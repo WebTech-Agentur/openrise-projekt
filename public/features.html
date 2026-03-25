@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Features - OpenRise</title>
+    <link rel="icon" type="image/png" href="image/favicon.png">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
@@ -61,35 +62,41 @@
 
             <div class="card-grid">
                 <div class="card">
-                    <i class="fas fa-search-plus"></i>
-                    <h3>Globales Sourcing</h3>
-                    <p>Zugang zu verborgenen Talentpools in aufstrebenden Tech-Hubs weltweit.</p>
+                    <i class="fas fa-language"></i>
+                    <h3>Übersetzungen</h3>
+                    <p>Offizielle Übersetzung mehrerer Dokumente durch zertifizierte Übersetzungsstellen – jeweils in
+                        die spezifisch geforderten Zielsprachen und gemäß behördlicher Vorgaben.</p>
                 </div>
                 <div class="card">
-                    <i class="fas fa-vial"></i>
-                    <h3>Geprüfte Qualität</h3>
-                    <p>Strenge fachliche und persönliche Bewertungen für jeden Bewerber.</p>
+                    <i class="fas fa-file-alt"></i>
+                    <h3>Beglaubigungen</h3>
+                    <p>Zusätzlich zur Übersetzung müssen viele Dokumente auch beglaubigt werden. – ein zwingender
+                        Schritt, damit die Unterlagen von deutschen Behörden anerkannt werden.</p>
                 </div>
                 <div class="card">
-                    <i class="fas fa-file-contract"></i>
+                    <i class="fas fa-passport"></i>
                     <h3>Visumsunterlagen</h3>
                     <p>Ein komplexes Geflecht aus behördlichen Anforderungen, das ohne spezialisierte Unterstützung kaum
                         zu durchdringen ist.</p>
                 </div>
                 <div class="card">
-                    <i class="fas fa-globe-europe"></i>
-                    <h3>Relocation-Zentrum</h3>
-                    <p>Durchgehende Unterstützung für den sicheren Umzug von Talenten nach Deutschland.</p>
+                    <i class="fas fa-building"></i>
+                    <h3>Wohnungssuche</h3>
+                    <p>Die Wohnungssuche für ausländische Fachkräfte stellt oft eine große Herausforderung dar –
+                        besonders ohne lokale Ansprechpartner.</p>
                 </div>
                 <div class="card">
-                    <i class="fas fa-users"></i>
-                    <h3>Kulturbrücke</h3>
-                    <p>Onboarding-Programme, um eine reibungslose kulturelle Integration zu gewährleisten.</p>
+                    <i class="fas fa-globe"></i>
+                    <h3>Dolmetscherservice</h3>
+                    <p>Ein zuverlässiger Dolmetscher-Service ist essenziell – Sprachliche Missverständnisse können
+                        gravierende Folgen haben.</p>
                 </div>
                 <div class="card">
-                    <i class="fas fa-rocket"></i>
-                    <h3>Kontinuierliche Betreuung</h3>
-                    <p>Regelmäßige Nachbetreuung, um den langfristigen Erfolg der Vermittlung zu garantieren.</p>
+                    <i class="fas fa-landmark"></i>
+                    <h3>Behördengänge</h3>
+                    <p>Die Kommunikation mit den beteiligten Behörden ist oft langwierig, komplex. Ohne Erfahrung kann
+                        hier viel Zeit verloren gehen – und im schlimmsten Fall das gesamte Verfahren ins Stocken
+                        geraten.</p>
                 </div>
             </div>
         </section>
@@ -150,7 +157,47 @@
         </section>
 
         <script>
-            document.querySelectorAll('.circle-icon').forEach(icon => {
+            const circle = document.querySelector('.feature-circle');
+            const icons = document.querySelectorAll('.circle-icon');
+            const container = document.querySelector('.circle-container');
+            
+            let rotation = 0;
+            let speed = 0.15; // Base speed: degrees per frame
+            let targetSpeed = 0.15;
+            let isHovering = false;
+
+            // Rotation Loop
+            function animate() {
+                if (window.innerWidth > 768) { // Only animate on desktop
+                    rotation += speed;
+                    circle.style.setProperty('--rot', `${rotation}deg`);
+                    circle.style.transform = `rotate(${rotation}deg)`;
+                    
+                    icons.forEach(icon => {
+                        icon.style.setProperty('--icon-rot', `${-rotation}deg`);
+                    });
+
+                    // Smooth speed transition
+                    speed += (targetSpeed - speed) * 0.05;
+                }
+                requestAnimationFrame(animate);
+            }
+
+            animate();
+
+            // Hover interactions for the whole circle
+            container.addEventListener('mouseenter', () => {
+                targetSpeed = 0.03; // Slow down but keep moving
+                isHovering = true;
+            });
+
+            container.addEventListener('mouseleave', () => {
+                targetSpeed = 0.15; // Back to normal speed
+                isHovering = false;
+            });
+
+            // Existing logic for updating center text
+            icons.forEach(icon => {
                 const updateCenter = () => {
                     const title = icon.getAttribute('data-title');
                     const desc = icon.getAttribute('data-desc');
@@ -166,7 +213,7 @@
                         content.style.transform = 'scale(1)';
                     }, 200);
 
-                    document.querySelectorAll('.circle-icon').forEach(i => i.classList.remove('active'));
+                    icons.forEach(i => i.classList.remove('active'));
                     icon.classList.add('active');
                 };
 
@@ -210,7 +257,7 @@
                     </ul>
                 </div>
                 <div class="footer-newsletter">
-                    <h4 class="footer-heading">Stay Updated</h4>
+                    <h4 class="footer-heading">Aktuell bleiben</h4>
                     <p>Erhalten Sie exklusive Insights zu globalen Recruiting-Trends direkt in Ihr Postfach.</p>
                     <form class="newsletter-form">
                         <input type="email" placeholder="E-Mail Adresse">
@@ -227,7 +274,7 @@
                 <p>&copy; 2026 OpenRise GmbH. Alle Rechte vorbehalten.</p>
                 <div class="status-indicator">
                     <div class="status-dot"></div>
-                    <span>System Status: Operational</span>
+                    <span>Systemstatus: Betriebsbereit</span>
                 </div>
             </div>
         </div>
