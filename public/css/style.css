@@ -1269,6 +1269,21 @@ input:checked+.slider:before {
     #home-hero {
         padding-top: 9rem !important; /* Move text ~48px (+3rem) further down */
     }
+
+    #home-potential .content {
+        padding: 0 1rem;
+    }
+    
+    #home-potential .image-container {
+        display: flex;
+        justify-content: center;
+    }
+    
+    #home-potential .image-container img {
+        max-width: 90%;
+        height: auto;
+        margin: 0 auto;
+    }
     
     .card-grid, .team-grid, .footer-grid {
         grid-template-columns: 1fr;
