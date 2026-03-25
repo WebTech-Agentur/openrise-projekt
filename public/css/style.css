@@ -1263,6 +1263,11 @@ input:checked+.slider:before {
         text-align: center;
         font-size: 2rem;
     }
+
+    /* Specific Mobile Adjustments for Home Page */
+    #home-hero {
+        padding-top: 9rem !important; /* Move text ~48px (+3rem) further down */
+    }
     
     .card-grid, .team-grid, .footer-grid {
         grid-template-columns: 1fr;
