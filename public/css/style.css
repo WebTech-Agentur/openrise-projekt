@@ -209,6 +209,23 @@ nav {
     transform: scale(1.1) rotate(5deg);
 }
 
+.solution-illu {
+    width: 72px;
+    height: 72px;
+    object-fit: contain;
+    margin-bottom: 1.5rem;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border-radius: 16px;
+    background: #ffffff;
+    padding: 6px;
+    box-shadow: var(--shadow);
+}
+
+.card:hover .solution-illu {
+    transform: scale(1.1) translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
 /* Hero */
 .hero {
     padding: 12rem 0 0rem;
