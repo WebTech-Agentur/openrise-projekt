@@ -1225,6 +1225,7 @@ input:checked+.slider:before {
 
     /* Specific Mobile Adjustments for Features Page */
     #features-hero {
+        padding-top: 8rem !important;
         padding-bottom: 1rem !important;
     }
 
