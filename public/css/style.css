@@ -1260,8 +1260,8 @@ input:checked+.slider:before {
     }
     
     #features-intro-split .image-container img {
-        max-width: 60%;
-        margin: 0 auto;
+        max-width: 90%;
+        margin: 2rem auto 0;
         display: block;
     }
 }
