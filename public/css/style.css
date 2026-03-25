@@ -1223,6 +1223,42 @@ input:checked+.slider:before {
         text-align: center;
     }
 
+    /* Specific Mobile Adjustments for Features Page */
+    #features-hero {
+        padding-bottom: 1rem !important;
+    }
+
+    #features-split {
+        padding-top: 1rem !important;
+    }
+
+    #features-split .content {
+        padding: 0 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    #features-split .content p {
+        text-align: center;
+    }
+
+    #features-split .content .btn-primary {
+        margin-top: 1.5rem !important;
+    }
+
+    #features-split .image-container {
+        display: flex;
+        justify-content: center;
+    }
+
+    #features-split .image-container img {
+        max-width: 85%;
+        height: auto;
+        margin: 0 auto;
+    }
+
     .split-section .content h2 {
         text-align: center;
         font-size: 2rem;
@@ -1231,38 +1267,6 @@ input:checked+.slider:before {
     .card-grid, .team-grid, .footer-grid {
         grid-template-columns: 1fr;
         gap: 1.5rem;
-    }
-    
-    /* Features Page Specific Overrides */
-    #features-hero {
-        padding-bottom: 1rem;
-    }
-    
-    #features-intro-split {
-        padding-top: 1rem;
-    }
-    
-    #features-intro-split .content h2 {
-        font-size: 1.5rem;
-        text-align: center;
-        line-height: 1.3;
-    }
-    
-    #features-intro-split .content p {
-        text-align: center;
-        font-size: 0.95rem;
-    }
-    
-    #features-intro-split .content .btn {
-        display: block;
-        margin: 1.5rem auto 0;
-        width: fit-content;
-    }
-    
-    #features-intro-split .image-container img {
-        max-width: 90%;
-        margin: 2rem auto 0;
-        display: block;
     }
 }
 
