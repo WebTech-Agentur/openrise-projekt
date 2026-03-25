@@ -1178,15 +1178,31 @@ input:checked+.slider:before {
 
 @media (max-width: 768px) {
     section {
-        padding: 3rem 0;
+        padding: 2.5rem 0;
     }
 
     .hero {
-        padding: 6rem 0 3rem;
+        padding: 8rem 0 3rem;
     }
 
     h1 {
-        font-size: 2.5rem;
+        font-size: 2.25rem;
+    }
+
+    h2 {
+        font-size: 1.75rem;
+    }
+
+    .hero p, .split-section .content p {
+        padding: 0 1rem;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .image-container img, .about-image img, .why-image img {
+        max-width: 90%;
+        margin: 0 auto;
+        display: block;
     }
 
     .mobile-menu-toggle {
@@ -1262,7 +1278,7 @@ input:checked+.slider:before {
 
     .split-section .content h2 {
         text-align: center;
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
 
     /* Specific Mobile Adjustments for Home Page */
@@ -1283,6 +1299,43 @@ input:checked+.slider:before {
         max-width: 90%;
         height: auto;
         margin: 0 auto;
+    }
+
+    #home-why-image {
+        display: flex;
+        justify-content: center;
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    #home-why-image img {
+        max-width: 100% !important;
+        margin: 0 !important;
+    }
+
+    /* Specific Mobile Adjustments for Team Page */
+    #team-hero {
+        padding-bottom: 0 !important;
+    }
+
+    #team-vision {
+        padding-top: 1rem !important;
+    }
+
+    #team-vision .content {
+        align-items: flex-start !important;
+        text-align: left !important;
+        padding: 0 1.5rem !important;
+    }
+
+    #team-vision .content h2, 
+    #team-vision .content p {
+        text-align: left !important;
+    }
+
+    ul.vision-list {
+        text-align: left;
+        padding-left: 2.5rem;
     }
     
     .card-grid, .team-grid, .footer-grid {
