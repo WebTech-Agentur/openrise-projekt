@@ -1232,6 +1232,38 @@ input:checked+.slider:before {
         grid-template-columns: 1fr;
         gap: 1.5rem;
     }
+    
+    /* Features Page Specific Overrides */
+    #features-hero {
+        padding-bottom: 1rem;
+    }
+    
+    #features-intro-split {
+        padding-top: 1rem;
+    }
+    
+    #features-intro-split .content h2 {
+        font-size: 1.5rem;
+        text-align: center;
+        line-height: 1.3;
+    }
+    
+    #features-intro-split .content p {
+        text-align: center;
+        font-size: 0.95rem;
+    }
+    
+    #features-intro-split .content .btn {
+        display: block;
+        margin: 1.5rem auto 0;
+        width: fit-content;
+    }
+    
+    #features-intro-split .image-container img {
+        max-width: 60%;
+        margin: 0 auto;
+        display: block;
+    }
 }
 
 #bg-canvas {
