@@ -100,13 +100,15 @@ nav {
 }
 
 .logo {
-    font-size: 1.5rem;
-    font-weight: 800;
-    background: var(--gradient);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+    display: inline-flex;
+    align-items: center;
     text-decoration: none;
+}
+
+.brand-logo {
+    max-height: 32px;
+    width: auto;
+    object-fit: contain;
 }
 
 .nav-links {
