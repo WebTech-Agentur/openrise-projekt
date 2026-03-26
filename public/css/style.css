@@ -989,6 +989,23 @@ input:checked+.slider:before {
     transform: scale(1.05);
 }
 
+/* Legal Pages Styling */
+.legal-card {
+    background: var(--card-bg);
+    padding: 3rem;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+    line-height: 1.8;
+}
+
+.legal-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 2.5rem;
+}
+
 /* Scroll Reveal */
 .reveal {
     opacity: 0;
@@ -1214,6 +1231,11 @@ input:checked+.slider:before {
     h1 {
         font-size: 3rem;
     }
+
+    nav,
+    .nav-links {
+        background: var(--bg) !important;
+    }
 }
 
 @media (max-width: 768px) {
@@ -1387,6 +1409,15 @@ input:checked+.slider:before {
     .footer-grid {
         grid-template-columns: 1fr;
         gap: 1.5rem;
+    }
+
+    .legal-card {
+        padding: 1.5rem !important;
+    }
+
+    .legal-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
     }
 }
 
