@@ -11,6 +11,11 @@
 </head>
 
 <body>
+    <!-- Interactive UI Elements -->
+    <div class="scroll-progress-container">
+        <div class="scroll-progress-bar" id="scroll-progress"></div>
+    </div>
+
     <nav>
         <div class="container nav-container">
             <a href="index.html" class="logo"><img src="image/logo.png" alt="OpenRise Logo" class="brand-logo"></a>
@@ -57,50 +62,128 @@
 
         <!-- Process Section -->
         <section class="container reveal">
-            <h2 class="text-center mb-4">Verborgene Prozesse:</h2>
-            <p class="text-center text-muted" style="max-width: 600px; margin: 0 auto 4rem;">Ein optimierter Workflow,
-                der die Komplexität der internationalen Personalbeschaffung reduziert.</p>
+            <h2 class="text-center mb-4" style="font-size: 3rem;">Verborgene Prozesse:</h2>
+            <p class="text-center text-muted" style="max-width: 650px; margin: 0 auto 4rem; font-size: 1.15rem;">Ein optimierter Workflow, der die Komplexität der internationalen Personalbeschaffung reduziert und den Weg für globale Talente ebnet.</p>
 
-            <div class="card-grid">
-                <div class="card">
-                    <i class="fas fa-language"></i>
-                    <h3>Übersetzungen</h3>
-                    <p>Offizielle Übersetzung mehrerer Dokumente durch zertifizierte Übersetzungsstellen – jeweils in
-                        die spezifisch geforderten Zielsprachen und gemäß behördlicher Vorgaben.</p>
+            <div class="bento-grid">
+                <!-- Large Item (2x2) - Interactive Visa Scene -->
+                <div class="bento-item bento-large">
+                    <div class="bento-visual interactive-visa">
+                        <div class="visa-scene">
+                            <div class="visa-doc doc-back"></div>
+                            <div class="visa-doc doc-main">
+                                <div class="doc-header"></div>
+                                <div class="doc-lines">
+                                    <div class="doc-line"></div>
+                                    <div class="doc-line short"></div>
+                                </div>
+                                <div class="doc-stamp"><i class="fas fa-stamp"></i> Geprüft</div>
+                            </div>
+                            <div class="passport"><i class="fas fa-passport"></i></div>
+                        </div>
+                    </div>
+                    <!-- New Interactive Status Tracker to fill space -->
+                    <div class="visa-status-tracker">
+                        <div class="tracker-step completed">
+                            <i class="fas fa-check"></i>
+                            <span>Prüfung</span>
+                        </div>
+                        <div class="tracker-step active">
+                            <i class="fas fa-spinner fa-spin"></i>
+                            <span>Behörde</span>
+                        </div>
+                        <div class="tracker-step">
+                            <i class="fas fa-clock"></i>
+                            <span>Visum</span>
+                        </div>
+                    </div>
+                    <div class="bento-text">
+                        <h3>Visumsunterlagen</h3>
+                        <p>Ein komplexes Geflecht aus behördlichen Anforderungen, das ohne erfahrene Spezialisten kaum zu durchdringen ist. Wir kümmern uns um die detaillierte Vorbereitung, Prüfung und Einreichung aller notwendigen Dokumente für eine reibungslose Visumserteilung.</p>
+                    </div>
                 </div>
-                <div class="card">
-                    <i class="fas fa-file-alt"></i>
-                    <h3>Beglaubigungen</h3>
-                    <p>Zusätzlich zur Übersetzung müssen viele Dokumente auch beglaubigt werden. – ein zwingender
-                        Schritt, damit die Unterlagen von deutschen Behörden anerkannt werden.</p>
+
+                <!-- Wide Item (2x1) - Translation Exchange -->
+                <div class="bento-item bento-wide">
+                    <div class="bento-visual translate-visual">
+                        <div class="lang-bubble from-lang">DE</div>
+                        <i class="fas fa-arrow-right-arrow-left exchange-icon"></i>
+                        <div class="lang-bubble to-lang">EN</div>
+                    </div>
+                    <div class="bento-text">
+                        <h3>Übersetzungen</h3>
+                        <p>Offizielle und rechtsgültige Übersetzung mehrerer Dokumente durch zertifizierte Übersetzungsstellen in die exakt geforderten Zielsprachen.</p>
+                    </div>
                 </div>
-                <div class="card">
-                    <i class="fas fa-passport"></i>
-                    <h3>Visumsunterlagen</h3>
-                    <p>Ein komplexes Geflecht aus behördlichen Anforderungen, das ohne spezialisierte Unterstützung kaum
-                        zu durchdringen ist.</p>
+
+                <!-- Square Item (1x1) - Seal animation -->
+                <div class="bento-item bento-square">
+                    <div class="bento-visual seal-visual">
+                        <div class="seal-ring">
+                            <i class="fas fa-certificate seal-icon"></i>
+                        </div>
+                    </div>
+                    <div class="bento-text">
+                        <h3>Beglaubigungen</h3>
+                        <p>Sicherung der rechtlichen Anerkennung durch deutsche Behörden.</p>
+                    </div>
                 </div>
-                <div class="card">
-                    <i class="fas fa-building"></i>
-                    <h3>Wohnungssuche</h3>
-                    <p>Die Wohnungssuche für ausländische Fachkräfte stellt oft eine große Herausforderung dar –
-                        besonders ohne lokale Ansprechpartner.</p>
+
+                <!-- Square Item (1x1) - Floating Map Pin -->
+                <div class="bento-item bento-square">
+                    <div class="bento-visual house-visual">
+                        <i class="fas fa-home house-base"></i>
+                        <i class="fas fa-map-marker-alt map-pin floating"></i>
+                    </div>
+                    <div class="bento-text">
+                        <h3>Wohnungssuche</h3>
+                        <p>Aktive Unterstützung bei der Suche nach sicherem Wohnraum vor Ort.</p>
+                    </div>
                 </div>
-                <div class="card">
-                    <i class="fas fa-globe"></i>
-                    <h3>Dolmetscherservice</h3>
-                    <p>Ein zuverlässiger Dolmetscher-Service ist essenziell – Sprachliche Missverständnisse können
-                        gravierende Folgen haben.</p>
+
+                <!-- Wide Item (2x1) - Sound waves -->
+                <div class="bento-item bento-wide">
+                    <div class="bento-visual audio-visual">
+                        <i class="fas fa-globe globe-center"></i>
+                        <div class="sound-waves">
+                            <span></span><span></span><span></span><span></span><span></span>
+                        </div>
+                    </div>
+                    <div class="bento-text">
+                        <h3>Dolmetscherservice</h3>
+                        <p>Sprachliche Barrieren abbauen: Ein zuverlässiger Dolmetscher-Service ist essenziell für die Vermeidung von Missverständnissen und sorgt für einen reibungslosen Ablauf.</p>
+                    </div>
                 </div>
-                <div class="card">
-                    <i class="fas fa-landmark"></i>
-                    <h3>Behördengänge</h3>
-                    <p>Die Kommunikation mit den beteiligten Behörden ist oft langwierig, komplex. Ohne Erfahrung kann
-                        hier viel Zeit verloren gehen – und im schlimmsten Fall das gesamte Verfahren ins Stocken
-                        geraten.</p>
+
+                <!-- Wide Item (2x1) - Flying Papers -->
+                <div class="bento-item bento-wide">
+                    <div class="bento-visual gov-visual">
+                        <i class="fas fa-landmark gov-building"></i>
+                        <div class="moving-papers">
+                            <i class="fas fa-file-alt paper p1"></i>
+                            <i class="fas fa-file-alt paper p2"></i>
+                        </div>
+                    </div>
+                    <div class="bento-text">
+                        <h3>Behördengänge</h3>
+                        <p>Wir übernehmen die komplizierte Abstimmung mit Ämtern und beschleunigen die oft langwierigen Verfahren erheblich, damit neue Talente schneller starten können.</p>
+                    </div>
                 </div>
             </div>
         </section>
+
+        <!-- Hover Event Script -->
+        <script>
+            document.querySelectorAll('.bento-item').forEach(item => {
+                item.addEventListener('mousemove', e => {
+                    const rect = item.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    item.style.setProperty('--mouse-x', `${x}px`);
+                    item.style.setProperty('--mouse-y', `${y}px`);
+                });
+            });
+        </script>
 
         <!-- Interactive Circle Section -->
         <section class="feature-circle-section reveal" style="padding-bottom: 2rem;">
@@ -279,6 +362,7 @@
     </footer>
 
     <script src="js/background.js"></script>
+    <script src="js/interactive.js"></script>
     <script src="js/script.js"></script>
 </body>
 

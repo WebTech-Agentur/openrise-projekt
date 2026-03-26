@@ -11,6 +11,11 @@
 </head>
 
 <body>
+    <!-- Interactive UI Elements -->
+    <div class="scroll-progress-container">
+        <div class="scroll-progress-bar" id="scroll-progress"></div>
+    </div>
+
     <nav>
         <div class="container nav-container">
             <a href="index.html" class="logo"><img src="image/logo.png" alt="OpenRise Logo" class="brand-logo"></a>
@@ -32,15 +37,65 @@
 
     <main>
         <!-- Hero Section -->
-        <section id="home-hero" class="hero reveal" style="position: relative; overflow: hidden;">
+        <section id="home-hero" class="hero reveal" style="position: relative; overflow: hidden; padding-top: 10rem;">
             <div class="hero-bg-accent"></div>
-            <div class="container">
-                <h1>Globale Talente für Deutschland</h1>
-                <p class="sub">Wir vereinfachen internationale Rekrutierung und Relocation, indem wir hochqualifizierte
-                    Fachkräfte mit führenden deutschen Unternehmen zusammenbringen</p>
-                <div class="cta-buttons">
-                    <a href="features.html" class="btn btn-primary">Features</a>
-                    <a href="team.html" class="btn btn-outline" style="margin-left: 1rem;">Team & Vision</a>
+            <div class="container hero-split">
+                <div class="hero-content-left">
+                    <h1>Globale Talente für Deutschland</h1>
+                    <p class="sub">Wir vereinfachen internationale Rekrutierung und Relocation, indem wir hochqualifizierte Fachkräfte mit führenden deutschen Unternehmen zusammenbringen.</p>
+                    <div class="cta-buttons">
+                        <a href="features.html" class="btn btn-primary">Features</a>
+                        <a href="team.html" class="btn btn-outline" style="margin-left: 1rem;">Team & Vision</a>
+                    </div>
+                </div>
+
+                <div class="hero-reels-right">
+                    <div class="reels-container">
+                        <!-- Reel Card 1 -->
+                        <div class="reel-card active">
+                            <div class="reel-video-placeholder" style="background-image: url('image/reel_maria.png');"></div>
+                            <div class="reel-overlay">
+                                <span class="badge">Software Engineer</span>
+                                <h3>Maria S., Brasilien</h3>
+                                <p>Sucht Position in Berlin • Senior Fullstack</p>
+                                <div class="reel-actions">
+                                    <button class="btn-icon-small"><i class="fas fa-heart"></i></button>
+                                    <button class="btn-icon-small"><i class="fas fa-share"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Reel Card 2 -->
+                        <div class="reel-card next">
+                            <div class="reel-video-placeholder" style="background-image: url('image/reel_arjun.png');"></div>
+                            <div class="reel-overlay">
+                                <span class="badge">Data Scientist</span>
+                                <h3>Arjun P., Indien</h3>
+                                <p>Ready for Relocation • AI Expert</p>
+                                <div class="reel-actions">
+                                    <button class="btn-icon-small"><i class="fas fa-heart"></i></button>
+                                    <button class="btn-icon-small"><i class="fas fa-share"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Reel Card 3 -->
+                        <div class="reel-card prev">
+                            <div class="reel-video-placeholder" style="background-image: url('image/reel_luis.png');"></div>
+                            <div class="reel-overlay">
+                                <span class="badge">Mechatroniker</span>
+                                <h3>Luis M., Mexiko</h3>
+                                <p>B1 Deutsch • Industriemechanik</p>
+                                <div class="reel-actions">
+                                    <button class="btn-icon-small"><i class="fas fa-heart"></i></button>
+                                    <button class="btn-icon-small"><i class="fas fa-share"></i></button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="reel-nav">
+                            <button class="reel-prev"><i class="fas fa-chevron-up"></i></button>
+                            <button class="reel-next"><i class="fas fa-chevron-down"></i></button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -94,41 +149,128 @@
                 <p class="text-center text-muted" style="max-width: 600px; margin: 0 auto 4rem;">Wir haben eine
                     Plattform entwickelt, die jeden Schritt des internationalen Einstellungsprozesses effizient
                     gestaltet.</p>
-                <div class="card-grid">
-                    <div class="card">
-                        <img src="image/illu_matching.png" alt="KI Matching" class="solution-illu">
-                        <h3>KI-gestütztes Matching</h3>
-                        <p>Unsere Algorithmen finden die perfekte Besetzung basierend auf Fähigkeiten, Kultur und
-                            langfristigem Potenzial.</p>
+                <!-- Decorative Background for Section -->
+                <div class="showcase-bg-decor">
+                    <div class="decor-circle c1"></div>
+                    <div class="decor-circle c2"></div>
+                    <div class="decor-grid"></div>
+                    <div class="decor-line v1"></div>
+                    <div class="decor-line v2"></div>
+                    <div class="decor-line v3"></div>
+                </div>
+                <div class="solutions-premium-grid">
+                    <!-- Solution 1 -->
+                    <div class="premium-solution-card animate-on-scroll">
+                        <div class="showcase-visual">
+                            <div class="icon-blob"></div>
+                            <div class="blob-glow"></div>
+                            <div class="icon-border-rotating"></div>
+                            <img src="image/illu_matching.png" alt="KI Matching" class="large-showcase-icon">
+                        </div>
+                        <div class="showcase-text">
+                            <span class="showcase-badge animate-stagger-1">Premium Tech</span>
+                            <h3 class="animate-stagger-2">KI-gestütztes Matching</h3>
+                            <p class="animate-stagger-3">Unsere hochentwickelten Algorithmen finden die perfekte Besetzung basierend auf Fähigkeiten, Unternehmenskultur und langfristigem Entwicklungspotenzial. Der gesamte Prozess wird intelligent gesteuert.</p>
+                            <div class="showcase-detail-items animate-stagger-4">
+                                <div class="detail-item"><i class="fas fa-microchip"></i> Neuronale Netze</div>
+                                <div class="detail-item"><i class="fas fa-users-cog"></i> Cultural Fit</div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="card">
-                        <img src="image/illu_automation.png" alt="Automated Processes" class="solution-illu">
-                        <h3>Automatisierte Prozesse</h3>
-                        <p>Von Arbeitsgenehmigungen bis hin zu Steuer-IDs – wir automatisieren den Dokumentenfluss für
-                            ein schnelleres Onboarding.</p>
+
+                    <!-- Solution 2 -->
+                    <div class="premium-solution-card animate-on-scroll">
+                        <div class="showcase-visual">
+                            <div class="icon-blob"></div>
+                            <div class="blob-glow"></div>
+                            <div class="icon-border-rotating"></div>
+                            <img src="image/illu_automation.png" alt="Automatisierte Prozesse" class="large-showcase-icon">
+                        </div>
+                        <div class="showcase-text">
+                            <span class="showcase-badge animate-stagger-1">Efficiency</span>
+                            <h3 class="animate-stagger-2">Automatisierte Prozesse</h3>
+                            <p class="animate-stagger-3">Wir digitalisieren und automatisieren den gesamten Dokumenten-Workflow. Von Arbeitsgenehmigungen bis hin zu Steuer-IDs – unser System übernimmt das.</p>
+                            <div class="showcase-detail-items animate-stagger-4">
+                                <div class="detail-item"><i class="fas fa-bolt"></i> Fast-Track</div>
+                                <div class="detail-item"><i class="fas fa-file-export"></i> Auto-Docs</div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="card">
-                        <img src="image/illu_relocation.png" alt="Relocation Service" class="solution-illu">
-                        <h3>Persönlicher Relocation-Service</h3>
-                        <p>Wir bieten individuelle Unterstützung bei der Wohnungssuche, Behördengängen und der
-                            gesellschaftlichen Integration.</p>
+
+                    <!-- Solution 3 -->
+                    <div class="premium-solution-card animate-on-scroll">
+                        <div class="showcase-visual">
+                            <div class="icon-blob"></div>
+                            <div class="blob-glow"></div>
+                            <div class="icon-border-rotating"></div>
+                            <img src="image/illu_relocation.png" alt="Relocation Service" class="large-showcase-icon">
+                        </div>
+                        <div class="showcase-text">
+                            <span class="showcase-badge animate-stagger-1">Support</span>
+                            <h3 class="animate-stagger-2">Relocation-Service</h3>
+                            <p class="animate-stagger-3">Ein Umzug in ein neues Land ist eine Herausforderung. Wir bieten eine umfassende Unterstützung bei der Wohnungssuche und Behördengängen.</p>
+                            <div class="showcase-detail-items animate-stagger-4">
+                                <div class="detail-item"><i class="fas fa-home"></i> Wohnungssuche</div>
+                                <div class="detail-item"><i class="fas fa-id-card"></i> Behörden</div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="card">
-                        <img src="image/illu_culture.png" alt="Cultural Integration" class="solution-illu">
-                        <h3>Kulturelle Integration</h3>
-                        <p>Spezialisierte Trainings zur Überbrückung der Unterschiede zwischen internationalen Talenten
-                            und der deutschen Arbeitskultur.</p>
+
+                    <!-- Solution 4 -->
+                    <div class="premium-solution-card animate-on-scroll">
+                        <div class="showcase-visual">
+                            <div class="icon-blob"></div>
+                            <div class="blob-glow"></div>
+                            <div class="icon-border-rotating"></div>
+                            <img src="image/illu_culture.png" alt="Kulturelle Integration" class="large-showcase-icon">
+                        </div>
+                        <div class="showcase-text">
+                            <span class="showcase-badge animate-stagger-1">Community</span>
+                            <h3 class="animate-stagger-2">Kulturelle Integration</h3>
+                            <p class="animate-stagger-3">Wir bereiten Talente optimal auf die deutsche Arbeitswelt vor. Durch interkulturelle Trainings sorgen wir dafür, dass sie sich schnell zu Hause fühlen.</p>
+                            <div class="showcase-detail-items animate-stagger-4">
+                                <div class="detail-item"><i class="fas fa-comments"></i> Training</div>
+                                <div class="detail-item"><i class="fas fa-hands-helping"></i> Mentoring</div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="card">
-                        <img src="image/illu_support.png" alt="Post-Hiring Support" class="solution-illu">
-                        <h3>Betreuung nach der Einstellung</h3>
-                        <p>Kontinuierliche Unterstützung für Arbeitgeber und Arbeitnehmer, um langfristigen Erfolg zu
-                            garantieren.</p>
+
+                    <!-- Solution 5 -->
+                    <div class="premium-solution-card animate-on-scroll">
+                        <div class="showcase-visual">
+                            <div class="icon-blob"></div>
+                            <div class="blob-glow"></div>
+                            <div class="icon-border-rotating"></div>
+                            <img src="image/illu_support.png" alt="Betreuung" class="large-showcase-icon">
+                        </div>
+                        <div class="showcase-text">
+                            <span class="showcase-badge animate-stagger-1">Success</span>
+                            <h3 class="animate-stagger-2">Langfristige Betreuung</h3>
+                            <p class="animate-stagger-3">Unsere Arbeit endet nicht beim Vertrag. Wir begleiten Unternehmen und Talente weit über den ersten Arbeitstag hinaus für nachhaltigen Erfolg.</p>
+                            <div class="showcase-detail-items animate-stagger-4">
+                                <div class="detail-item"><i class="fas fa-chart-line"></i> Success</div>
+                                <div class="detail-item"><i class="fas fa-headset"></i> 24/7 Support</div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="card">
-                        <img src="image/illu_billing.png" alt="Secure Billing" class="solution-illu">
-                        <h3>Rechtssichere Abrechnung</h3>
-                        <p>Vereinfachte internationale Zahlungen und steuerliche Compliance für Ihr globales Team.</p>
+
+                    <!-- Solution 6 -->
+                    <div class="premium-solution-card animate-on-scroll">
+                        <div class="showcase-visual">
+                            <div class="icon-blob"></div>
+                            <div class="blob-glow"></div>
+                            <div class="icon-border-rotating"></div>
+                            <img src="image/illu_billing.png" alt="Abrechnung" class="large-showcase-icon">
+                        </div>
+                        <div class="showcase-text">
+                            <span class="showcase-badge animate-stagger-1">Compliance</span>
+                            <h3 class="animate-stagger-2">Sichere Abrechnung</h3>
+                            <p class="animate-stagger-3">Wir regeln alle internationalen Zahlungsströme und stellen sicher, dass alle steuerlichen und rechtlichen Anforderungen in Deutschland erfüllt werden.</p>
+                            <div class="showcase-detail-items animate-stagger-4">
+                                <div class="detail-item"><i class="fas fa-shield-alt"></i> Compliance</div>
+                                <div class="detail-item"><i class="fas fa-euro-sign"></i> Smart Billing</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -311,6 +453,7 @@
     </footer>
 
     <script src="js/background.js"></script>
+    <script src="js/interactive.js"></script>
     <script src="js/script.js"></script>
 </body>
 
