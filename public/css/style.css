@@ -886,12 +886,12 @@ input:checked+.slider:before {
 
 /* Problem Section */
 .problems {
-    padding: 5rem 0;
+    padding: 5rem 0 4.625rem; /* 80px top, 74px bottom (-6px) */
 }
 
 /* Solution Section */
 .solutions {
-    padding: 8rem 0 4rem;
+    padding: 7.625rem 0 4rem; /* 122px top (-6px), 64px bottom */
 }
 
 /* Progress Section */
@@ -1011,7 +1011,7 @@ input:checked+.slider:before {
 .reveal {
     opacity: 0;
     transform: translateY(30px);
-    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 .reveal-visible {
@@ -1382,6 +1382,11 @@ input:checked+.slider:before {
 
     .problems {
         padding-top: 0rem !important;
+        padding-bottom: 2rem !important; /* 32px (-8px) */
+    }
+
+    .solutions {
+        padding-top: 2rem !important; /* 32px (-8px) */
     }
 
     #home-why-image {
@@ -1434,7 +1439,16 @@ input:checked+.slider:before {
 
     #team-vision {
         padding-top: 0 !important;
+        padding-bottom: 2rem !important; /* Reduced bottom padding */
         margin-top: -1rem !important;
+    }
+
+    #team-vision .content h2 {
+        margin-top: 3.5rem !important; /* Add space above heading in stacked view */
+    }
+
+    .team-members-section {
+        padding-top: 2rem !important; /* Bring Team section closer */
     }
 
     .team-row {
