@@ -745,14 +745,45 @@ footer::before {
 }
 
 /* Position icons around the circle */
-.icon-1 { top: 0%; left: 50%; }
-.icon-2 { top: 14.6%; left: 85.4%; }
-.icon-3 { top: 50%; left: 100%; }
-.icon-4 { top: 85.4%; left: 85.4%; }
-.icon-5 { top: 100%; left: 50%; }
-.icon-6 { top: 85.4%; left: 14.6%; }
-.icon-7 { top: 50%; left: 0%; }
-.icon-8 { top: 14.6%; left: 14.6%; }
+.icon-1 {
+    top: 0%;
+    left: 50%;
+}
+
+.icon-2 {
+    top: 14.6%;
+    left: 85.4%;
+}
+
+.icon-3 {
+    top: 50%;
+    left: 100%;
+}
+
+.icon-4 {
+    top: 85.4%;
+    left: 85.4%;
+}
+
+.icon-5 {
+    top: 100%;
+    left: 50%;
+}
+
+.icon-6 {
+    top: 85.4%;
+    left: 14.6%;
+}
+
+.icon-7 {
+    top: 50%;
+    left: 0%;
+}
+
+.icon-8 {
+    top: 14.6%;
+    left: 14.6%;
+}
 
 /* Responsive adjustments for the circle */
 @media (max-width: 768px) {
@@ -1193,13 +1224,16 @@ input:checked+.slider:before {
         font-size: 1.75rem;
     }
 
-    .hero p, .split-section .content p {
+    .hero p,
+    .split-section .content p {
         padding: 0 1rem;
         margin-left: auto;
         margin-right: auto;
     }
 
-    .image-container img, .about-image img, .why-image img {
+    .image-container img,
+    .about-image img,
+    .why-image img {
         max-width: 90%;
         margin: 0 auto;
         display: block;
@@ -1283,18 +1317,19 @@ input:checked+.slider:before {
 
     /* Specific Mobile Adjustments for Home Page */
     #home-hero {
-        padding-top: 9rem !important; /* Move text ~48px (+3rem) further down */
+        padding-top: 9rem !important;
+        /* Move text ~48px (+3rem) further down */
     }
 
     #home-potential .content {
         padding: 0 1rem;
     }
-    
+
     #home-potential .image-container {
         display: flex;
         justify-content: center;
     }
-    
+
     #home-potential .image-container img {
         max-width: 90%;
         height: auto;
@@ -1328,7 +1363,7 @@ input:checked+.slider:before {
         padding: 0 1.5rem !important;
     }
 
-    #team-vision .content h2, 
+    #team-vision .content h2,
     #team-vision .content p {
         text-align: left !important;
     }
@@ -1338,15 +1373,9 @@ input:checked+.slider:before {
         padding-left: 2.5rem;
     }
 
-    #team-members {
-        padding-bottom: 1rem !important;
-    }
-
-    .team-members-section + section.reveal {
-        padding-top: 1rem !important;
-    }
-    
-    .card-grid, .team-grid, .footer-grid {
+    .card-grid,
+    .team-grid,
+    .footer-grid {
         grid-template-columns: 1fr;
         gap: 1.5rem;
     }
