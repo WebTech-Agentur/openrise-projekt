@@ -250,6 +250,10 @@ nav {
     overflow: hidden;
 }
 
+#features-split {
+    margin-top: 2rem;
+}
+
 .hero-bg-accent {
     position: absolute;
     top: 50%;
@@ -1276,11 +1280,11 @@ input:checked+.slider:before {
     /* Specific Mobile Adjustments for Features Page */
     #features-hero {
         padding-top: 8rem !important;
-        padding-bottom: 1rem !important;
+        padding-bottom: 2rem !important;
     }
 
     #features-split {
-        padding-top: 1rem !important;
+        padding-top: 2rem !important;
     }
 
     #features-split .content {
