@@ -161,7 +161,7 @@
             const circle = document.querySelector('.feature-circle');
             const icons = document.querySelectorAll('.circle-icon');
             const container = document.querySelector('.circle-container');
-            
+
             let rotation = 0;
             let speed = 0.15; // Base speed: degrees per frame
             let targetSpeed = 0.15;
@@ -173,7 +173,7 @@
                     rotation += speed;
                     circle.style.setProperty('--rot', `${rotation}deg`);
                     circle.style.transform = `rotate(${rotation}deg)`;
-                    
+
                     icons.forEach(icon => {
                         icon.style.setProperty('--icon-rot', `${-rotation}deg`);
                     });
@@ -237,7 +237,8 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
-                    <a href="index.html" class="logo"><img src="image/logo.png" alt="OpenRise Logo" class="brand-logo"></a>
+                    <a href="index.html" class="logo"><img src="image/logo.png" alt="OpenRise Logo"
+                            class="brand-logo"></a>
                     <p>Ihre Brücke zu globalen Talenten. Wir vereinfachen die komplexe Welt der internationalen
                         Personalbeschaffung mit modernster KI.</p>
                 </div>
@@ -272,11 +273,7 @@
                     <a href="#"><i class="fab fa-twitter"></i></a>
                     <a href="#"><i class="fab fa-instagram"></i></a>
                 </div>
-                <p>&copy; 2026 OpenRise GmbH. Alle Rechte vorbehalten.</p>
-                <div class="status-indicator">
-                    <div class="status-dot"></div>
-                    <span>Systemstatus: Betriebsbereit</span>
-                </div>
+
             </div>
         </div>
     </footer>
