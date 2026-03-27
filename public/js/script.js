@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, observerOptions);
 
-    document.querySelectorAll('section, .card, .team-row').forEach(el => {
+    document.querySelectorAll('section, .card, .team-row, .timeline-spine').forEach(el => {
         el.classList.add('reveal');
         observer.observe(el);
     });

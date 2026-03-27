@@ -144,7 +144,7 @@ function initScrollReveal() {
         });
     }, observerOptions);
 
-    document.querySelectorAll('.animate-on-scroll, .solutions-premium-grid').forEach(el => {
+    document.querySelectorAll('.animate-on-scroll, .solutions-premium-grid, .timeline-spine').forEach(el => {
         observer.observe(el);
     });
 }
