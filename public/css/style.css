@@ -1573,6 +1573,21 @@ input:not(:checked) + .slider .sun-icon {
     transform: translateY(0);
 }
 
+.reveal-sync {
+    animation: revealIn 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes revealIn {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 /* Team Timeline Section */
 .team-timeline {
     position: relative;
@@ -2078,21 +2093,7 @@ input:not(:checked) + .slider .sun-icon {
         left: 25px !important;
     }
 
-    .reveal-sync {
-        animation: revealIn 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-    }
-
-    @keyframes revealIn {
-        from {
-            opacity: 0;
-            transform: translateY(40px);
-        }
-
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
+    /* Animation already moved to global scope */
 
     #team-vision .content {
         align-items: flex-start !important;
