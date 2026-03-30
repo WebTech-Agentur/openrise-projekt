@@ -319,228 +319,25 @@ nav {
     opacity: 1;
 }
 
-/* --- Intelligent Problem Visuals --- */
-.problem-visual {
+.problem-card i {
     width: 70px;
     height: 70px;
-    margin-bottom: 2rem;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    background: linear-gradient(135deg, var(--primary-soft) 0%, rgba(37, 99, 235, 0.1) 100%);
+    color: var(--primary);
+    border: 1px solid rgba(37, 99, 235, 0.15);
     border-radius: 18px;
-    background: var(--primary-soft);
-    border: 1px solid rgba(37, 99, 235, 0.1);
+    font-size: 2.25rem;
     transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+    box-shadow: 0 10px 20px rgba(37, 99, 235, 0.1);
+    margin-bottom: 2rem;
 }
 
-.problem-card:hover .problem-visual {
-    transform: translateY(-5px) scale(1.1);
+.problem-card:hover i {
+    transform: translateY(-5px) scale(1.1) rotate(10deg);
     background: var(--primary);
-    box-shadow: 0 15px 30px rgba(37, 99, 235, 0.3);
-}
-
-/* 1. Skill Shortage Visual */
-.visual-skill-shortage {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 4px;
-    padding: 10px;
-}
-
-.skill-dot {
-    width: 10px;
-    height: 10px;
-    background: var(--primary);
-    border-radius: 50%;
-    opacity: 0.8;
-}
-
-.skill-dot.missing {
-    background: transparent;
-    border: 1.5px dashed var(--primary);
-    animation: skillPulse 2s infinite ease-in-out;
-}
-
-.problem-card:hover .skill-dot:not(.missing) {
-    background: white;
-}
-
-.problem-card:hover .skill-dot.missing {
-    border-color: white;
-}
-
-@keyframes skillPulse {
-    0%, 100% { transform: scale(1); opacity: 0.3; }
-    50% { transform: scale(1.2); opacity: 1; }
-}
-
-.skill-scanner {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 4px;
-    background: linear-gradient(to right, transparent, var(--primary), transparent);
-    animation: skillScan 3s infinite linear;
-    opacity: 0;
-}
-
-.problem-card:hover .skill-scanner {
-    opacity: 1;
-    background: linear-gradient(to right, transparent, white, transparent);
-}
-
-@keyframes skillScan {
-    0% { top: 10%; }
-    100% { top: 90%; }
-}
-
-/* 2. Bureaucracy Visual */
-.visual-bureaucracy {
-    position: relative;
-}
-
-.doc-sheet {
-    position: absolute;
-    width: 30px;
-    height: 40px;
-    background: white;
-    border-radius: 4px;
-    border: 1px solid var(--border);
-    transition: all 0.5s ease;
-}
-
-.doc-sheet::before {
-    content: '';
-    position: absolute;
-    top: 6px;
-    left: 4px;
-    width: 20px;
-    height: 2px;
-    background: var(--border);
-    box-shadow: 0 6px 0 var(--border), 0 12px 0 var(--border);
-}
-
-.doc-1 { transform: rotate(-10deg) translate(-5px, -2px); z-index: 1; }
-.doc-2 { transform: rotate(5deg) translate(5px, 2px); z-index: 2; }
-.doc-3 { transform: rotate(0deg); z-index: 3; }
-
-.problem-card:hover .doc-1 { transform: rotate(-25deg) translate(-15px, -5px); }
-.problem-card:hover .doc-2 { transform: rotate(15deg) translate(15px, 5px); }
-.problem-card:hover .doc-3 { transform: scale(1.1); }
-
-.problem-card:hover .doc-sheet {
-    border-color: var(--primary-soft);
-}
-
-.doc-stamp-icon {
-    position: absolute;
-    bottom: -15px;
-    right: -15px;
-    font-size: 1.5rem;
-    color: var(--primary);
-    opacity: 0;
-    transform: scale(0.5);
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    z-index: 4;
-}
-
-.problem-card:hover .doc-stamp-icon {
-    opacity: 1;
-    transform: scale(1) rotate(-15deg);
     color: white;
-}
-
-/* 3. Relocation Visual - Intelligent Search & Integration */
-.visual-relocation {
-    position: relative;
-}
-
-.reloc-house {
-    font-size: 1.6rem; /* Slightly smaller to give room */
-    color: var(--primary);
-    z-index: 2;
-    transition: all 0.5s ease;
-    transform: translateY(0);
-}
-
-.reloc-search-ring {
-    position: absolute;
-    width: 54px;
-    height: 54px;
-    border: 1.5px solid var(--primary);
-    border-radius: 50%;
-    border-top-color: transparent;
-    border-bottom-color: transparent;
-    animation: relocRotate 3s infinite linear;
-    opacity: 0.3;
-    transition: all 0.5s ease;
-}
-
-@keyframes relocRotate {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
-}
-
-.reloc-dots {
-    position: absolute;
-    inset: -5px; /* Wider than the house area */
-    opacity: 0;
-    transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
-    pointer-events: none;
-}
-
-.reloc-dot {
-    position: absolute;
-    width: 5px;
-    height: 5px;
-    background: white;
-    border-radius: 50%;
-    box-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
-}
-
-.dot-1 { top: 0%; left: 50%; transform: translateX(-50%); }
-.dot-2 { top: 25%; right: 0%; }
-.dot-3 { bottom: 25%; right: 0%; }
-.dot-4 { bottom: 0%; left: 50%; transform: translateX(-50%); }
-.dot-5 { bottom: 25%; left: 0%; }
-.dot-6 { top: 25%; left: 0%; }
-
-.problem-card:hover .reloc-house {
-    color: white;
-    transform: scale(1.1) translateY(-2px);
-}
-
-.problem-card:hover .reloc-search-ring {
-    opacity: 0; /* Fade out ring to let dots shine */
-    transform: scale(1.3);
-}
-
-.problem-card:hover .reloc-dots {
-    opacity: 1;
-    transform: scale(1.1);
-}
-
-.reloc-success-icon {
-    position: absolute;
-    top: -12px; /* Move further away to avoid "on top of each other" look */
-    right: -12px;
-    font-size: 1.25rem;
-    color: #4ade80;
-    filter: drop-shadow(0 0 5px rgba(74, 222, 128, 0.5));
-    opacity: 0;
-    transform: scale(0) rotate(-30deg);
-    transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
-    z-index: 5;
-    background: var(--card-bg); /* Give it a background to separate it */
-    border-radius: 50%;
-    padding: 2px;
-}
-
-.problem-card:hover .reloc-success-icon {
-    opacity: 1;
-    transform: scale(1) rotate(0deg);
+    box-shadow: 0 15px 30px rgba(37, 99, 235, 0.4);
+    border-color: var(--primary);
 }
 
 .problem-card h3 {
