@@ -254,64 +254,25 @@ nav {
 }
 
 /* Moving Shine Effect */
-.problem-card::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 200%;
-    height: 100%;
-    background: linear-gradient(
-        120deg,
-        transparent,
-        rgba(255, 255, 255, 0.05),
-        transparent
-    );
-    transition: all 0.6s ease;
-    z-index: 2;
-    pointer-events: none;
-}
 
-[data-theme="dark"] .problem-card::after {
-    background: linear-gradient(
-        120deg,
-        transparent,
-        rgba(37, 99, 235, 0.1),
-        transparent
-    );
-}
 
 .problem-card:hover::after {
     left: 100%;
 }
 
-.problem-card::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(400px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), 
-                rgba(37, 99, 235, 0.08), 
-                transparent 40%);
-    z-index: -1;
-    opacity: 0;
-    transition: opacity 0.5s ease;
-    pointer-events: none;
-}
-
+.problem-card::before,
 [data-theme="dark"] .problem-card::before {
-    background: radial-gradient(400px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), 
-                rgba(37, 99, 235, 0.15), 
-                transparent 45%);
+    display: none;
 }
 
 .problem-card:hover {
     transform: translateY(-12px) scale(1.02);
     border-color: var(--primary);
-    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12), 0 0 20px rgba(37, 99, 235, 0.1);
+    box-shadow: var(--shadow-lg);
 }
 
 [data-theme="dark"] .problem-card:hover {
-    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.5), 0 0 30px rgba(37, 99, 235, 0.2);
+    box-shadow: var(--shadow-lg);
     border-color: var(--primary);
 }
 
@@ -336,7 +297,7 @@ nav {
     transform: translateY(-5px) scale(1.1) rotate(10deg);
     background: var(--primary);
     color: white;
-    box-shadow: 0 15px 30px rgba(37, 99, 235, 0.4);
+    box-shadow: var(--shadow);
     border-color: var(--primary);
 }
 
@@ -386,18 +347,9 @@ nav {
     z-index: 1;
 }
 
-.bento-item::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(800px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(37, 99, 235, 0.08), transparent 40%);
-    z-index: -1;
-    opacity: 0;
-    transition: opacity 0.5s ease;
-}
-
+.bento-item::before,
 [data-theme="dark"] .bento-item::before {
-    background: radial-gradient(800px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(37, 99, 235, 0.15), transparent 40%);
+    display: none;
 }
 
 .bento-item:hover {
@@ -881,7 +833,7 @@ nav {
 .hero {
     padding: 12rem 0 0rem;
     text-align: center;
-    background: radial-gradient(circle at top right, var(--primary-soft), transparent 25%);
+    background: var(--bg);
     position: relative;
     overflow: hidden;
 }
@@ -891,16 +843,7 @@ nav {
 }
 
 .hero-bg-accent {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 60%;
-    height: 80%;
-    background: radial-gradient(circle at center, var(--glow) 0%, transparent 70%);
-    z-index: -1;
-    pointer-events: none;
-    filter: blur(40px);
+    display: none;
 }
 
 .hero h1 {
@@ -1308,7 +1251,7 @@ footer::before {
 .feature-circle-section {
     padding: 8rem 0;
     text-align: center;
-    background: radial-gradient(circle at center, var(--border) 0%, transparent 40%);
+    background: var(--bg);
     overflow: hidden;
 }
 
@@ -1823,8 +1766,8 @@ input:not(:checked) + .slider .sun-icon {
 
 .member-image:hover {
     transform: translateY(-15px) rotate(3deg) scale(1.05);
-    box-shadow: 0 20px 40px rgba(37, 99, 235, 0.3), 0 0 20px rgba(37, 99, 235, 0.2);
-    border-color: var(--primary);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    border-color: var(--border);
 }
 
 .member-image::after {
@@ -1837,7 +1780,7 @@ input:not(:checked) + .slider .sun-icon {
 }
 
 .team-row:hover .member-image::after {
-    box-shadow: inset 0 0 30px rgba(37, 99, 235, 0.4);
+    box-shadow: none;
 }
 
 .member-info {
@@ -2503,26 +2446,7 @@ input:not(:checked) + .slider .sun-icon {
 }
 
 .card::before, .problem-card::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    border-radius: inherit;
-    background: radial-gradient(
-        600px circle at var(--mouse-x, 0) var(--mouse-y, 0),
-        rgba(37, 99, 235, 0.08),
-        transparent 40%
-    );
-    z-index: 1;
-    pointer-events: none;
-    transition: opacity 0.5s;
-    opacity: 0;
-}
-
-.card:hover::before, .problem-card:hover::before {
-    opacity: 1;
+    display: none;
 }
 
 .card > *, .problem-card > * {
@@ -2548,28 +2472,7 @@ input:not(:checked) + .slider .sun-icon {
 }
 
 .decor-circle {
-    position: absolute;
-    border-radius: 50%;
-    filter: blur(80px);
-    opacity: 0.15;
-    animation: drift 20s infinite alternate ease-in-out;
-}
-
-.decor-circle.c1 {
-    width: 600px;
-    height: 600px;
-    background: var(--primary);
-    top: -10%;
-    left: -10%;
-}
-
-.decor-circle.c2 {
-    width: 500px;
-    height: 500px;
-    background: #f59e0b;
-    bottom: -10%;
-    right: -10%;
-    animation-delay: -5s;
+    display: none;
 }
 
 .decor-grid {
@@ -2615,8 +2518,6 @@ input:not(:checked) + .slider .sun-icon {
 
 .premium-solution-card {
     position: relative;
-    background: var(--card-bg);
-    border-radius: 1.5rem;
     padding: 2.5rem 1.5rem;
     display: flex;
     flex-direction: column;
@@ -2624,14 +2525,10 @@ input:not(:checked) + .slider .sun-icon {
     text-align: center;
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     z-index: 1;
-    overflow: hidden;
-    border: 1px solid var(--border);
 }
 
 .premium-solution-card:hover {
     transform: translateY(-8px);
-    border-color: var(--primary);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
 }
 
 .premium-solution-card::before, .premium-solution-card::after {
@@ -2664,66 +2561,29 @@ input:not(:checked) + .slider .sun-icon {
 }
 
 .showcase-visual {
-    width: 220px;
-    height: 220px;
-    border-radius: 50%;
     margin-bottom: 2rem;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
-    background: transparent;
     z-index: 1;
-    overflow: hidden; /* Added to keep everything inside the circle */
 }
 
-/* The exact fitting rainbow border for the circle */
-.showcase-visual::before {
-    content: '';
-    position: absolute;
-    inset: -3px; /* Exact fitting border thickness */
-    background: conic-gradient(
-        #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #8b00ff, #ff0000
-    );
-    border-radius: 50%;
-    z-index: -1;
-    animation: rotateRainbow 0.5s linear infinite;
-}
-
+.showcase-visual::before,
 .showcase-visual::after {
-    content: '';
-    position: absolute;
-    inset: 0px;
-    background: var(--card-bg);
-    border-radius: 50%;
-    z-index: 0;
+    display: none;
 }
 
 .icon-border-rotating {
-    display: none; /* We now use ::before on showcase-visual */
+    display: none;
 }
 
 .icon-blob {
-    position: absolute;
-    width: 120%;
-    height: 120%;
-    background: radial-gradient(circle, var(--primary-soft) 0%, transparent 70%);
-    border-radius: 50%;
-    z-index: -1;
-    animation: blobMorph 8s ease-in-out infinite;
-    opacity: 0.3;
+    display: none;
 }
 
 .blob-glow {
-    position: absolute;
-    width: 180px;
-    height: 180px;
-    background: var(--primary);
-    border-radius: 50%;
-    filter: blur(40px);
-    opacity: 0;
-    z-index: 0;
-    transition: all 1s ease;
+    display: none;
 }
 
 .showcase-item.active .blob-glow {
@@ -2746,7 +2606,6 @@ input:not(:checked) + .slider .sun-icon {
     height: 150px;
     object-fit: contain;
     z-index: 2;
-    filter: drop-shadow(0 15px 25px rgba(0,0,0,0.1));
     transition: transform 0.5s ease;
 }
 
