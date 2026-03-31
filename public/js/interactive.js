@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initCardGlow();
     initScrollReveal();
     initReels();
+    initLogoDraggable();
 });
 
 // 1. Interactive Reels Module for Hero
@@ -50,7 +51,6 @@ function initReels() {
     
     updateReels();
 }
-
 
 // 2. Scroll Progress Bar
 function initScrollProgress() {
@@ -107,7 +107,6 @@ function initCardGlow() {
     
     if (window.matchMedia("(pointer: coarse)").matches) return;
 
-    // Inject glow element physically into each card if not present, or use CSS Custom Properties
     cards.forEach(card => {
         card.addEventListener('mousemove', (e) => {
             const rect = card.getBoundingClientRect();
@@ -131,20 +130,54 @@ function initScrollReveal() {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('active');
-                // If it's a grid container, we might want to stagger its children
                 if (entry.target.classList.contains('solutions-premium-grid')) {
                     const cards = entry.target.querySelectorAll('.premium-solution-card');
                     cards.forEach((card, index) => {
                         setTimeout(() => card.classList.add('active'), index * 100);
                     });
                 }
-                // Option to unobserve if you only want it once
-                // observer.unobserve(entry.target);
             }
         });
     }, observerOptions);
 
-    document.querySelectorAll('.animate-on-scroll, .solutions-premium-grid, .timeline-spine').forEach(el => {
+    document.querySelectorAll('.reveal, .animate-on-scroll, .solutions-premium-grid, .timeline-spine').forEach(el => {
         observer.observe(el);
+    });
+}
+
+// 6. Draggable Logo Slider (Grab to scroll)
+function initLogoDraggable() {
+    const slider = document.getElementById('logo-slider');
+    if (!slider) return;
+
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+
+    slider.addEventListener('mousedown', (e) => {
+        isDown = true;
+        slider.style.cursor = 'grabbing';
+        startX = e.pageX - slider.offsetLeft;
+        scrollLeft = slider.scrollLeft;
+        slider.style.scrollBehavior = 'auto'; // Disable smooth scroll while dragging
+    });
+
+    slider.addEventListener('mouseleave', () => {
+        isDown = false;
+        slider.style.cursor = 'grab';
+    });
+
+    slider.addEventListener('mouseup', () => {
+        isDown = false;
+        slider.style.cursor = 'grab';
+        slider.style.scrollBehavior = 'smooth';
+    });
+
+    slider.addEventListener('mousemove', (e) => {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - slider.offsetLeft;
+        const walk = (x - startX) * 2; // Scroll speed
+        slider.scrollLeft = scrollLeft - walk;
     });
 }
