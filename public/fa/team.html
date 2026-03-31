@@ -33,10 +33,19 @@
             flex-direction: row !important;
         }
 
-        .logo {
+        .nav-container .logo {
             position: absolute !important;
             left: 0 !important;
             margin: 0 !important;
+        }
+
+        .footer-brand {
+            text-align: right !important;
+        }
+
+        .footer-brand .logo {
+            position: static !important;
+            display: inline-block !important;
         }
 
         .nav-links {
@@ -378,8 +387,15 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
-                    <a href="index.html" class="logo"><img src="../image/logo.png" alt="OpenRise Logo" class="brand-logo"></a>
-                    <p>دروازه شما به سوی استعدادهای جهانی. ما استخدام بین‌المللی را از طریق راهکارهای هوشمند هوش مصنوعی ساده می‌کنیم.</p>
+                    <a href="index.html" class="logo"><img src="../image/logo.png" alt="OpenRise Logo"
+                            class="brand-logo"></a>
+                    <p style="text-align: right !important;">پل شما به استعدادهای جهانی. ما دنیای پیچیده استخدام بین‌المللی را با هوش مصنوعی پیشرفته ساده می‌کنیم.</p>
+                    <div class="footer-status">
+                        <div class="status-indicator">
+                            <span class="status-dot"></span>
+                            <span>سیستم‌ها فعال هستند</span>
+                        </div>
+                    </div>
                 </div>
                 <div class="footer-col">
                     <h4 class="footer-heading">پلتفرم</h4>
@@ -393,16 +409,10 @@
                 <div class="footer-col">
                     <h4 class="footer-heading">منابع</h4>
                     <ul class="footer-links">
-                        <li><a href="contact.html">تماس</a>
-                            <div class="lang-switcher-nav">
-                                <a href="../team.html" class="lang-link">DE</a>
-                                <a href="../en/team.html" class="lang-link">EN</a>
-                                <a href="team.html" class="lang-link active">FA</a>
-                            </div>
-                        </li>
-                        <li><a href="../blog-fachkraeftemangel.html">بلاگ</a></li>
-                        <li><a href="../datenschutz.html">حریم خصوصی</a></li>
-                        <li><a href="../impressum.html">اطلاعات حقوقی</a></li>
+                        <li><a href="contact.html">تماس</a></li>
+                        <li><a href="blog-fachkraeftemangel.html">وبلاگ</a></li>
+                        <li><a href="datenschutz.html">حریم خصوصی</a></li>
+                        <li><a href="impressum.html">اطلاعات حقوقی</a></li>
                     </ul>
                 </div>
                 <div class="footer-newsletter">
@@ -412,6 +422,21 @@
                         <input type="email" placeholder="آدرس ایمیل">
                         <button type="submit" class="btn-icon"><i class="fas fa-paper-plane"></i></button>
                     </form>
+                    <div class="footer-lang-selector" style="margin-top: 2rem;">
+                        <div class="lang-switcher-nav" style="margin: 0; padding: 0; border: none;">
+                            <a href="../team.html" class="lang-link">DE</a>
+                            <a href="../en/team.html" class="lang-link">EN</a>
+                            <a href="team.html" class="lang-link active">FA</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© ۲۰۲۶ OpenRise. تمامی حقوق محفوظ است.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
         </div>

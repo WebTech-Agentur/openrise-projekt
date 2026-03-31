@@ -3195,7 +3195,7 @@ input:not(:checked)+.slider .sun-icon {
 }
 
 @media (max-width: 900px) {
-    [dir='rtl'] .lang-switcher-nav {
+    .lang-switcher-nav {
         border: none;
         margin: 1rem 0;
         justify-content: center;
