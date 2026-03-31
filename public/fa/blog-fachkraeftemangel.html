@@ -1,19 +1,25 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="fa" dir="rtl">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fachkräftemangel in Deutschland 2026: Strategien & Lösungen | OpenRise</title>
+    <title>کمبود نیروی کار متخصص در آلمان ۲۰۲۶: استراتژی‌ها و راه‌حل‌ها | OpenRise</title>
     <meta name="description"
-        content="Fachkräftemangel in Deutschland 2026: Aktuelle Statistiken zu IT & Ingenieurwesen sowie Tipps zur Gewinnung von Fachkräften aus dem Ausland (Chancenkarte & Visum).">
-    <link rel="icon" type="image/png" href="image/favicon.png?v=4">
-    <link rel="stylesheet" href="css/style.css">
+        content="کمبود نیروی کار متخصص در آلمان ۲۰۲۶: آمارهای فعلی مربوط به IT و مهندسی و نکات جذب متخصصان از خارج (کارت شانس و ویزا).">
+    <link rel="icon" type="image/png" href="../image/favicon.png?v=4">
+    <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100;300;400;700&display=swap" rel="stylesheet">
     <style>
+        body {
+            font-family: 'Vazirmatn', sans-serif;
+            text-align: right;
+        }
+
         .blog-header {
             padding: 12rem 0 6rem;
-            background: linear-gradient(rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.9)), url('image/blog-header.png');
+            background: linear-gradient(rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.9)), url('../image/blog-header.png');
             background-size: cover;
             background-position: center;
             color: white;
@@ -86,13 +92,13 @@
             z-index: -1;
         }
 
-        .dot-left {
-            left: -100px;
+        .dot-right {
+            right: -100px;
             top: 100px;
         }
 
-        .dot-right {
-            right: -100px;
+        .dot-left {
+            left: -100px;
             top: 600px;
         }
 
@@ -109,7 +115,7 @@
             height: 300px;
             background: var(--primary-soft);
             top: 20%;
-            left: -150px;
+            right: -150px;
         }
 
         .shape-2 {
@@ -117,7 +123,7 @@
             height: 250px;
             background: rgba(245, 158, 11, 0.15);
             top: 50%;
-            right: -100px;
+            left: -100px;
         }
 
         .blog-content h2 {
@@ -141,8 +147,8 @@
         .side-illustration {
             width: 140px;
             opacity: 0.9;
-            float: right;
-            margin: 1.5rem 0 1.5rem 2.5rem;
+            float: left;
+            margin: 1.5rem 2.5rem 1.5rem 0;
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             filter: drop-shadow(0 15px 25px rgba(0, 0, 0, 0.1));
             border-radius: 2rem;
@@ -227,7 +233,7 @@
             padding: 2rem;
             border-radius: var(--radius);
             margin: 2rem 0;
-            border-left: 5px solid var(--primary);
+            border-right: 5px solid var(--primary);
         }
 
         .highlight-box h4 {
@@ -303,13 +309,13 @@
             padding: 2.5rem;
             border-radius: 1.5rem;
             margin: 3rem 0;
-            border-left: 6px solid #f59e0b;
+            border-right: 6px solid #f59e0b;
             transition: all 0.3s ease;
             cursor: default;
         }
 
         .highlight-box:hover {
-            transform: translateX(10px);
+            transform: translateX(-10px);
             background: rgba(245, 158, 11, 0.12);
             box-shadow: 0 10px 30px rgba(245, 158, 11, 0.1);
         }
@@ -322,7 +328,7 @@
 
         .highlight-box ul li i {
             color: #f59e0b;
-            margin-right: 10px;
+            margin-left: 10px;
         }
 
         .info-grid {
@@ -407,9 +413,30 @@
         }
 
         .back-link:hover {
-            transform: translateX(-8px);
+            transform: translateX(8px);
             background: var(--primary);
             color: white;
+        }
+
+        .nav-container {
+            flex-direction: row-reverse !important;
+        }
+
+        .nav-links {
+            flex-direction: row !important;
+            gap: 1.5rem !important;
+            margin-left: 0 !important;
+            margin-right: auto !important;
+        }
+
+        .logo {
+            margin-right: 0 !important;
+            margin-left: auto !important;
+            display: flex;
+        }
+
+        .nav-links a {
+            margin: 0 !important;
         }
 
         [data-theme="dark"] .stat-card {
@@ -537,14 +564,9 @@
 
     <nav>
         <div class="container nav-container">
-            <a href="index.html" class="logo"><img src="image/logo.png" alt="OpenRise Logo" class="brand-logo"></a>
+            <a href="index.html" class="logo"><img src="../image/logo.png" alt="OpenRise Logo" class="brand-logo"></a>
             <div class="mobile-menu-toggle"><i class="fas fa-bars"></i></div>
             <div class="nav-links">
-                <a href="index.html">Home</a>
-                <a href="features.html">Features</a>
-                <a href="demo.html">Demo</a>
-                <a href="team.html">Team & Vision</a>
-                <a href="contact.html">Kontakt</a><div class="lang-switcher-nav"><a href="blog-fachkraeftemangel.html" class="lang-link active">DE</a><a href="en/blog-fachkraeftemangel.html" class="lang-link">EN</a><a href="fa/blog-fachkraeftemangel.html" class="lang-link">FA</a></div>
                 <div class="theme-switch-wrapper">
                     <label class="theme-switch" for="checkbox">
                         <input type="checkbox" id="checkbox" />
@@ -554,6 +576,16 @@
                         </div>
                     </label>
                 </div>
+                <div class="lang-switcher-nav">
+                    <a href="../blog-fachkraeftemangel.html" class="lang-link">DE</a>
+                    <a href="../en/blog-fachkraeftemangel.html" class="lang-link">EN</a>
+                    <a href="blog-fachkraeftemangel.html" class="lang-link active">FA</a>
+                </div>
+                <a href="index.html">خانه</a>
+                <a href="features.html">ویژگی‌ها</a>
+                <a href="demo.html">دمو</a>
+                <a href="team.html">تیم و چشم‌انداز</a>
+                <a href="contact.html">تماس</a>
             </div>
         </div>
     </nav>
@@ -562,140 +594,107 @@
         <header class="blog-header">
             <div class="container">
                 <div class="blog-meta">
-                    <span><i class="far fa-calendar-alt"></i> 31. März 2026</span>
-                    <span><i class="far fa-user"></i> OpenRise Redaktion</span>
-                    <span><i class="far fa-clock"></i> 6 Min. Lesezeit</span>
+                    <span><i class="far fa-calendar-alt"></i> ۳۱ مارس ۲۰۲۶</span>
+                    <span><i class="far fa-user"></i> تحریریه OpenRise</span>
+                    <span><i class="far fa-clock"></i> ۶ دقیقه زمان مطالعه</span>
                 </div>
-                <h1 id="main-title">Fachkräftemangel in Deutschland: <br>Herausforderungen und Lösungen 2026</h1>
+                <h1 id="main-title">کمبود نیروی کار متخصص در آلمان: <br>چالش‌ها و راه‌حل‌ها ۲۰۲۶</h1>
             </div>
         </header>
 
         <section class="container blog-section">
             <!-- Background Decorations -->
-            <div class="decoration-dot dot-left"></div>
             <div class="decoration-dot dot-right"></div>
+            <div class="decoration-dot dot-left"></div>
             <div class="abstract-shape shape-1"></div>
             <div class="abstract-shape shape-2"></div>
 
             <article class="blog-content fade-in">
-                <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> Zurück zur Übersicht</a>
+                <a href="index.html" class="back-link"><i class="fas fa-arrow-right"></i> بازگشت به نمای کلی</a>
 
-                <p>Der <strong>Fachkräftemangel Deutschland</strong> ist längst keine abstrakte Prognose mehr, sondern
-                    Realität in fast allen Wirtschaftszweigen. Trotz konjunktureller Schwankungen bleibt die
-                    strukturelle Lücke aufgrund des demografischen Wandels eine der größten Hürden für das deutsche
-                    Wirtschaftswachstum. In diesem Artikel beleuchten wir die aktuelle Lage und zeigen Wege auf, wie
-                    Unternehmen <strong>Fachkräfte aus dem Ausland</strong> gewinnen können.</p>
+                <p><strong>کمبود نیروی متخصص در آلمان</strong> دیگر تنها یک پیش‌بینی انتزاعی نیست، بلکه واقعیتی در تقریباً تمام بخش‌های اقتصادی است. با وجود نوسانات اقتصادی، شکاف ساختاری ناشی از تغییرات دموگرافیک یکی از بزرگترین موانع رشد اقتصادی آلمان باقی مانده است. در این مقاله، وضعیت فعلی را بررسی کرده و راه‌هایی را برای شرکت‌ها جهت <strong>جذب متخصصان از خارج</strong> نشان می‌دهیم.</p>
 
-                <h2 id="statistik-2026" class="fade-in"><i class="fas fa-chart-bar"></i> 1. Der Status Quo:
-                    Fachkräftemangel in Zahlen</h2>
-                <img src="image/blog_vibe_1.png" alt="Illustration Matching" class="side-illustration fade-in">
-                <p class="fade-in">Laut aktuellen Berichten des Instituts der Deutschen Wirtschaft (IW Köln) und
-                    Branchenverbänden wie
-                    Bitkom und VDI zeigt sich Anfang 2026 ein deutliches Bild des Bedarfs:</p>
+                <h2 id="statistik-2026" class="fade-in"><i class="fas fa-chart-bar"></i> ۱. وضعیت موجود: کمبود نیروی متخصص به روایت آمار</h2>
+                <img src="../image/blog_vibe_1.png" alt="Illustration Matching" class="side-illustration fade-in">
+                <p class="fade-in">بر اساس گزارش‌های فعلی موسسه اقتصاد آلمان (IW Köln) و انجمن‌های صنعتی مانند Bitkom و VDI، در اوایل سال ۲۰۲۶ نیاز شدیدی مشاهده می‌شود:</p>
 
                 <div class="stat-grid fade-in">
                     <div class="stat-card">
-                        <span class="stat-number" id="stat-it">109.000</span>
-                        <span class="stat-label">Offene IT-Stellen (Bitkom)</span>
+                        <span class="stat-number" id="stat-it">۱۰۹.۰۰۰</span>
+                        <span class="stat-label">موقعیت‌های شغلی خالی IT (Bitkom)</span>
                     </div>
                     <div class="stat-card">
-                        <span class="stat-number" id="stat-mint">148.500</span>
-                        <span class="stat-label">MINT-Lücke (IW Köln)</span>
+                        <span class="stat-number" id="stat-mint">۱۴۸.۵۰۰</span>
+                        <span class="stat-label">شکاف در مشاغل MINT (IW Köln)</span>
                     </div>
                     <div class="stat-card">
-                        <span class="stat-number" id="stat-ing">99.470</span>
-                        <span class="stat-label">Offene Ingenieurstellen (VDI)</span>
+                        <span class="stat-number" id="stat-ing">۹۹.۴۷۰</span>
+                        <span class="stat-label">موقعیت‌های مهندسی خالی (VDI)</span>
                     </div>
                     <div class="stat-card">
-                        <span class="stat-number" id="stat-lehr">68.000</span>
-                        <span class="stat-label">Fehlende Lehrkräfte (KMK)</span>
+                        <span class="stat-number" id="stat-lehr">۶۸.۰۰۰</span>
+                        <span class="stat-label">کمبود آموزگار (KMK)</span>
                     </div>
                 </div>
 
-                <h3>IT und Technik: Das Herz der Digitalisierung</h3>
-                <p>Die digitale Transformation treibt die Nachfrage nach Spezialisten massiv voran. Besonders gefragt
-                    sind Softwareentwickler:innen, IT-Sicherheitsanalyst:innen und Experten für Künstliche Intelligenz.
-                    Laut Bitkom erwarten 79 % der Unternehmen, dass sich der Mangel in Zukunft weiter verschärfen wird.
+                <h3>IT و فناوری: قلب دیجیتالی‌سازی</h3>
+                <p>تحول دیجیتال تقاضا برای متخصصان را به شدت افزایش داده است. برنامه نویسان، تحلیلگران امنیت IT و کارشناسان هوش مصنوعی بیشترین تقاضا را دارند. طبق گفته Bitkom، حدود ۷۹٪ از شرکت‌ها انتظار دارند این کمبود در آینده شدیدتر شود.
                 </p>
-                <h3>Ingenieurwesen und Energiewende</h3>
-                <p>Ohne qualifizierte Ingenieur:innen sind Projekte wie die Energiewende oder der Ausbau digitaler
-                    Infrastruktur nicht umsetzbar. Der VDI meldet weiterhin einen hohen Bedarf, insbesondere bei
-                    Bauingenieur:innen und Fachkräften für erneuerbare Energien.</p>
+                <h3>مهندسی و انتقال انرژی</h3>
+                <p>بدون مهندسان واجد شرایط، پروژه‌هایی مانند انتقال انرژی یا گسترش زیرساخت‌های دیجیتال قابل اجرا نیستند. VDI همچنان نیاز بالایی را گزارش می‌دهد، به‌ویژه برای مهندسان عمران و متخصصان انرژی‌های تجدیدپذیر.</p>
 
-                <h2 id="ausland-gewinnen"><i class="fas fa-globe-americas"></i> 2. Fachkräfte aus dem Ausland gewinnen
+                <h2 id="ausland-gewinnen"><i class="fas fa-globe-americas"></i> ۲. جذب متخصصان از خارج از کشور
                 </h2>
-                <img src="image/blog_vibe_2.png" alt="Onboarding Illustration" class="side-illustration fade-in"
-                    style="float: left; margin: 1rem 2rem 1rem 0;">
-                <p>Angesichts des zunehmenden Fachkräftemangels in Deutschland wird die Gewinnung von Fachkräften aus
-                    dem Ausland immer wichtiger. Internationale Talente spielen eine entscheidende Rolle, um offene
-                    Stellen in Bereichen wie IT, Ingenieurwesen und Gesundheitswesen zu besetzen.
-
-                    Deutschland hat in den letzten Jahren die rechtlichen Rahmenbedingungen deutlich verbessert, um die
-                    Zuwanderung qualifizierter Arbeitskräfte zu erleichtern. Dazu gehören vereinfachte Visaverfahren,
-                    schnellere Anerkennung von Abschlüssen und gezielte Programme zur Integration internationaler
-                    Fachkräfte.
-
-                    Für Unternehmen bietet die Rekrutierung internationaler Talente große Chancen: Sie sichern nicht nur
-                    ihren Personalbedarf, sondern stärken auch Innovation und Wettbewerbsfähigkeit in einem globalen
-                    Markt.</p>
+                <img src="../image/blog_vibe_2.png" alt="Onboarding Illustration" class="side-illustration fade-in"
+                    style="float: right; margin: 1.5rem 0 1.5rem 2.5rem;">
+                <p>با توجه به افزایش کمبود نیروی متخصص در آلمان، جذب نیرو از خارج اهمیت فزاینده‌ای یافته است. استعدادهای بین‌المللی نقش تعیین‌کننده‌ای در پر کردن جاهای خالی در زمینه‌هایی مانند IT، مهندسی و مراقبت‌های بهداشتی ایفا می‌کنند.
+                <br><br>
+                آلمان در سال‌های اخیر چارچوب قانونی خود را به طور قابل توجهی بهبود بخشیده است تا مهاجرت نیروی کار ماهر را تسهیل کند. این شامل فرآیندهای ساده‌شده ویزا، تأیید سریع‌تر مدارک تحصیلی و برنامه‌های هدفمند برای ادغام متخصصان بین‌المللی است.
+                <br><br>
+                برای شرکت‌ها، استخدام استعدادهای بین‌المللی فرصت‌های بزرگی را فراهم می‌کند: آن‌ها نه تنها نیازهای پرسنلی خود را تأمین می‌کنند، بلکه نوآوری و رقابت‌پذیری را در یک بازار جهانی تقویت می‌کنند.</p>
 
                 <div class="highlight-box">
-                    <h4>Vorteile internationaler Talente:</h4>
-                    <ul style="list-style: none; padding-left: 0;">
-                        <li><i class="fas fa-check-circle"></i> Schließung spezifischer Qualifikationslücken</li>
-                        <li><i class="fas fa-check-circle"></i> Erhöhung der Innovationskraft durch diverse Perspektiven
+                    <h4>مزایای استعدادهای بین‌المللی:</h4>
+                    <ul style="list-style: none; padding-right: 0;">
+                        <li><i class="fas fa-check-circle"></i> پر کردن شکاف‌های مهارتی خاص</li>
+                        <li><i class="fas fa-check-circle"></i> افزایش نوآوری از طریق دیدگاه‌های متنوع
                         </li>
-                        <li><i class="fas fa-check-circle"></i> Stärkung der globalen Wettbewerbsfähigkeit</li>
+                        <li><i class="fas fa-check-circle"></i> تقویت رقابت‌پذیری جهانی</li>
                     </ul>
                 </div>
 
-                <h2 id="visum-prozesse" class="fade-in"><i class="fas fa-passport"></i> 3. Visum- und Einreiseprozesse:
-                    Das neue Fachkräfteeinwanderungsgesetz</h2>
-                <p class="fade-in">Das modernisierte Fachkräfteeinwanderungsgesetz bietet zwei zentrale Wege für den
-                    Zugang zum deutschen Arbeitsmarkt und erleichtert es, Fachkräfte aus dem Ausland zu gewinnen.</p>
+                <h2 id="visum-prozesse" class="fade-in"><i class="fas fa-passport"></i> ۳. فرآیندهای ویزا و ورود: قانون جدید مهاجرت نیروهای متخصص</h2>
+                <p class="fade-in">قانون جدید مهاجرت نیروهای متخصص دو مسیر اصلی را برای دسترسی به بازار کار آلمان ارائه می‌دهد و جذب متخصصان از خارج را آسان‌تر می‌کند.</p>
 
                 <div class="info-grid fade-in">
                     <div class="info-card">
-                        <h3>Die Chancenkarte (Opportunity Card)</h3>
-                        <p>Seit 2024 ermöglicht die Chancenkarte Fachkräften aus Drittstaaten die Einreise zur
-                            Arbeitssuche. Die
-                            Vergabe basiert auf einem Punktesystem, das Kriterien wie Qualifikation, Sprachkenntnisse
-                            (Deutsch
-                            A1 oder Englisch B2), Berufserfahrung und Alter berücksichtigt. <strong>Arbeiten in
-                                Deutschland
-                                Visum</strong>-Prozesse wurden dadurch deutlich flexibler.</p>
+                        <h3>کارت شانس (Opportunity Card)</h3>
+                        <p>از سال ۲۰۲۴، کارت شانس به متخصصان کشورهای غیر اتحادیه اروپا اجازه می‌دهد برای جستجوی کار وارد آلمان شوند. تخصیص بر اساس یک سیستم امتیازی شامل مهارت‌ها، زبان (آلمانی A1 یا انگلیسی B2)، تجربه و سن است. در نتیجه فرآیندهای <strong>ویزای کار در آلمان</strong> بسیار منعطف‌تر شده‌اند.</p>
                         <div class="hover-reveal">
-                            <span>Voraussetzungen im Detail</span>
+                            <span>پیش‌نیازها در یک نگاه</span>
                             <div class="reveal-content">
-                                Deutsch A1 oder Englisch B2, Berufserfahrung und ein Mindestalter sind Voraussetzungen
-                                für das Punktesystem.
+                                آلمانی A1 یا انگلیسی B2، تجربه حرفه‌ای و حداقل سن از الزامات سیستم امتیازی هستند.
                             </div>
                         </div>
                     </div>
 
                     <div class="info-card">
-                        <h3>Die Blaue Karte EU</h3>
-                        <p>Für hochqualifizierte Akademiker und IT-Spezialisten bleibt die Blaue Karte EU der
-                            Goldstandard. Mit
-                            angepassten Gehaltsschwellen (Stand 2026: ca. 45.934 € für Mangelberufe) ist der Zugang zum
-                            deutschen Arbeitsmarkt für Experten so einfach wie nie zuvor.</p>
+                        <h3>بلو کارت اتحادیه اروپا (Blue Card)</h3>
+                        <p>برای دانشگاهیان و متخصصان IT با صلاحیت بالا، بلو کارت همچنان استاندارد طلایی است. با تعدیل آستانه حقوق (در سال ۲۰۲۶: حدود ۴۵.۹۳۴ یورو برای مشاغل با کمبود نیرو)، دسترسی به بازار کار آلمان برای کارشناسان آسان‌تر از همیشه شده است.</p>
                         <div class="hover-reveal">
-                            <span>Aktuelle Gehaltsgrenzen</span>
+                            <span>محدودیت‌های حقوقی فعلی</span>
                             <div class="reveal-content">
-                                Ca. 45.934 € für Mangelberufe (wie IT und Ingenieurwesen) im Jahr 2026.
+                                حدود ۴۵.۹۳۴ یورو برای مشاغل دارای کمبود نیرو (مانند IT و مهندسی) در سال ۲۰۲۶.
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <h2 id="fazit"><i class="fas fa-check-double"></i> Fazit: Proaktive Rekrutierung als Schlüssel</h2>
-                <p>Der Fachkräftemangel ist eine anhaltende Herausforderung. Unternehmen, die in internationale
-                    Rekrutierung, automatisierte Onboarding-Prozesse und eine offene Unternehmenskultur investieren,
-                    sichern sich die besten Talente von morgen. Mit OpenRise können Sie Ihre Recruiting-Prozesse
-                    digitalisieren und weltweit die passenden Fachkräfte finden.</p>
+                <h2 id="fazit"><i class="fas fa-check-double"></i> نتیجه‌گیری: جذب نیروی فعال به عنوان کلید موفقیت</h2>
+                <p>کمبود نیروی متخصص یک چالش مداوم است. شرکت‌هایی که در جذب بین‌المللی، فرآیندهای خودکار ورود به کار و فرهنگ سازمانی باز سرمایه‌گذاری می‌کنند، بهترین استعدادهای فردا را تضمین می‌کنند. با OpenRise، می‌توانید فرآیندهای جذب خود را دیجیتالی کنید و متخصصان مناسب را در سراسر جهان بیابید.</p>
 
                 <div style="text-align: center; margin-top: 3rem;">
-                    <a href="contact.html" class="btn btn-primary">Beratung anfordern</a>
+                    <a href="contact.html" class="btn btn-primary">درخواست مشاوره</a>
                 </div>
             </article>
         </section>
@@ -704,9 +703,9 @@
         <section class="cta-section">
             <div class="container">
                 <div class="final-cta">
-                    <h2>Gemeinsam gegen den Fachkräftemangel</h2>
-                    <p>Lassen Sie uns gemeinsam Ihre Recruiting-Strategie für 2026 optimieren.</p>
-                    <a href="contact.html" class="btn-cta">Kontaktieren Sie uns</a>
+                    <h2>با هم علیه کمبود نیرو</h2>
+                    <p>بیایید با هم استراتژی جذب نیروی شما را برای سال ۲۰۲۶ بهینه کنیم.</p>
+                    <a href="contact.html" class="btn-cta">با ما تماس بگیرید</a>
                 </div>
             </div>
         </section>
@@ -716,44 +715,42 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
-                    <a href="index.html" class="logo"><img src="image/logo.png" alt="OpenRise Logo"
+                    <a href="index.html" class="logo"><img src="../image/logo.png" alt="OpenRise Logo"
                             class="brand-logo"></a>
-                    <p>Ihre Brücke zu globalen Talenten. Wir vereinfachen die komplexe Welt der internationalen
-                        Personalbeschaffung mit modernster KI.</p>
+                    <p>پل شما به استعدادهای جهانی. ما دنیای پیچیده استخدام بین‌المللی را با استفاده از هوش مصنوعی مدرن ساده می‌کنیم.</p>
                 </div>
                 <div class="footer-col">
-                    <h4 class="footer-heading">Plattform</h4>
+                    <h4 class="footer-heading">پلتفرم</h4>
                     <ul class="footer-links">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="features.html">Features</a></li>
-                        <li><a href="demo.html">Demo</a></li>
-                        <li><a href="team.html">Team & Vision</a></li>
+                        <li><a href="index.html">خانه</a></li>
+                        <li><a href="features.html">ویژگی‌ها</a></li>
+                        <li><a href="demo.html">دمو</a></li>
+                        <li><a href="team.html">تیم و چشم‌انداز</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h4 class="footer-heading">Ressourcen</h4>
+                    <h4 class="footer-heading">منابع</h4>
                     <ul class="footer-links">
-                        <li><a href="contact.html">Kontakt</a><div class="lang-switcher-nav"><a href="blog-fachkraeftemangel.html" class="lang-link active">DE</a><a href="en/blog-fachkraeftemangel.html" class="lang-link">EN</a><a href="fa/blog-fachkraeftemangel.html" class="lang-link">FA</a></div></li>
-                        <li><a href="blog-fachkraeftemangel.html">Blog</a></li>
-                        <li><a href="datenschutz.html">Datenschutz</a></li>
-                        <li><a href="impressum.html">Impressum</a></li>
+                        <li><a href="contact.html">تماس</a><div class="lang-switcher-nav"><a href="../blog-fachkraeftemangel.html" class="lang-link">DE</a><a href="../en/blog-fachkraeftemangel.html" class="lang-link">EN</a><a href="blog-fachkraeftemangel.html" class="lang-link active">FA</a></div></li>
+                        <li><a href="blog-fachkraeftemangel.html">وبلاگ</a></li>
+                        <li><a href="datenschutz.html">حریم خصوصی</a></li>
+                        <li><a href="impressum.html">شناسنامه سایت</a></li>
                     </ul>
                 </div>
                 <div class="footer-newsletter">
-                    <h4 class="footer-heading">Aktuell bleiben</h4>
-                    <p>Bleibe auf dem Laufenden mit den neuesten OpenRise-Nachrichten und Updates.</p>
+                    <h4 class="footer-heading">بروز بمانید</h4>
+                    <p>با آخرین اخبار و بروزرسانی‌های OpenRise همراه باشید.</p>
                     <form class="newsletter-form">
-                        <input type="email" placeholder="E-Mail Adresse">
+                        <input type="email" placeholder="آدرس ایمیل">
                         <button type="submit" class="btn-icon"><i class="fas fa-paper-plane"></i></button>
                     </form>
                 </div>
             </div>
         </div>
     </footer>
-    <script src="js/background.js"></script>
-    <script src="js/interactive.js"></script>
-    <script src="js/script.js"></script>
+    <script src="../js/background.js"></script>
+    <script src="../js/interactive.js"></script>
+    <script src="../js/script.js"></script>
 </body>
 
 </html>
-

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>شناسنامه سایت | OpenRise</title>
+    <link rel="icon" type="image/png" href="../image/favicon.png?v=4">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100;300;400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Vazirmatn', sans-serif;
+            text-align: right;
+        }
+
+        .hero {
+            text-align: center !important;
+        }
+
+        .hero .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center !important;
+        }
+
+        .nav-container {
+            flex-direction: row-reverse !important;
+        }
+
+        .nav-links {
+            flex-direction: row !important;
+            gap: 1.5rem !important;
+            margin-left: 0 !important;
+            margin-right: auto !important;
+        }
+
+        .logo {
+            margin-right: 0 !important;
+            margin-left: auto !important;
+            display: flex;
+        }
+
+        .nav-links a {
+            margin: 0 !important;
+        }
+
+        .legal-card {
+            text-align: right;
+        }
+
+        .legal-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .legal-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Interactive UI Elements -->
+    <div class="scroll-progress-container">
+        <div class="scroll-progress-bar" id="scroll-progress"></div>
+    </div>
+
+    <nav>
+        <div class="container nav-container">
+            <a href="index.html" class="logo"><img src="../image/logo.png" alt="لوگوی OpenRise" class="brand-logo"></a>
+            <div class="mobile-menu-toggle"><i class="fas fa-bars"></i></div>
+            <div class="nav-links">
+                <div class="theme-switch-wrapper">
+                    <label class="theme-switch" for="checkbox">
+                        <input type="checkbox" id="checkbox" />
+                        <div class="slider round">
+                            <i class="fas fa-sun sun-icon"></i>
+                            <i class="fas fa-moon moon-icon"></i>
+                        </div>
+                    </label>
+                </div>
+                <div class="lang-switcher-nav">
+                    <a href="../impressum.html" class="lang-link">DE</a>
+                    <a href="../en/impressum.html" class="lang-link">EN</a>
+                    <a href="impressum.html" class="lang-link active">FA</a>
+                </div>
+                <a href="index.html">خانه</a>
+                <a href="features.html">ویژگی‌ها</a>
+                <a href="demo.html">دمو</a>
+                <a href="team.html">تیم و چشم‌انداز</a>
+                <a href="contact.html">تماس</a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="hero reveal-sync" style="position: relative; overflow: hidden;">
+            <div class="hero-bg-accent"></div>
+            <div class="container">
+                <h1>شناسنامه سایت</h1>
+                <p class="sub">اطلاعات مطابق با ماده ۵ قانون رسانه‌های دیجیتال آلمان (TMG)</p>
+            </div>
+        </section>
+
+        <section class="content-section reveal-sync" style="padding: 4rem 0 8rem;">
+            <div class="container">
+                <div style="max-width: 850px; margin: 0 auto; line-height: 1.8;">
+                    <div class="legal-card">
+                        <h2 style="margin-bottom: 1.5rem; color: var(--primary);">OpenRise </h2>
+                        <p>Nordstraße 978<br>
+                            40477 Düsseldorf<br>
+                            آلمان</p>
+
+                        <div class="legal-grid">
+                            <div>
+                                <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem;">نماینده قانونی:</h3>
+                                <p>مدیرعامل: Elena Richter</p>
+                            </div>
+                            <div>
+                                <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem;">ثبت تجاری:</h3>
+                                <p>دادگاه ثبت: Amtsgericht Düsseldorf<br>
+                                    شماره ثبت: HRB 89421</p>
+                            </div>
+                        </div>
+
+                        <div style="margin-top: 2.5rem;">
+                            <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem;">تماس:</h3>
+                            <p>تلفن: ۱۷۸-۱۴۴۸۷ ۵۹۱ ۴۹+<br>
+                                ایمیل: <a href="mailto:info@openrise.de" style="color: var(--primary); text-decoration: none;">info@openrise.de</a></p>
+                        </div>
+
+                        <div style="margin-top: 2.5rem;">
+                            <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem;">شماره مالیات بر ارزش افزوده (VAT ID):</h3>
+                            <p>شماره شناسایی مالیات بر ارزش افزوده طبق ماده ۲۷آ قانون مالیات بر ارزش افزوده:<br>
+                                DE 312 456 789</p>
+                        </div>
+
+                        <hr style="margin: 3rem 0; border: 0; border-top: 1px solid var(--border);">
+
+                        <h2 style="font-size: 1.5rem; margin-bottom: 1rem;">اطلاعات حقوقی</h2>
+
+                        <h3 style="font-size: 1.1rem; margin-top: 2rem; margin-bottom: 0.5rem;">حل و فصل اختلافات</h3>
+                        <p>کمیسیون اروپا پلتفرمی برای حل و فصل آنلاین اختلافات (OS) ارائه می‌دهد:
+                            <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener" style="color: var(--primary);">https://ec.europa.eu/consumers/odr</a>.<br>
+                            آدرس ایمیل ما در بالای شناسنامه سایت آمده است. ما مایل یا موظف نیستیم در مراحل حل و فصل اختلافات در برابر هیئت داوری مصرف‌کننده شرکت کنیم.
+                        </p>
+
+                        <h3 style="font-size: 1.1rem; margin-top: 2rem; margin-bottom: 0.5rem;">مسئولیت در قبال محتوا</h3>
+                        <p>ما به عنوان ارائه‌دهنده خدمات، طبق ماده ۷ پاراگراف ۱ قانون رسانه‌های دیجیتال آلمان (TMG)، مسئول محتوای خود در این صفحات مطابق قوانین عمومی هستیم. طبق مواد ۸ تا ۱۰ TMG، ما به عنوان ارائه‌دهنده خدمات موظف نیستیم اطلاعات منتقل شده یا ذخیره شده شخص ثالث را نظارت کنیم یا به دنبال شرایطی بگردیم که به فعالیت غیرقانونی اشاره دارد. تعهد به حذف یا مسدود کردن استفاده از اطلاعات طبق قوانین عمومی تحت تأثیر قرار نمی‌گیرد.</p>
+
+                        <h3 style="font-size: 1.1rem; margin-top: 2rem; margin-bottom: 0.5rem;">مسئولیت در قبال پیوندها (Links)</h3>
+                        <p>پیشنهاد ما حاوی پیوندهایی به وب‌سایت‌های خارجی شخص ثالث است که ما هیچ نفوذی بر محتوای آن‌ها نداریم. بنابراین نمی‌توانیم مسئولیتی در قبال این محتوای خارجی بپذیریم. ارائه‌دهنده یا اپراتور مربوطه صفحات همیشه مسئول محتوای صفحات پیوند داده شده است. صفحات پیوند داده شده در زمان ایجاد پیوند از نظر نقض احتمالی قانونی بررسی شده‌اند. محتوای غیرقانونی در زمان پیوند دادن قابل تشخیص نبوده است.</p>
+
+                        <h3 style="font-size: 1.1rem; margin-top: 2rem; margin-bottom: 0.5rem;">حق چاپ (Copyright)</h3>
+                        <p>محتوا و آثار موجود در این صفحات که توسط اپراتورها ایجاد شده‌اند، مشمول قانون حق چاپ آلمان هستند. تکثیر، ویرایش، توزیع و هر نوع استفاده خارج از محدودیت‌های قانون حق چاپ نیازمند رضایت کتبی نویسنده یا خالق مربوطه است. دانلود و کپی از این صفحه فقط برای استفاده خصوصی و غیر تجاری مجاز است.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo"><img src="../image/logo.png" alt="لوگوی OpenRise" class="brand-logo"></a>
+                    <p>پل شما به استعدادهای جهانی. ما دنیای پیچیده استخدام بین‌المللی را با استفاده از هوش مصنوعی مدرن ساده می‌کنیم.</p>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-heading">پلتفرم</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">خانه</a></li>
+                        <li><a href="features.html">ویژگی‌ها</a></li>
+                        <li><a href="demo.html">دمو</a></li>
+                        <li><a href="team.html">تیم و چشم‌انداز</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-heading">منابع</h4>
+                    <ul class="footer-links">
+                        <li><a href="contact.html">تماس</a><div class="lang-switcher-nav"><a href="../impressum.html" class="lang-link">DE</a><a href="../en/impressum.html" class="lang-link">EN</a><a href="impressum.html" class="lang-link active">FA</a></div></li>
+                        <li><a href="../blog-fachkraeftemangel.html">وبلاگ</a></li>
+                        <li><a href="datenschutz.html">حریم خصوصی</a></li>
+                        <li><a href="impressum.html">شناسنامه سایت</a></li>
+                    </ul>
+                </div>
+                <div class="footer-newsletter">
+                    <h4 class="footer-heading">بروز بمانید</h4>
+                    <p>با آخرین اخبار و بروزرسانی‌های OpenRise همراه باشید.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="آدرس ایمیل">
+                        <button type="submit" class="btn-icon"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="../js/background.js"></script>
+    <script src="../js/interactive.js"></script>
+    <script src="../js/script.js"></script>
+</body>
+
+</html>

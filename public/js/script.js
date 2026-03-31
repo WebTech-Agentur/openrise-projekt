@@ -68,11 +68,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Number Counter Animation for Statistics
     const countItems = document.querySelectorAll('.stat-number');
+    const lang = document.documentElement.lang || 'de';
+    
+    const persianToLatin = (str) => {
+        const persianDigits = [/۰/g, /۱/g, /۲/g, /۳/g, /۴/g, /۵/g, /۶/g, /۷/g, /۸/g, /۹/g];
+        for (let i = 0; i < 10; i++) {
+            str = str.replace(persianDigits[i], i);
+        }
+        return str;
+    };
+
     const countObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if(entry.isIntersecting && !entry.target.classList.contains('counted')) {
                 const target = entry.target;
-                const finalValue = parseInt(target.innerText.replace('.', ''));
+                const rawText = persianToLatin(target.innerText.replace(/[\.,]/g, ''));
+                const finalValue = parseInt(rawText);
+                
+                if (isNaN(finalValue)) return;
+
                 let current = 0;
                 const duration = 2000;
                 const startTime = performance.now();
@@ -81,16 +95,15 @@ document.addEventListener('DOMContentLoaded', () => {
                     const elapsed = now - startTime;
                     const progress = Math.min(elapsed / duration, 1);
                     
-                    // Cubic ease-out
                     const eased = 1 - Math.pow(1 - progress, 3);
                     const val = Math.floor(eased * finalValue);
                     
-                    target.innerText = val.toLocaleString('de-DE');
+                    target.innerText = val.toLocaleString(lang === 'fa' ? 'fa-IR' : (lang === 'en' ? 'en-US' : 'de-DE'));
 
                     if (progress < 1) {
                         requestAnimationFrame(animate);
                     } else {
-                        target.innerText = finalValue.toLocaleString('de-DE');
+                        target.innerText = finalValue.toLocaleString(lang === 'fa' ? 'fa-IR' : (lang === 'en' ? 'en-US' : 'de-DE'));
                         target.classList.add('counted');
                     }
                 };
