@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenRise | Connecting Global Talent with German Opportunities</title>
+    <link rel="icon" type="image/png" href="../image/favicon.png?v=4">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Interactive UI Elements -->
+    <div class="scroll-progress-container">
+        <div class="scroll-progress-bar" id="scroll-progress"></div>
+    </div>
+
+    <nav>
+        <div class="container nav-container">
+            <a href="index.html" class="logo"><img src="../image/logo.png" alt="OpenRise Logo" class="brand-logo"></a>
+            <div class="mobile-menu-toggle"><i class="fas fa-bars"></i></div>
+            <div class="nav-links">
+                <a href="index.html" class="active">Home</a>
+                <a href="features.html">Features</a>
+                <a href="demo.html">Demo</a>
+                <a href="team.html">Team & Vision</a>
+                <a href="contact.html">Contact</a>
+                <div class="lang-switcher-nav">
+                    <a href="../index.html" class="lang-link">DE</a>
+                    <a href="index.html" class="lang-link active">EN</a>
+                    <a href="../fa/index.html" class="lang-link">FA</a>
+                </div>
+                <div class="theme-switch-wrapper">
+                    <label class="theme-switch" for="checkbox">
+                        <input type="checkbox" id="checkbox" />
+                        <div class="slider round">
+                            <i class="fas fa-sun sun-icon"></i>
+                            <i class="fas fa-moon moon-icon"></i>
+                        </div>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home-hero" class="hero reveal" style="position: relative; overflow: hidden; padding-top: 10rem;">
+            <div class="hero-bg-accent"></div>
+            <div class="container hero-split">
+                <div class="hero-content-left">
+                    <h1>Global Talent for Germany</h1>
+                    <p class="sub">We simplify international recruitment and relocation by connecting
+                        highly qualified professionals with leading German companies.</p>
+                    <div class="cta-buttons">
+                        <a href="features.html" class="btn btn-primary">Features</a>
+                        <a href="team.html" class="btn btn-outline" style="margin-left: 1rem;">Team & Vision</a>
+                    </div>
+                </div>
+
+                <div class="hero-reels-right">
+                    <div class="reels-container">
+                        <!-- Reel Card 1 -->
+                        <div class="reel-card active">
+                            <div class="reel-video-placeholder" style="background-image: url('../image/reel_maria.png');">
+                            </div>
+                            <div class="reel-overlay">
+                                <span class="badge">Software Engineer</span>
+                                <h3>Maria S., Brazil</h3>
+                                <p>Sought position in Berlin • Senior Fullstack</p>
+                                <div class="reel-actions">
+                                    <button class="btn-icon-small"><i class="fas fa-heart"></i></button>
+                                    <button class="btn-icon-small"><i class="fas fa-share"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Reel Card 2 -->
+                        <div class="reel-card next">
+                            <div class="reel-video-placeholder" style="background-image: url('../image/reel_arjun.png');">
+                            </div>
+                            <div class="reel-overlay">
+                                <span class="badge">Data Scientist</span>
+                                <h3>Arjun P., India</h3>
+                                <p>Ready for Relocation • AI Expert</p>
+                                <div class="reel-actions">
+                                    <button class="btn-icon-small"><i class="fas fa-heart"></i></button>
+                                    <button class="btn-icon-small"><i class="fas fa-share"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Reel Card 3 -->
+                        <div class="reel-card prev">
+                            <div class="reel-video-placeholder" style="background-image: url('../image/reel_luis.png');">
+                            </div>
+                            <div class="reel-overlay">
+                                <span class="badge">Mechatronics Tech</span>
+                                <h3>Luis M., Mexico</h3>
+                                <p>B1 German • Industrial Mechanics</p>
+                                <div class="reel-actions">
+                                    <button class="btn-icon-small"><i class="fas fa-heart"></i></button>
+                                    <button class="btn-icon-small"><i class="fas fa-share"></i></button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="reel-nav">
+                            <button class="reel-prev"><i class="fas fa-chevron-up"></i></button>
+                            <button class="reel-next"><i class="fas fa-chevron-down"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Partners Section -->
+        <section class="partners-section reveal">
+            <div class="container" style="max-width: 100%; padding: 0;">
+                <p class="partners-title">Trust that connects</p>
+                <div id="logo-slider" class="logo-slider">
+                    <div class="logo-track">
+                        <div class="logo-item"><img src="../image/Bildschirmfoto-2025-05-15-um-10.18.52.png" alt="Partner 1"></div>
+                        <div class="logo-item"><img src="../image/Bildschirmfoto-2025-05-15-um-10.18.45.png" alt="Partner 2"></div>
+                        <div class="logo-item"><img src="../image/Bildschirmfoto-2025-05-15-um-10.18.34-1.png" alt="Partner 3"></div>
+                        <div class="logo-item"><img src="../image/Bildschirmfoto-2025-05-15-um-10.18.27.png" alt="Partner 4"></div>
+                        <div class="logo-item"><img src="../image/logo-ihk-osnabrueck.png" alt="IHK Osnabrück"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Potential Section -->
+        <section id="home-potential" class="potential">
+            <div class="container split-section">
+                <div class="content">
+                    <h2>Unleash the full potential of your company</h2>
+                    <p>The increasing challenge of the skilled labor shortage requires innovative approaches in the recruitment process. OpenRise offers a holistic solution.</p>
+                </div>
+                <div class="image-container">
+                    <img src="../image/116f9a69-a6ec-4e42-a6f1-cfc73fe464e8.png" alt="Growth Potential">
+                </div>
+            </div>
+        </section>
+
+        <!-- Problem Section -->
+        <section class="problems">
+            <div class="container">
+                <h2 class="text-center mb-4">The Challenges of Global Growth</h2>
+                <div class="problem-grid">
+                    <div class="card problem-card">
+                        <i class="fas fa-users-slash"></i>
+                        <h3>Skilled Labor Shortage</h3>
+                        <p>Germany faces a critical shortage of qualified professionals in technology, healthcare, and engineering fields.</p>
+                    </div>
+                    <div class="card problem-card">
+                        <i class="fas fa-file-signature"></i>
+                        <h3>Bureaucracy Jungle</h3>
+                        <p>Navigating through visa regulations and German labor laws is time-consuming and prone to errors.</p>
+                    </div>
+                    <div class="card problem-card">
+                        <i class="fas fa-route"></i>
+                        <h3>Relocation Challenges</h3>
+                        <p>Moving an entire life to a new country brings complex organizational tasks – from house hunting to social integration.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Solution Section -->
+        <section class="solutions">
+            <div class="container">
+                <h2 class="text-center mb-4">Our Modern Solution</h2>
+                <p class="text-center text-muted" style="max-width: 600px; margin: 0 auto 4rem;">We have developed a platform that streamlines every step of the international hiring process efficiently.</p>
+
+                <div class="solutions-premium-grid">
+                    <div class="premium-solution-card animate-on-scroll">
+                        <div class="showcase-visual"><img src="../image/illu_matching.png" alt="AI Matching" class="large-showcase-icon"></div>
+                        <div class="showcase-text">
+                            <span class="showcase-badge">Premium Tech</span>
+                            <h3>AI-Powered Matching</h3>
+                            <p>Our algorithms find the perfect fit based on skills, company culture, and long-term potential.</p>
+                        </div>
+                    </div>
+                    <div class="premium-solution-card animate-on-scroll">
+                        <div class="showcase-visual"><img src="../image/illu_automation.png" alt="Automation" class="large-showcase-icon"></div>
+                        <div class="showcase-text">
+                            <span class="showcase-badge">Efficiency</span>
+                            <h3>Automated Processes</h3>
+                            <p>We digitize and automate the entire document workflow. From work permits to tax IDs.</p>
+                        </div>
+                    </div>
+                    <div class="premium-solution-card animate-on-scroll">
+                        <div class="showcase-visual"><img src="../image/illu_relocation.png" alt="Relocation" class="large-showcase-icon"></div>
+                        <div class="showcase-text">
+                            <span class="showcase-badge">Support</span>
+                            <h3>Relocation Service</h3>
+                            <p>Moving to a new country made easy. We provide support for house hunting and authorities.</p>
+                        </div>
+                    </div>
+                    <div class="premium-solution-card animate-on-scroll">
+                        <div class="showcase-visual"><img src="../image/illu_culture.png" alt="Integration" class="large-showcase-icon"></div>
+                        <div class="showcase-text">
+                            <span class="showcase-badge">Community</span>
+                            <h3>Cultural Integration</h3>
+                            <p>Preparing talents for the German work environment through intercultural training.</p>
+                        </div>
+                    </div>
+                    <div class="premium-solution-card animate-on-scroll">
+                        <div class="showcase-visual"><img src="../image/illu_support.png" alt="Success" class="large-showcase-icon"></div>
+                        <div class="showcase-text">
+                            <span class="showcase-badge">Success</span>
+                            <h3>Long-term Support</h3>
+                            <p>Accompanying companies and talents far beyond the first day for sustainable success.</p>
+                        </div>
+                    </div>
+                    <div class="premium-solution-card animate-on-scroll">
+                        <div class="showcase-visual"><img src="../image/illu_billing.png" alt="Billing" class="large-showcase-icon"></div>
+                        <div class="showcase-text">
+                            <span class="showcase-badge">Compliance</span>
+                            <h3>Secure Billing</h3>
+                            <p>Handling international payment streams while ensuring full legal and tax compliance.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Progress Section -->
+        <section class="progress-section">
+            <div class="container">
+                <h2 class="text-center mb-4">Project Progress</h2>
+                <div class="progress-grid">
+                    <div class="progress-item">
+                        <div class="progress-header"><span class="progress-label">1. System Architecture</span><span class="progress-percentage">72%</span></div>
+                        <div class="progress-track"><div class="progress-fill" style="width: 72%;"></div></div>
+                    </div>
+                    <div class="progress-item">
+                        <div class="progress-header"><span class="progress-label">2. UX-Flow & Prototyping</span><span class="progress-percentage">81%</span></div>
+                        <div class="progress-track"><div class="progress-fill" style="width: 81%;"></div></div>
+                    </div>
+                    <div class="progress-item">
+                        <div class="progress-header"><span class="progress-label">3. Backend Development</span><span class="progress-percentage">78%</span></div>
+                        <div class="progress-track"><div class="progress-fill" style="width: 78%;"></div></div>
+                    </div>
+                    <div class="progress-item">
+                        <div class="progress-header"><span class="progress-label">4. Frontend Development</span><span class="progress-percentage">66%</span></div>
+                        <div class="progress-track"><div class="progress-fill" style="width: 66%;"></div></div>
+                    </div>
+                    <div class="progress-item">
+                        <div class="progress-header"><span class="progress-label">5. Testing & DevOps</span><span class="progress-percentage">72%</span></div>
+                        <div class="progress-track"><div class="progress-fill" style="width: 72%;"></div></div>
+                    </div>
+                    <div class="progress-item">
+                        <div class="progress-header"><span class="progress-label">6. Mobile App</span><span class="progress-percentage">62%</span></div>
+                        <div class="progress-track"><div class="progress-fill" style="width: 62%;"></div></div>
+                    </div>
+                    <div class="progress-item">
+                        <div class="progress-header"><span class="progress-label">7. Web App</span><span class="progress-percentage">31%</span></div>
+                        <div class="progress-track"><div class="progress-fill" style="width: 31%;"></div></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Us -->
+        <section class="why-us reveal">
+            <div class="container">
+                <h2 class="section-title-left">Talent Platform in<br> APP and Web Version</h2>
+                <div class="why-grid">
+                    <div class="why-image"><img src="../image/c3d5f78dda649955663c6ff640e8abfd.png" alt="Strategic Talent Connection"></div>
+                    <div class="why-items">
+                        <div class="why-item">
+                            <div class="why-number">1</div>
+                            <div class="why-text"><h3>Global Talent Acquisition</h3><p>Access an international pool of qualified professionals targetedly and efficiently.</p></div>
+                        </div>
+                        <div class="why-item">
+                            <div class="why-number">2</div>
+                            <div class="why-text"><h3>End to End</h3><p>Accompanying talents step-by-step from application to the first day in Germany.</p></div>
+                        </div>
+                        <div class="why-item">
+                            <div class="why-number">3</div>
+                            <div class="why-text"><h3>Global Access</h3><p>International job seekers apply directly for career opportunities in German companies.</p></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="container">
+                <div class="final-cta">
+                    <h2>Ready for the next step?</h2>
+                    <p>Join hundreds of companies and thousands of talents shaping the future together.</p>
+                    <a href="contact.html" class="btn-cta">Start Now</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <img src="../image/logo.png" alt="OpenRise Logo" class="brand-logo">
+                    <p>Your bridge to global talent. We simplify international recruitment with AI.</p>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-heading">Platform</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="features.html">Features</a></li>
+                        <li><a href="demo.html">Demo</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-heading">Resources</h4>
+                    <ul class="footer-links">
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="../blog-fachkraeftemangel.html">Blog</a></li>
+                        <li><a href="impressum.html">Legal</a></li>
+                    </ul>
+                </div>
+                <div class="footer-newsletter">
+                    <h4 class="footer-heading">Stay Updated</h4>
+                    <p>Get the latest news from OpenRise.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Email Address">
+                        <button type="submit" class="btn-icon"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/background.js"></script>
+    <script src="../js/interactive.js"></script>
+    <script src="../js/script.js"></script>
+</body>
+</html>

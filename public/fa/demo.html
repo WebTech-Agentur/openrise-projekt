@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>دموی تعاملی | OpenRise</title>
+    <link rel="icon" type="image/png" href="../image/favicon.png?v=4">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100;400;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Vazirmatn', sans-serif !important; direction: rtl; text-align: right; }
+        .demo-simulator { display: grid; grid-template-columns: 280px 1fr; border-radius: 20px; overflow: hidden; background: var(--card-bg); border: 1px solid var(--border); min-height: 600px; }
+        [dir="rtl"] .demo-simulator { grid-template-columns: 1fr 280px; }
+        .demo-sidebar { background: rgba(15, 23, 42, 0.03); padding: 2rem 1rem; border-left: 1px solid var(--border); }
+        .demo-nav-item { display: flex; align-items: center; gap: 1rem; padding: 1rem; cursor: pointer; transition: 0.3s; color: var(--text-muted); }
+        .demo-nav-item.active { background: var(--primary); color: white; border-radius: 10px; }
+        .demo-content { padding: 3rem; }
+        .demo-screen { display: none; }
+        .demo-screen.active { display: block; }
+        .text-center { text-align: center !important; }
+        [dir="rtl"] .logo { margin-left: auto !important; margin-right: 0 !important; }
+        [dir="rtl"] .nav-links { flex-direction: row-reverse !important; margin-right: auto !important; margin-left: 0 !important; }
+        .status-badge { padding: 0.25rem 0.75rem; border-radius: 100px; font-size: 0.8rem; }
+        .status-completed { background: rgba(16, 185, 129, 0.1); color: #0fb880; }
+        .mock-ui-card { background: var(--card-bg); border: 1px solid var(--border); padding: 1.5rem; margin-top: 1.5rem; border-radius: 12px; }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="container nav-container">
+            <a href="index.html" class="logo"><img src="../image/logo.png" alt="OpenRise" class="brand-logo"></a>
+            <div class="nav-links">
+                <a href="index.html">خانه</a>
+                <a href="features.html">ویژگی‌ها</a>
+                <a href="demo.html" class="active">دمو</a>
+                <a href="team.html">تیم و چشم‌انداز</a>
+                <a href="contact.html">تماس</a>
+                <div class="lang-switcher-nav">
+                    <a href="../demo.html" class="lang-link">DE</a>
+                    <a href="../en/demo.html" class="lang-link">EN</a>
+                    <a href="demo.html" class="lang-link active">FA</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="demo-hero reveal" style="padding-top: 8rem; text-align: center;">
+            <div class="container">
+                <h1>پلتفرم را در عمل تجربه کنید</h1>
+                <p class="sub">به صورت تعاملی کشف کنید که چگونه OpenRise فرآیند استخدام را خودکار کرده و استعدادهای جهانی را به شرکت شما متصل می‌کند.</p>
+            </div>
+        </section>
+
+        <section id="simulator" class="container reveal" style="padding-bottom: 4rem;">
+            <div class="demo-simulator">
+                <div class="demo-content">
+                    <!-- Dashboard -->
+                    <div id="screen-dashboard" class="demo-screen active">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+                            <h2>نمای کلی داشبورد</h2>
+                            <span class="status-badge status-completed">به‌روزرسانی زنده</span>
+                        </div>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+                            <div class="mock-ui-card">
+                                <h4>موقعیت‌های باز</h4>
+                                <p style="font-size: 2rem; font-weight: 700; color: var(--primary);">۱۲</p>
+                            </div>
+                            <div class="mock-ui-card">
+                                <h4>کاندیداها</h4>
+                                <p style="font-size: 2rem; font-weight: 700; color: var(--primary);">۱۴۸</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Matching -->
+                    <div id="screen-matching" class="demo-screen">
+                        <h2>تطبیق استعدادها</h2>
+                        <div class="mock-ui-card">
+                            <strong>مهندس کلود ارشد</strong>
+                            <span class="status-badge status-completed">۹۸٪ تطابق</span>
+                            <p>کاندیدا: مارکوس اس. | ۱۰ سال تجربه</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="demo-sidebar">
+                    <div class="demo-nav-item active" onclick="switchScreen('dashboard')">
+                        <i class="fas fa-th-large"></i><span>داشبورد</span>
+                    </div>
+                    <div class="demo-nav-item" onclick="switchScreen('matching')">
+                        <i class="fas fa-users"></i><span>تطبیق استعداد</span>
+                    </div>
+                    <div class="demo-nav-item" onclick="switchScreen('documents')">
+                        <i class="fas fa-file-signature"></i><span>اسناد</span>
+                    </div>
+                    <div class="demo-nav-item" onclick="switchScreen('visa')">
+                        <i class="fas fa-passport"></i><span>وضعیت ویزا</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        function switchScreen(screenId) {
+            document.querySelectorAll('.demo-screen').forEach(s => s.classList.remove('active'));
+            document.querySelectorAll('.demo-nav-item').forEach(i => i.classList.remove('active'));
+            document.getElementById('screen-' + screenId).classList.add('active');
+            event.currentTarget.classList.add('active');
+        }
+    </script>
+    <script src="../js/background.js"></script>
+    <script src="../js/interactive.js"></script>
+    <script src="../js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ویژگی‌ها | OpenRise</title>
+    <link rel="icon" type="image/png" href="../image/favicon.png?v=4">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100;400;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Vazirmatn', sans-serif !important; direction: rtl; text-align: right; }
+        .bento-grid, .split-section { direction: rtl; }
+        .text-center { text-align: center !important; }
+        .circle-container { direction: ltr; } /* Orbiting logic best in ltr */
+        .circle-icon i { direction: rtl; }
+        .center-box { direction: rtl; text-align: center; }
+        [dir="rtl"] .logo { margin-left: auto !important; margin-right: 0 !important; }
+        [dir="rtl"] .nav-links { flex-direction: row-reverse !important; }
+    </style>
+</head>
+
+<body>
+    <div class="scroll-progress-container">
+        <div class="scroll-progress-bar" id="scroll-progress"></div>
+    </div>
+
+    <nav>
+        <div class="container nav-container">
+            <a href="index.html" class="logo"><img src="../image/logo.png" alt="OpenRise" class="brand-logo"></a>
+            <div class="mobile-menu-toggle"><i class="fas fa-bars"></i></div>
+            <div class="nav-links">
+                <a href="index.html">خانه</a>
+                <a href="features.html" class="active">ویژگی‌ها</a>
+                <a href="demo.html">دمو</a>
+                <a href="team.html">تیم و چشم‌انداز</a>
+                <a href="contact.html">تماس</a>
+                <div class="lang-switcher-nav">
+                    <a href="../features.html" class="lang-link">DE</a>
+                    <a href="../en/features.html" class="lang-link">EN</a>
+                    <a href="features.html" class="lang-link active">FA</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="features-hero reveal" style="padding-top: 8rem;">
+            <div class="container">
+                <h1 style="text-align: right !important;">ویژگی‌های ما</h1>
+                <p class="sub" style="text-align: right !important;">عملکردهای پیشرفته پلتفرم که استخدام جهانی را ساده می‌کنند.</p>
+            </div>
+        </section>
+
+        <section id="features-split" class="container split-section reveal">
+            <div class="content">
+                <h2 style="text-align: right !important;">استخدام هدفمند استعدادهای بین‌المللی – کارآمد، منعطف، منطبق.</h2>
+                <p style="text-align: right !important;">دسترسی به متخصصان بین‌المللی با RiseHub. شما انتخاب می‌کنید، ما فرآیندهای ویزا و معادل‌سازی را انجام می‌دهیم.</p>
+            </div>
+            <div class="image-container"><img src="../image/085aeb5f97b73b4380e984bb291af05c.png" alt="ویژگی‌ها"></div>
+        </section>
+
+        <section class="reveal">
+            <div class="container">
+                <h2 class="text-center mb-4" style="font-size: 3rem;">فرآیندهای پنهان:</h2>
+                <div class="bento-grid">
+                    <!-- 1 Visa -->
+                    <div class="bento-item bento-large">
+                        <div class="bento-visual interactive-visa"><div class="visa-scene"><div class="doc-stamp">تایید شد</div></div></div>
+                        <div class="bento-text">
+                            <h3>مدارک ویزا</h3>
+                            <p>ناوبری در الزامات دولتی برای صدور ویزای بی‌دردسر.</p>
+                        </div>
+                    </div>
+                    <!-- 2 Translation -->
+                    <div class="bento-item bento-wide">
+                        <div class="bento-visual translate-visual"><div class="lang-bubble">FA</div><i class="fas fa-arrow-left"></i><div class="lang-bubble">DE</div></div>
+                        <div class="bento-text"><h3>ترجمه‌ها</h3><p>ترجمه رسمی مدارک توسط مراکز تایید شده.</p></div>
+                    </div>
+                    <!-- 3 Seal -->
+                    <div class="bento-item bento-square">
+                        <div class="bento-visual seal-visual"><i class="fas fa-certificate"></i></div>
+                        <div class="bento-text"><h3>تصدیق و گواهی</h3><p>تضمین به رسمیت شناختن قانونی توسط مقامات آلمانی.</p></div>
+                    </div>
+                    <!-- 4 House -->
+                    <div class="bento-item bento-square">
+                        <div class="bento-visual house-visual"><i class="fas fa-home"></i></div>
+                        <div class="bento-text"><h3>جستجوی مسکن</h3><p>پشتیبانی فعال در یافتن خانه امن.</p></div>
+                    </div>
+                    <!-- 5 Interpreter -->
+                    <div class="bento-item bento-wide">
+                        <div class="bento-visual audio-visual"><i class="fas fa-globe"></i></div>
+                        <div class="bento-text"><h3>سرویس مترجم</h3><p>شکستن موانع زبانی برای جلوگیری از سوء تفاهم.</p></div>
+                    </div>
+                    <!-- 6 Authorities -->
+                    <div class="bento-item bento-wide">
+                        <div class="bento-visual gov-visual"><i class="fas fa-landmark"></i></div>
+                        <div class="bento-text"><h3>امور اداری</h3><p>تسریع در هماهنگی با ادارات دولتی.</p></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="feature-circle-section reveal">
+            <div class="container">
+                <h2 class="text-center mb-4">ادغام همراهی شده</h2>
+                <div class="circle-container" style="direction: ltr;">
+                    <div class="feature-circle">
+                        <div class="circle-icon icon-1" data-title="ثبت‌نام در باشگاه" data-desc="کمک در ثبت‌نام در انجمن‌های محلی."><i class="fas fa-users"></i></div>
+                        <div class="circle-icon icon-2" data-title="فعالیت تفریحی" data-desc="کشف بهترین مکان‌های تفریحی."><i class="fas fa-calendar-alt"></i></div>
+                        <div class="circle-icon icon-3" data-title="مدیریت تضاد" data-desc="پشتیبانی مربیگری در چالش‌ها."><i class="fas fa-hands-helping"></i></div>
+                        <div class="circle-icon icon-4" data-title="دیدارهای آنلاین" data-desc="اتصال ماهانه با استعدادهای دیگر."><i class="fas fa-video"></i></div>
+                        <div class="circle-icon icon-5" data-title="تبادل زبان" data-desc="یافتن شریک زبانی برای تمرین آلمانی."><i class="fas fa-language"></i></div>
+                        <div class="circle-icon icon-6" data-title="آموزش فرهنگی" data-desc="درک ظرافت‌های فرهنگی آلمان."><i class="fas fa-landmark"></i></div>
+                        <div class="circle-icon icon-7" data-title="راهنمای ادارات" data-desc="ناوبری گام به گام در بوروکراسی."><i class="fas fa-id-card"></i></div>
+                        <div class="circle-icon icon-8" data-title="تقویم رویدادها" data-desc="مرور رویدادهای شبکه‌سازی در منطقه."><i class="fas fa-map-marked-alt"></i></div>
+                    </div>
+                    <div class="center-box">
+                        <div id="center-text-content">
+                            <h3>ادغام OpenRise</h3>
+                            <p id="center-desc">رویکرد جامع ما برای ایجاد حس تعلق در محیط جدید.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="../js/background.js"></script>
+    <script src="../js/interactive.js"></script>
+    <script src="../js/script.js"></script>
+</body>
+</html>
