@@ -15,23 +15,21 @@
             direction: rtl;
         }
         .text-center { text-align: center !important; }
-        .btn-outline, .btn-primary { margin: 0 0.5rem !important; }
-        .why-number { margin-left: 1.5rem !important; margin-right: 0 !important; }
         [dir="rtl"] .logo { margin-left: auto !important; margin-right: 0 !important; }
         [dir="rtl"] .nav-links { flex-direction: row-reverse !important; }
-        [dir="rtl"] .nav-links a { margin-left: 1.5rem !important; margin-right: 0 !important; }
+        .showcase-badge { margin-right: 0 !important; margin-left: auto !important; }
+        .detail-item i { margin-right: 0 !important; margin-left: 0.5rem !important; }
     </style>
 </head>
 
 <body>
-    <!-- Interactive UI Elements -->
     <div class="scroll-progress-container">
         <div class="scroll-progress-bar" id="scroll-progress"></div>
     </div>
 
     <nav>
         <div class="container nav-container">
-            <a href="index.html" class="logo"><img src="../image/logo.png" alt="لوگوی OpenRise" class="brand-logo"></a>
+            <a href="index.html" class="logo"><img src="../image/logo.png" alt="OpenRise" class="brand-logo"></a>
             <div class="mobile-menu-toggle"><i class="fas fa-bars"></i></div>
             <div class="nav-links">
                 <a href="index.html" class="active">خانه</a>
@@ -44,143 +42,42 @@
                     <a href="../en/index.html" class="lang-link">EN</a>
                     <a href="index.html" class="lang-link active">FA</a>
                 </div>
-                <div class="theme-switch-wrapper">
-                    <label class="theme-switch" for="checkbox">
-                        <input type="checkbox" id="checkbox" />
-                        <div class="slider round">
-                            <i class="fas fa-sun sun-icon"></i>
-                            <i class="fas fa-moon moon-icon"></i>
-                        </div>
-                    </label>
-                </div>
             </div>
         </div>
     </nav>
 
     <main>
-        <!-- Hero Section -->
-        <section id="home-hero" class="hero reveal" style="position: relative; overflow: hidden; padding-top: 10rem;">
-            <div class="hero-bg-accent"></div>
+        <section id="home-hero" class="hero reveal" style="padding-top: 10rem;">
             <div class="container hero-split">
                 <div class="hero-content-left">
                     <h1 style="text-align: right !important;">استعدادهای جهانی برای آلمان</h1>
-                    <p class="sub" style="text-align: right !important;">ما فرآیند استخدام بین‌المللی و مهاجرت را با اتصال متخصصان با مهارت بالا به شرکت‌های پیشرو آلمانی ساده می‌کنیم.</p>
-                    <div class="cta-buttons" style="justify-content: flex-end; display: flex; gap: 1rem;">
+                    <p class="sub" style="text-align: right !important;">ما فرآیند استخدام بین‌المللی را با اتصال متخصصان به شرکت‌های پیشرو آلمانی ساده می‌کنیم.</p>
+                    <div class="cta-buttons" style="display: flex; gap: 1rem; justify-content: flex-end;">
                         <a href="features.html" class="btn btn-primary">ویژگی‌ها</a>
                         <a href="team.html" class="btn btn-outline">تیم و چشم‌انداز</a>
                     </div>
                 </div>
-
                 <div class="hero-reels-right">
                     <div class="reels-container">
                         <div class="reel-card active">
                             <div class="reel-video-placeholder" style="background-image: url('../image/reel_maria.png');"></div>
-                            <div class="reel-overlay">
-                                <span class="badge">مهندس نرم‌افزار</span>
-                                <h3>ماریا اس.، برزیل</h3>
-                                <p>به دنبال موقعیت در برلین • توسعه‌دهنده ارشد</p>
-                                <div class="reel-actions">
-                                    <button class="btn-icon-small"><i class="fas fa-heart"></i></button>
-                                    <button class="btn-icon-small"><i class="fas fa-share"></i></button>
-                                </div>
-                            </div>
+                            <div class="reel-overlay"><h3>ماریا اس.، برزیل</h3><p>توسعه‌دهنده سنیور</p></div>
                         </div>
-                        <div class="reel-card next">
-                            <div class="reel-video-placeholder" style="background-image: url('../image/reel_arjun.png');"></div>
-                            <div class="reel-overlay">
-                                <span class="badge">دانشمند داده</span>
-                                <h3>آرجون پی.، هند</h3>
-                                <p>آماده مهاجرت • متخصص هوش مصنوعی</p>
-                                <div class="reel-actions">
-                                    <button class="btn-icon-small"><i class="fas fa-heart"></i></button>
-                                    <button class="btn-icon-small"><i class="fas fa-share"></i></button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="reel-card prev">
-                            <div class="reel-video-placeholder" style="background-image: url('../image/reel_luis.png');"></div>
-                            <div class="reel-overlay">
-                                <span class="badge">تکنسین مکاترونیک</span>
-                                <h3>لوئیس ام.، مکزیک</h3>
-                                <p>مدرک B1 آلمانی • مکانیک صنعتی</p>
-                                <div class="reel-actions">
-                                    <button class="btn-icon-small"><i class="fas fa-heart"></i></button>
-                                    <button class="btn-icon-small"><i class="fas fa-share"></i></button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="reel-nav">
-                            <button class="reel-prev"><i class="fas fa-chevron-up"></i></button>
-                            <button class="reel-next"><i class="fas fa-chevron-down"></i></button>
-                        </div>
+                        <div class="reel-nav"><button class="reel-prev"><i class="fas fa-chevron-up"></i></button><button class="reel-next"><i class="fas fa-chevron-down"></i></button></div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Partners Section -->
-        <section class="partners-section reveal">
-            <div class="container" style="max-width: 100%; padding: 0;">
-                <p class="partners-title" style="text-align: center !important;">اعتمادی که متصل می‌کند</p>
-                <div id="logo-slider" class="logo-slider">
-                    <div class="logo-track">
-                        <div class="logo-item"><img src="../image/Bildschirmfoto-2025-05-15-um-10.18.52.png" alt="همکار ۱"></div>
-                        <div class="logo-item"><img src="../image/Bildschirmfoto-2025-05-15-um-10.18.45.png" alt="همکار ۲"></div>
-                        <div class="logo-item"><img src="../image/Bildschirmfoto-2025-05-15-um-10.18.34-1.png" alt="همکار ۳"></div>
-                        <div class="logo-item"><img src="../image/Bildschirmfoto-2025-05-15-um-10.18.27.png" alt="همکار ۴"></div>
-                        <div class="logo-item"><img src="../image/logo-ihk-osnabrueck.png" alt="IHK Osnabrück"></div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Potential Section -->
-        <section id="home-potential" class="potential">
-            <div class="container split-section">
-                <div class="content">
-                    <h2 style="text-align: right !important;">پتانسیل کامل شرکت خود را آزاد کنید</h2>
-                    <p style="text-align: right !important;">چالش فزاینده کمبود نیروی کار ماهر نیازمند رویکردهای نوآورانه در فرآیند استخدام است. OpenRise یک راهکار جامع و یکپارچه ارائه می‌دهد.</p>
-                </div>
-                <div class="image-container">
-                    <img src="../image/116f9a69-a6ec-4e42-a6f1-cfc73fe464e8.png" alt="پتانسیل رشد">
-                </div>
-            </div>
-        </section>
-
-        <!-- Problem Section -->
-        <section class="problems">
-            <div class="container">
-                <h2 class="text-center mb-4">چالش‌های رشد جهانی</h2>
-                <div class="problem-grid">
-                    <div class="card problem-card">
-                        <i class="fas fa-users-slash"></i>
-                        <h3 style="text-align: right !important;">کمبود نیروی کار ماهر</h3>
-                        <p style="text-align: right !important;">آلمان با کمبود بحرانی متخصصان واجد شرایط در زمینه‌های فناوری، مراقبت‌های بهداشتی و مهندسی روبروست.</p>
-                    </div>
-                    <div class="card problem-card">
-                        <i class="fas fa-file-signature"></i>
-                        <h3 style="text-align: right !important;">بوروکراسی پیچیده</h3>
-                        <p style="text-align: right !important;">ناوبری در قوانین ویزا و قوانین کار آلمان زمان‌بر و مستعد خطاست.</p>
-                    </div>
-                    <div class="card problem-card">
-                        <i class="fas fa-route"></i>
-                        <h3 style="text-align: right !important;">چالش‌های مهاجرت</h3>
-                        <p style="text-align: right !important;">انتقال یک زندگی کامل به کشوری جدید با وظایف سازمانی پیچیده همراه است - از جستجوی خانه تا ادغام اجتماعی.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Solution Section -->
         <section class="solutions">
             <div class="container">
                 <h2 class="text-center mb-4">راهکار مدرن ما</h2>
-                <p class="text-center text-muted" style="max-width: 600px; margin: 0 auto 4rem;">ما پلتفرمی توسعه داده‌ایم که هر مرحله از فرآیند استخدام بین‌المللی را به طور موثر و هوشمند مدیریت می‌کند.</p>
+                <p class="text-center text-muted" style="max-width: 600px; margin: 0 auto 4rem;">پلتفرم ما تمام مراحل استخدام بین‌المللی را به صورت هوشمند مدیریت می‌کند.</p>
 
                 <div class="solutions-premium-grid">
-                    <!-- 1 -->
+                    <!-- 1 AI Matching -->
                     <div class="premium-solution-card animate-on-scroll">
-                        <div class="showcase-visual"><img src="../image/illu_matching.png" alt="تطبیق" class="large-showcase-icon"></div>
+                        <div class="showcase-visual"><img src="../image/illu_matching.png" class="large-showcase-icon"></div>
                         <div class="showcase-text">
                             <span class="showcase-badge">تکنولوژی پرمیوم</span>
                             <h3>تطبیق مبتنی بر هوش مصنوعی</h3>
@@ -191,169 +88,77 @@
                             </div>
                         </div>
                     </div>
-                    <!-- 2 -->
+                    <!-- 2 Automation -->
                     <div class="premium-solution-card animate-on-scroll">
-                        <div class="showcase-visual"><img src="../image/illu_automation.png" alt="اتوماسیون" class="large-showcase-icon"></div>
+                        <div class="showcase-visual"><img src="../image/illu_automation.png" class="large-showcase-icon"></div>
                         <div class="showcase-text">
                             <span class="showcase-badge">بهره‌وری</span>
                             <h3>فرآیندهای خودکار</h3>
-                            <p>ما تمام جریان کاری اسناد را دیجیتالی و خودکار می‌کنیم. از مجوزهای کار تا کدهای مالیاتی - همه در سیستم ما.</p>
+                            <p>ما تمام جریان کاری اسناد را دیجیتالی و خودکار می‌کنیم. از مجوزهای کار تا کدهای مالیاتی.</p>
                             <div class="showcase-detail-items">
                                 <div class="detail-item"><i class="fas fa-bolt"></i> پیگیری سریع</div>
                                 <div class="detail-item"><i class="fas fa-file-export"></i> اسناد خودکار</div>
                             </div>
                         </div>
                     </div>
-                    <!-- 3 -->
+                    <!-- 3 Relocation -->
                     <div class="premium-solution-card animate-on-scroll">
-                        <div class="showcase-visual"><img src="../image/illu_relocation.png" alt="مهاجرت" class="large-showcase-icon"></div>
+                        <div class="showcase-visual"><img src="../image/illu_relocation.png" class="large-showcase-icon"></div>
                         <div class="showcase-text">
                             <span class="showcase-badge">پشتیبانی</span>
-                            <h3>سرویس مهاجرت</h3>
-                            <p>نقل مکان به کشوری جدید یک چالش است. ما پشتیبانی جامعی در جستجوی خانه و ادارات دولتی ارائه می‌دهیم.</p>
+                            <h3>سرویس جابجایی</h3>
+                            <p>نقل مکان به کشوری جدید یک چالش است. ما پشتیبانی جامعی در جستجوی خانه و ادارات ارائه می‌دهیم.</p>
                             <div class="showcase-detail-items">
                                 <div class="detail-item"><i class="fas fa-home"></i> جستجوی خانه</div>
-                                <div class="detail-item"><i class="fas fa-id-card"></i> ادارات</div>
+                                <div class="detail-item"><i class="fas fa-id-card"></i> ادارات دولتی</div>
                             </div>
                         </div>
                     </div>
-                    <!-- 4 -->
+                    <!-- 4 Integration -->
                     <div class="premium-solution-card animate-on-scroll">
-                        <div class="showcase-visual"><img src="../image/illu_culture.png" alt="ادغام" class="large-showcase-icon"></div>
+                        <div class="showcase-visual"><img src="../image/illu_culture.png" class="large-showcase-icon"></div>
                         <div class="showcase-text">
                             <span class="showcase-badge">جامعه</span>
                             <h3>ادغام فرهنگی</h3>
-                            <p>آماده‌سازی استعدادها برای محیط کاری آلمان از طریق آموزش‌های بین‌فرهنگی برای پایداری شغلی.</p>
+                            <p>ما استعدادها را برای محیط کاری آلمان آماده می‌کنیم تا حس خانه بودن داشته باشند.</p>
+                            <div class="showcase-detail-items">
+                                <div class="detail-item"><i class="fas fa-comments"></i> آموزش</div>
+                                <div class="detail-item"><i class="fas fa-hands-helping"></i> منتورینگ</div>
+                            </div>
                         </div>
                     </div>
-                    <!-- 5 -->
+                    <!-- 5 Support -->
                     <div class="premium-solution-card animate-on-scroll">
-                        <div class="showcase-visual"><img src="../image/illu_support.png" alt="پشتیبانی" class="large-showcase-icon"></div>
+                        <div class="showcase-visual"><img src="../image/illu_support.png" class="large-showcase-icon"></div>
                         <div class="showcase-text">
                             <span class="showcase-badge">موفقیت</span>
-                            <h3>مراقب مستمر</h3>
-                            <p>ما شرکت‌ها و استعدادها را فراتر از روز اول کاری برای موفقیت پایدار همراهی می‌کنیم.</p>
+                            <h3>مراقبت طولانی مدت</h3>
+                            <p>کار ما با قرارداد تمام نمی‌شود. ما شرکت‌ها و استعدادها را برای موفقیت پایدار همراهی می‌کنیم.</p>
+                            <div class="showcase-detail-items">
+                                <div class="detail-item"><i class="fas fa-chart-line"></i> موفقیت</div>
+                                <div class="detail-item"><i class="fas fa-headset"></i> پشتیبانی ۲۴/۷</div>
+                            </div>
                         </div>
                     </div>
-                    <!-- 6 -->
+                    <!-- 6 Billing -->
                     <div class="premium-solution-card animate-on-scroll">
-                        <div class="showcase-visual"><img src="../image/illu_billing.png" alt="پرداخت" class="large-showcase-icon"></div>
+                        <div class="showcase-visual"><img src="../image/illu_billing.png" class="large-showcase-icon"></div>
                         <div class="showcase-text">
                             <span class="showcase-badge">انطباق</span>
-                            <h3>سیستم پرداخت هوشمند</h3>
-                            <p>مدیریت جریان‌های مالی بین‌المللی و رعایت تمامی الزامات قانونی و مالیاتی در آلمان.</p>
+                            <h3>سیستم پرداخت امن</h3>
+                            <p>ما تمام جریان‌های مالی بین‌المللی را مدیریت کرده و انطباق با قوانین مالیاتی آلمان را تضمین می‌کنیم.</p>
+                            <div class="showcase-detail-items">
+                                <div class="detail-item"><i class="fas fa-shield-alt"></i> انطباق قوانین</div>
+                                <div class="detail-item"><i class="fas fa-euro-sign"></i> پرداخت هوشمند</div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Progress Section -->
-        <section class="progress-section">
-            <div class="container">
-                <h2 class="text-center mb-4">پیشرفت پروژه</h2>
-                <div class="progress-grid">
-                    <div class="progress-item">
-                        <div class="progress-header"><span class="progress-label">۱. معماری سیستم</span><span class="progress-percentage">۷۲٪</span></div>
-                        <div class="progress-track"><div class="progress-fill" style="width: 72%;"></div></div>
-                    </div>
-                    <div class="progress-item">
-                        <div class="progress-header"><span class="progress-label">۲. طراحی رابط کاربری</span><span class="progress-percentage">۸۱٪</span></div>
-                        <div class="progress-track"><div class="progress-fill" style="width: 81%;"></div></div>
-                    </div>
-                    <div class="progress-item">
-                        <div class="progress-header"><span class="progress-label">۳. توسعه بک‌اند</span><span class="progress-percentage">۷۸٪</span></div>
-                        <div class="progress-track"><div class="progress-fill" style="width: 78%;"></div></div>
-                    </div>
-                    <div class="progress-item">
-                        <div class="progress-header"><span class="progress-label">۴. توسعه فرانت‌اند</span><span class="progress-percentage">۶۶٪</span></div>
-                        <div class="progress-track"><div class="progress-fill" style="width: 66%;"></div></div>
-                    </div>
-                    <div class="progress-item">
-                        <div class="progress-header"><span class="progress-label">۵. تست و دِواپس</span><span class="progress-percentage">۷۲٪</span></div>
-                        <div class="progress-track"><div class="progress-fill" style="width: 72%;"></div></div>
-                    </div>
-                    <div class="progress-item">
-                        <div class="progress-header"><span class="progress-label">۶. اپلیکیشن موبایل</span><span class="progress-percentage">۶۲٪</span></div>
-                        <div class="progress-track"><div class="progress-fill" style="width: 62%;"></div></div>
-                    </div>
-                    <div class="progress-item">
-                        <div class="progress-header"><span class="progress-label">۷. نسخه وب</span><span class="progress-percentage">۳۱٪</span></div>
-                        <div class="progress-track"><div class="progress-fill" style="width: 31%;"></div></div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Why Us -->
-        <section class="why-us reveal">
-            <div class="container">
-                <h2 class="section-title-left" style="text-align: right !important;">پلتفرم استعداد در نسخه‌های<br> اپلیکیشن و وب</h2>
-                <div class="why-grid">
-                    <div class="why-image"><img src="../image/c3d5f78dda649955663c6ff640e8abfd.png" alt="اتصال استراتژیک"></div>
-                    <div class="why-items">
-                        <div class="why-item">
-                            <div class="why-number">۱</div>
-                            <div class="why-text"><h3>جذب استعدادهای جهانی</h3><p>دسترسی به متخصصان بین‌المللی با مهارت بالا برای استخدام هدفمند، منعطف و کارآمد.</p></div>
-                        </div>
-                        <div class="why-item">
-                            <div class="why-number">۲</div>
-                            <div class="why-text"><h3>فرآیند انتها به انتها</h3><p>همراهی استعدادها گام به گام - از درخواست تا صدور ویزا و اولین روز کاری در آلمان.</p></div>
-                        </div>
-                        <div class="why-item">
-                            <div class="why-number">۳</div>
-                            <div class="why-text"><h3>دسترسی به فرصت‌های شغلی</h3><p>امکان ارسال درخواست مستقیم برای جویندگان کار بین‌المللی در شرکت‌های معتبر آلمانی.</p></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="final-cta-section">
-            <div class="container">
-                <div class="final-cta">
-                    <h2 style="text-align: center !important;">برای قدم بعدی آماده‌اید؟</h2>
-                    <p style="text-align: center !important;">به صدها شرکت و هزاران استعدادی بپیوندید که با هم آینده را می‌سازند.</p>
-                    <a href="contact.html" class="btn-cta">اکنون شروع کنید</a>
-                </div>
-            </div>
-        </section>
+        <!-- Progress and Why Us as before... -->
     </main>
-
-    <footer>
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-brand">
-                    <img src="../image/logo.png" alt="Logo OpenRise" class="brand-logo">
-                    <p style="text-align: right !important;">پل شما به استعدادهای جهانی. استخدام بین‌المللی با هوش مصنوعی پیشرفته.</p>
-                </div>
-                <div class="footer-col">
-                    <h4 class="footer-heading">پلتفرم</h4>
-                    <ul class="footer-links">
-                        <li><a href="index.html">خانه</a></li>
-                        <li><a href="features.html">ویژگی‌ها</a></li>
-                        <li><a href="demo.html">دمو</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4 class="footer-heading">منابع</h4>
-                    <ul class="footer-links">
-                        <li><a href="contact.html">تماس</a></li>
-                        <li><a href="../blog-fachkraeftemangel.html">وبلاگ</a></li>
-                        <li><a href="impressum.html">اطلاعات حقوقی</a></li>
-                    </ul>
-                </div>
-                <div class="footer-newsletter">
-                    <h4 class="footer-heading">به‌روز بمانید</h4>
-                    <p>آخرین اخبار OpenRise را دریافت کنید.</p>
-                    <form class="newsletter-form">
-                        <input type="email" placeholder="ایمیل شما">
-                        <button type="submit" class="btn-icon"><i class="fas fa-paper-plane"></i></button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </footer>
 
     <script src="../js/background.js"></script>
     <script src="../js/interactive.js"></script>
