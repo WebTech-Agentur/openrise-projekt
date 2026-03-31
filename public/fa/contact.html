@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تماس با ما | OpenRise</title>
+    <link rel="icon" type="image/png" href="../image/favicon.png?v=4">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body { font-family: 'Vazirmatn', sans-serif !important; direction: rtl; text-align: right; }
+        .contact-container { display: grid; grid-template-columns: 1fr 1.5fr; gap: 4rem; margin-top: 4rem; }
+        .contact-info { padding: 3rem; background: var(--card-bg); border-radius: 20px; border: 1px solid var(--border); }
+        .contact-form { padding: 3rem; background: var(--card-bg); border-radius: 20px; border: 1px solid var(--border); }
+        .form-group { margin-bottom: 1.5rem; text-align: right; }
+        .form-group label { display: block; margin-bottom: 0.5rem; }
+        .form-group input, .form-group textarea { width: 100%; padding: 0.8rem; border: 1px solid var(--border); border-radius: 10px; background: var(--bg-main); color: var(--text-main); }
+        .btn-submit { width: 100%; padding: 1rem; background: var(--primary); color: white; border: none; border-radius: 10px; cursor: pointer; font-weight: 700; }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="container nav-container">
+            <a href="index.html" class="logo"><img src="../image/logo.png" alt="OpenRise" class="brand-logo"></a>
+            <div class="nav-links">
+                <a href="index.html">خانه</a>
+                <a href="features.html">ویژگی‌ها</a>
+                <a href="contact.html" class="active">تماس</a>
+                <div class="lang-switcher-nav">
+                    <a href="../contact.html" class="lang-link">DE</a>
+                    <a href="../en/contact.html" class="lang-link">EN</a>
+                    <a href="contact.html" class="lang-link active">FA</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container" style="padding-top: 10rem; padding-bottom: 5rem;">
+        <h1 class="text-center">با ما در تماس باشید</h1>
+        <p class="text-center text-muted">ما آماده پاسخگویی به سوالات شما درباره استخدام بین‌المللی هستیم.</p>
+
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>اطلاعات تماس</h3>
+                <p><i class="fas fa-envelope"></i> info@openrise.de</p>
+                <p><i class="fas fa-map-marker-alt"></i> آلمان، اسنابروک</p>
+                <div class="social-links" style="margin-top: 2rem;">
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+
+            <form class="contact-form">
+                <div class="form-group">
+                    <label>نام نام خانوادگی</label>
+                    <input type="text" placeholder="نام خود را وارد کنید">
+                </div>
+                <div class="form-group">
+                    <label>ایمیل</label>
+                    <input type="email" placeholder="ایمیل خود را وارد کنید">
+                </div>
+                <div class="form-group">
+                    <label>پیام شما</label>
+                    <textarea rows="5" placeholder="چگونه می‌توانیم به شما کمک کنیم؟"></textarea>
+                </div>
+                <button type="submit" class="btn-submit">ارسال پیام</button>
+            </form>
+        </div>
+    </main>
+
+    <script src="../js/background.js"></script>
+    <script src="../js/interactive.js"></script>
+    <script src="../js/script.js"></script>
+</body>
+</html>
