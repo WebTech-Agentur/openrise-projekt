@@ -1637,7 +1637,7 @@ input:not(:checked)+.slider .sun-icon {
 
 .progress-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2.5rem;
     margin-top: 4rem;
 }
@@ -2303,11 +2303,31 @@ input:not(:checked)+.slider .sun-icon {
 
     .card-grid,
     .team-grid,
-    .footer-grid {
-        grid-template-columns: 1fr;
+    .footer-grid,
+    .bento-grid {
+        grid-template-columns: 1fr !important;
         gap: 1.5rem;
     }
 
+    .bento-large, .bento-wide, .bento-square {
+        grid-column: span 1 !important;
+        grid-row: span 1 !important;
+    }
+
+    .bento-item {
+        padding: 2rem 1.5rem;
+        min-height: auto;
+    }
+
+    .bento-large .bento-visual {
+        height: 150px;
+        margin-bottom: 2rem;
+    }
+
+    .bento-large .bento-text h3 {
+        font-size: 1.5rem;
+    }
+    
     .legal-card {
         padding: 1.5rem !important;
     }
@@ -2615,23 +2635,31 @@ input:not(:checked)+.slider .sun-icon {
 
     .hero-content-left {
         margin: 0 auto;
+        padding: 0 1rem;
     }
 
     .hero-content-left .cta-buttons {
         justify-content: center;
     }
 
+    .hero-reels-right {
+        height: 500px;
+        margin-top: 3rem;
+    }
+
+    .reels-container {
+        width: 280px;
+        height: 480px;
+        margin: 0 auto 4rem;
+    }
+
     .reel-nav {
         right: auto;
-        bottom: -60px;
+        bottom: -40px;
         top: auto;
         left: 50%;
         transform: translateX(-50%);
         flex-direction: row;
-    }
-
-    .reels-container {
-        margin-bottom: 4rem;
     }
 }
 

@@ -40,17 +40,28 @@
             align-items: center;
             gap: 0.5rem;
         }
-        
+
         [data-theme="dark"] .blog-meta span {
             background: rgba(15, 23, 42, 0.5);
             border-color: rgba(255, 255, 255, 0.05);
         }
 
         /* Color Variations */
-        .text-accent { color: #f59e0b !important; }
-        .text-success { color: #10b981 !important; }
-        .bg-accent-soft { background: rgba(245, 158, 11, 0.1) !important; }
-        .bg-success-soft { background: rgba(16, 185, 129, 0.1) !important; }
+        .text-accent {
+            color: #f59e0b !important;
+        }
+
+        .text-success {
+            color: #10b981 !important;
+        }
+
+        .bg-accent-soft {
+            background: rgba(245, 158, 11, 0.1) !important;
+        }
+
+        .bg-success-soft {
+            background: rgba(16, 185, 129, 0.1) !important;
+        }
 
         .blog-content {
             max-width: 800px;
@@ -75,8 +86,15 @@
             z-index: -1;
         }
 
-        .dot-left { left: -100px; top: 100px; }
-        .dot-right { right: -100px; top: 600px; }
+        .dot-left {
+            left: -100px;
+            top: 100px;
+        }
+
+        .dot-right {
+            right: -100px;
+            top: 600px;
+        }
 
         .abstract-shape {
             position: absolute;
@@ -126,7 +144,7 @@
             float: right;
             margin: 1.5rem 0 1.5rem 2.5rem;
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            filter: drop-shadow(0 15px 25px rgba(0,0,0,0.1));
+            filter: drop-shadow(0 15px 25px rgba(0, 0, 0, 0.1));
             border-radius: 2rem;
             background: white;
             padding: 5px;
@@ -141,8 +159,11 @@
         .blog-content::before {
             content: '';
             position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background-image: 
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image:
                 radial-gradient(circle at 2px 2px, var(--border) 1px, transparent 0);
             background-size: 40px 40px;
             opacity: 0.15;
@@ -213,6 +234,7 @@
             color: var(--primary);
             margin-bottom: 1rem;
         }
+
         .stat-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -397,7 +419,7 @@
         [data-theme="dark"] .highlight-box {
             background: rgba(245, 158, 11, 0.05);
         }
-        
+
         [data-theme="dark"] .highlight-box:hover {
             background: rgba(245, 158, 11, 0.1);
         }
@@ -407,8 +429,15 @@
         }
 
         @keyframes slideUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .slide-up {
@@ -421,16 +450,80 @@
 
         @media (max-width: 768px) {
             .blog-content {
-                padding: 2.5rem 1.5rem;
+                padding: 2.5rem 1.25rem;
                 margin: -2rem 1rem 2rem;
+                border-radius: 1.5rem;
             }
 
             .blog-header h1 {
-                font-size: 2.2rem;
+                font-size: 2rem;
+                padding: 0 1rem;
+            }
+
+            .blog-meta {
+                flex-wrap: wrap;
+                gap: 0.75rem;
+                padding: 0 1rem;
+            }
+
+            .blog-meta span {
+                font-size: 0.75rem;
+                padding: 0.4rem 0.75rem;
             }
 
             .stat-grid {
-                grid-template-columns: 1fr 1fr;
+                grid-template-columns: 1fr;
+            }
+
+            .stat-card {
+                padding: 1.5rem;
+            }
+
+            .side-illustration {
+                float: none !important;
+                margin: 0 auto 2rem !important;
+                display: block;
+                width: 180px;
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .info-card {
+                padding: 1.5rem;
+            }
+
+            .abstract-shape, .decoration-dot {
+                display: none;
+            }
+            
+            .back-link {
+                margin-bottom: 2rem;
+                font-size: 0.9rem;
+            }
+            
+            .blog-content h2 {
+                font-size: 1.5rem;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.5rem;
+            }
+            
+            .blog-content h2 i {
+                font-size: 1.25rem;
+                margin-bottom: 0.25rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .blog-header h1 {
+                font-size: 1.75rem;
+            }
+            
+            .blog-content p {
+                font-size: 1rem;
             }
         }
     </style>
@@ -493,9 +586,11 @@
                     Wirtschaftswachstum. In diesem Artikel beleuchten wir die aktuelle Lage und zeigen Wege auf, wie
                     Unternehmen <strong>Fachkräfte aus dem Ausland</strong> gewinnen können.</p>
 
-                <h2 id="statistik-2026" class="fade-in"><i class="fas fa-chart-bar"></i> 1. Der Status Quo: Fachkräftemangel in Zahlen</h2>
+                <h2 id="statistik-2026" class="fade-in"><i class="fas fa-chart-bar"></i> 1. Der Status Quo:
+                    Fachkräftemangel in Zahlen</h2>
                 <img src="image/blog_vibe_1.png" alt="Illustration Matching" class="side-illustration fade-in">
-                <p class="fade-in">Laut aktuellen Berichten des Instituts der Deutschen Wirtschaft (IW Köln) und Branchenverbänden wie
+                <p class="fade-in">Laut aktuellen Berichten des Instituts der Deutschen Wirtschaft (IW Köln) und
+                    Branchenverbänden wie
                     Bitkom und VDI zeigt sich Anfang 2026 ein deutliches Bild des Bedarfs:</p>
 
                 <div class="stat-grid fade-in">
@@ -527,43 +622,61 @@
                     Infrastruktur nicht umsetzbar. Der VDI meldet weiterhin einen hohen Bedarf, insbesondere bei
                     Bauingenieur:innen und Fachkräften für erneuerbare Energien.</p>
 
-                <h2 id="ausland-gewinnen"><i class="fas fa-globe-americas"></i> 2. Fachkräfte aus dem Ausland gewinnen</h2>
-                <img src="image/blog_vibe_2.png" alt="Onboarding Illustration" class="side-illustration fade-in" style="float: left; margin: 1rem 2rem 1rem 0;">
-                <p>Angesichts der inländischen Lücke wird die Rekrutierung internationaler Talente zur strategischen
-                    Notwendigkeit. Deutschland hat hierfür in den letzten Jahren die rechtlichen Rahmenbedingungen
-                    deutlich verbessert.</p>
+                <h2 id="ausland-gewinnen"><i class="fas fa-globe-americas"></i> 2. Fachkräfte aus dem Ausland gewinnen
+                </h2>
+                <img src="image/blog_vibe_2.png" alt="Onboarding Illustration" class="side-illustration fade-in"
+                    style="float: left; margin: 1rem 2rem 1rem 0;">
+                <p>Angesichts des zunehmenden Fachkräftemangels in Deutschland wird die Gewinnung von Fachkräften aus
+                    dem Ausland immer wichtiger. Internationale Talente spielen eine entscheidende Rolle, um offene
+                    Stellen in Bereichen wie IT, Ingenieurwesen und Gesundheitswesen zu besetzen.
+
+                    Deutschland hat in den letzten Jahren die rechtlichen Rahmenbedingungen deutlich verbessert, um die
+                    Zuwanderung qualifizierter Arbeitskräfte zu erleichtern. Dazu gehören vereinfachte Visaverfahren,
+                    schnellere Anerkennung von Abschlüssen und gezielte Programme zur Integration internationaler
+                    Fachkräfte.
+
+                    Für Unternehmen bietet die Rekrutierung internationaler Talente große Chancen: Sie sichern nicht nur
+                    ihren Personalbedarf, sondern stärken auch Innovation und Wettbewerbsfähigkeit in einem globalen
+                    Markt.</p>
 
                 <div class="highlight-box">
                     <h4>Vorteile internationaler Talente:</h4>
                     <ul style="list-style: none; padding-left: 0;">
                         <li><i class="fas fa-check-circle"></i> Schließung spezifischer Qualifikationslücken</li>
-                        <li><i class="fas fa-check-circle"></i> Erhöhung der Innovationskraft durch diverse Perspektiven</li>
+                        <li><i class="fas fa-check-circle"></i> Erhöhung der Innovationskraft durch diverse Perspektiven
+                        </li>
                         <li><i class="fas fa-check-circle"></i> Stärkung der globalen Wettbewerbsfähigkeit</li>
                     </ul>
                 </div>
 
-                <h2 id="visum-prozesse" class="fade-in"><i class="fas fa-passport"></i> 3. Visum- und Einreiseprozesse: Das neue Fachkräfteeinwanderungsgesetz</h2>
-                <p class="fade-in">Das modernisierte Fachkräfteeinwanderungsgesetz bietet zwei zentrale Wege für den Markteintritt in
-                    Deutschland:</p>
+                <h2 id="visum-prozesse" class="fade-in"><i class="fas fa-passport"></i> 3. Visum- und Einreiseprozesse:
+                    Das neue Fachkräfteeinwanderungsgesetz</h2>
+                <p class="fade-in">Das modernisierte Fachkräfteeinwanderungsgesetz bietet zwei zentrale Wege für den
+                    Zugang zum deutschen Arbeitsmarkt und erleichtert es, Fachkräfte aus dem Ausland zu gewinnen.</p>
 
                 <div class="info-grid fade-in">
                     <div class="info-card">
                         <h3>Die Chancenkarte (Opportunity Card)</h3>
-                        <p>Seit 2024 ermöglicht die Chancenkarte Fachkräften aus Drittstaaten die Einreise zur Arbeitssuche. Die
-                            Vergabe basiert auf einem Punktesystem, das Kriterien wie Qualifikation, Sprachkenntnisse (Deutsch
-                            A1 oder Englisch B2), Berufserfahrung und Alter berücksichtigt. <strong>Arbeiten in Deutschland
+                        <p>Seit 2024 ermöglicht die Chancenkarte Fachkräften aus Drittstaaten die Einreise zur
+                            Arbeitssuche. Die
+                            Vergabe basiert auf einem Punktesystem, das Kriterien wie Qualifikation, Sprachkenntnisse
+                            (Deutsch
+                            A1 oder Englisch B2), Berufserfahrung und Alter berücksichtigt. <strong>Arbeiten in
+                                Deutschland
                                 Visum</strong>-Prozesse wurden dadurch deutlich flexibler.</p>
                         <div class="hover-reveal">
                             <span>Voraussetzungen im Detail</span>
                             <div class="reveal-content">
-                                Deutsch A1 oder Englisch B2, Berufserfahrung und ein Mindestalter sind Voraussetzungen für das Punktesystem.
+                                Deutsch A1 oder Englisch B2, Berufserfahrung und ein Mindestalter sind Voraussetzungen
+                                für das Punktesystem.
                             </div>
                         </div>
                     </div>
 
                     <div class="info-card">
                         <h3>Die Blaue Karte EU</h3>
-                        <p>Für hochqualifizierte Akademiker und IT-Spezialisten bleibt die Blaue Karte EU der Goldstandard. Mit
+                        <p>Für hochqualifizierte Akademiker und IT-Spezialisten bleibt die Blaue Karte EU der
+                            Goldstandard. Mit
                             angepassten Gehaltsschwellen (Stand 2026: ca. 45.934 € für Mangelberufe) ist der Zugang zum
                             deutschen Arbeitsmarkt für Experten so einfach wie nie zuvor.</p>
                         <div class="hover-reveal">
@@ -576,10 +689,10 @@
                 </div>
 
                 <h2 id="fazit"><i class="fas fa-check-double"></i> Fazit: Proaktive Rekrutierung als Schlüssel</h2>
-                <p>Der Fachkräftemangel ist eine Daueraufgabe. Unternehmen, die heute in internationale Rekrutierung,
-                    digitale Onboarding-Prozesse und eine offene Unternehmenskultur investieren, sichern sich die
-                    Talente von morgen. OpenRise unterstützt Sie dabei, diese Prozesse zu automatisieren und die besten
-                    Köpfe weltweit zu finden.</p>
+                <p>Der Fachkräftemangel ist eine anhaltende Herausforderung. Unternehmen, die in internationale
+                    Rekrutierung, automatisierte Onboarding-Prozesse und eine offene Unternehmenskultur investieren,
+                    sichern sich die besten Talente von morgen. Mit OpenRise können Sie Ihre Recruiting-Prozesse
+                    digitalisieren und weltweit die passenden Fachkräfte finden.</p>
 
                 <div style="text-align: center; margin-top: 3rem;">
                     <a href="contact.html" class="btn btn-primary">Beratung anfordern</a>
