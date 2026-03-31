@@ -67,7 +67,7 @@ function initScrollProgress() {
 
 // 3. Lightweight 3D Tilt Effect
 function init3DTilt() {
-    const tiltElements = document.querySelectorAll('.card, .problem-card, .why-image, .bento-item, .premium-solution-card');
+    const tiltElements = document.querySelectorAll('.card, .problem-card, .why-image, .bento-item, .premium-solution-card, .interactive-card, .mock-ui-card');
     
     if (window.matchMedia("(pointer: coarse)").matches) return; // Disable on mobile/touch
 
@@ -103,7 +103,7 @@ function init3DTilt() {
 
 // 4. Dynamic Glow Hover (Glassmorphism effect)
 function initCardGlow() {
-    const cards = document.querySelectorAll('.card, .problem-card, .bento-item, .premium-solution-card');
+    const cards = document.querySelectorAll('.card, .problem-card, .bento-item, .premium-solution-card, .interactive-card, .mock-ui-card');
     
     if (window.matchMedia("(pointer: coarse)").matches) return;
 

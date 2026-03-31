@@ -2440,16 +2440,36 @@ input:not(:checked) + .slider .sun-icon {
 }
 
 /* Card Glow Effect (Glassmorphism + Interactive) */
-.card, .problem-card {
+.card, .problem-card, .bento-item, .premium-solution-card, .interactive-card, .mock-ui-card {
     position: relative;
     overflow: hidden; /* Ensure glow doesn't bleed */
 }
 
-.card::before, .problem-card::before {
-    display: none;
+.card::before, .problem-card::before, .bento-item::before, .premium-solution-card::before, .interactive-card::before, .mock-ui-card::before {
+    content: "";
+    position: absolute;
+    inset: 0px;
+    background: radial-gradient(400px circle at var(--mouse-x, -999px) var(--mouse-y, -999px), rgba(37, 99, 235, 0.08), transparent 40%);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    z-index: 0;
+    pointer-events: none;
 }
 
-.card > *, .problem-card > * {
+[data-theme="dark"] .card::before, 
+[data-theme="dark"] .problem-card::before, 
+[data-theme="dark"] .bento-item::before, 
+[data-theme="dark"] .premium-solution-card::before,
+[data-theme="dark"] .interactive-card::before,
+[data-theme="dark"] .mock-ui-card::before {
+    background: radial-gradient(600px circle at var(--mouse-x, -999px) var(--mouse-y, -999px), rgba(37, 99, 235, 0.15), transparent 40%);
+}
+
+.card:hover::before, .problem-card:hover::before, .bento-item:hover::before, .premium-solution-card:hover::before, .interactive-card:hover::before, .mock-ui-card:hover::before {
+    opacity: 1;
+}
+
+.card > *, .problem-card > *, .bento-item > *, .premium-solution-card > *, .interactive-card > *, .mock-ui-card > * {
     position: relative;
     z-index: 2;
 }

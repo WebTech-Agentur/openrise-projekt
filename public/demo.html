@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interaktive Demo | OpenRise</title>
+    <link rel="icon" type="image/png" href="image/favicon.png">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Demo Specific Styles */
+        .demo-simulator {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: calc(var(--radius) * 1.5);
+            box-shadow: var(--shadow-lg);
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            min-height: 600px;
+            margin: 4rem 0;
+            position: relative;
+        }
+
+        .demo-sidebar {
+            background: rgba(15, 23, 42, 0.03);
+            border-right: 1px solid var(--border);
+            padding: 2rem 1rem;
+        }
+
+        [data-theme="dark"] .demo-sidebar {
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .demo-nav-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            border-radius: var(--radius);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-bottom: 0.5rem;
+            color: var(--text-muted);
+            border: 1px solid transparent;
+        }
+
+        .demo-nav-item:hover {
+            background: rgba(59, 130, 246, 0.05);
+            color: var(--primary);
+        }
+
+        .demo-nav-item.active {
+            background: var(--primary);
+            color: white;
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+        }
+
+        .demo-content {
+            padding: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .demo-screen {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .demo-screen.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .mock-ui-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            margin-top: 1.5rem;
+            box-shadow: var(--shadow);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .mock-ui-card:hover {
+            box-shadow: var(--shadow-lg);
+            border-color: rgba(37, 99, 235, 0.2);
+        }
+
+        .mock-ui-card:hover h4, 
+        .mock-ui-card:hover strong,
+        .mock-ui-card:hover span {
+             color: var(--primary);
+             transition: color 0.3s ease;
+        }
+
+        .status-badge {
+            padding: 0.25rem 0.75rem;
+            border-radius: 100px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .status-processing {
+            background: rgba(59, 130, 246, 0.1);
+            color: #3b82f6;
+        }
+
+        .status-completed {
+            background: rgba(16, 185, 129, 0.1);
+            color: #0fb880;
+        }
+
+        .status-pending {
+            background: rgba(245, 158, 11, 0.1);
+            color: #f59e0b;
+        }
+
+        .stat-bar-container {
+            width: 100%;
+            height: 6px;
+            background: var(--border);
+            border-radius: 10px;
+            margin-top: 1rem;
+            overflow: hidden;
+        }
+
+        .stat-bar-fill {
+            height: 100%;
+            background: var(--primary);
+            border-radius: 10px;
+            animation: growBar 2s ease-out forwards;
+        }
+
+        @keyframes growBar {
+            from {
+                width: 0;
+            }
+
+            to {
+                width: var(--fill-width);
+            }
+        }
+
+        .activity-item {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            animation: slideIn 0.5s ease backwards;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .demo-hero {
+            text-align: center;
+            padding: 8rem 0 4rem;
+            position: relative;
+        }
+
+        .demo-hero h1 {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, var(--text-main) 0%, var(--primary) 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .demo-interactive-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .interactive-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 2.5rem;
+            text-align: center;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            --card-color: var(--primary);
+            /* Fallback */
+        }
+
+        .interactive-card.matching {
+            --card-color: #3b82f6;
+        }
+
+        .interactive-card.automation {
+            --card-color: #f65cca;
+        }
+
+        .interactive-card.compliance {
+            --card-color: #10b981;
+        }
+
+        .interactive-card:hover {
+            box-shadow: var(--shadow-lg);
+            border-color: rgba(37, 99, 235, 0.3);
+        }
+
+        .interactive-card:hover .card-visual {
+            transform: translateY(-5px) scale(1.05);
+            filter: drop-shadow(0 15px 25px rgba(0, 0, 0, 0.15));
+        }
+
+        .interactive-card i {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+
+        .pulse-btn {
+            position: relative;
+        }
+
+        .pulse-btn::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            height: 100%;
+            background: var(--primary);
+            border-radius: inherit;
+            transform: translate(-50%, -50%) scale(1);
+            opacity: 0;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: translate(-50%, -50%) scale(1);
+                opacity: 0.5;
+            }
+
+            100% {
+                transform: translate(-50%, -50%) scale(1.5);
+                opacity: 0;
+            }
+        }
+
+        /* Advanced Visualizations for Interactive Cards */
+        .card-visual {
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 2rem;
+            position: relative;
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            z-index: 2;
+        }
+
+        /* KI-Matching Visual Refined */
+        .matching-visual .ai-core {
+            font-size: 3.5rem;
+            color: #3b82f6;
+            position: relative;
+            z-index: 2;
+        }
+
+        .matching-visual .ai-ring {
+            position: absolute;
+            width: 90px;
+            height: 90px;
+            border: 2px dashed rgba(59, 130, 246, 0.6);
+            border-radius: 50%;
+            animation: rotate 12s linear infinite;
+        }
+
+        /* Automation Visual Refined */
+        .automation-visual .gear-container {
+            position: relative;
+            font-size: 3.5rem;
+            color: #8b5cf6;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .automation-visual .gear-main {
+            animation: rotate 8s linear infinite;
+        }
+
+        .automation-visual .data-flow {
+            position: absolute;
+            width: 100px;
+            height: 4px;
+            background: var(--border);
+            border-radius: 10px;
+            overflow: hidden;
+            bottom: 5px;
+            /* Closer to gear */
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .automation-visual .data-bit {
+            width: 30px;
+            height: 100%;
+            background: #8b5cf6;
+            box-shadow: 0 0 15px #8b5cf6;
+            animation: flow 1.5s linear infinite;
+        }
+
+        /* Compliance Visual */
+        .compliance-visual .shield-box {
+            font-size: 3.5rem;
+            color: #10b981;
+            position: relative;
+        }
+
+        .compliance-visual .scan-line {
+            position: absolute;
+            top: 0;
+            left: -10%;
+            width: 120%;
+            height: 2px;
+            background: #34d399;
+            box-shadow: 0 0 8px #10b981;
+            animation: scan 3s ease-in-out infinite;
+        }
+
+        @keyframes pulse-glow {
+
+            0%,
+            100% {
+                transform: scale(1);
+                box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+            }
+
+            50% {
+                transform: scale(1.1);
+                box-shadow: 0 0 40px rgba(59, 130, 246, 0.8);
+            }
+        }
+
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes node-float {
+
+            0%,
+            100% {
+                transform: translateY(0);
+                opacity: 0.5;
+            }
+
+            50% {
+                transform: translateY(-15px);
+                opacity: 1;
+            }
+        }
+
+        @keyframes flow {
+            from {
+                transform: translateX(-40px);
+            }
+
+            to {
+                transform: translateX(120px);
+            }
+        }
+
+        @keyframes scan {
+
+            0%,
+            100% {
+                top: 0%;
+                opacity: 0;
+            }
+
+            45%,
+            55% {
+                opacity: 1;
+            }
+
+            50% {
+                top: 100%;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .demo-simulator {
+                grid-template-columns: 1fr;
+            }
+
+            .demo-sidebar {
+                border-right: none;
+                border-bottom: 1px solid var(--border);
+                display: flex;
+                overflow-x: auto;
+                padding: 1rem;
+            }
+
+            .demo-nav-item {
+                margin-bottom: 0;
+                margin-right: 0.5rem;
+                white-space: nowrap;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Interactive UI Elements -->
+    <div class="scroll-progress-container">
+        <div class="scroll-progress-bar" id="scroll-progress"></div>
+    </div>
+
+    <nav>
+        <div class="container nav-container">
+            <a href="index.html" class="logo"><img src="image/logo.png" alt="OpenRise Logo" class="brand-logo"></a>
+            <div class="mobile-menu-toggle"><i class="fas fa-bars"></i></div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="features.html">Features</a>
+                <a href="demo.html" class="active">Demo</a>
+                <a href="team.html">Team & Vision</a>
+                <a href="contact.html">Kontakt</a>
+                <div class="theme-switch-wrapper">
+                    <label class="theme-switch" for="checkbox">
+                        <input type="checkbox" id="checkbox" />
+                        <div class="slider round">
+                            <i class="fas fa-sun sun-icon"></i>
+                            <i class="fas fa-moon moon-icon"></i>
+                        </div>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="demo-hero reveal">
+            <div class="hero-bg-accent"></div>
+            <div class="container">
+                <h1>Erlebe die Plattform in Aktion</h1>
+                <p class="sub" style="max-width: 700px; margin: 0 auto;">Entdecken Sie interaktiv, wie OpenRise den
+                    Rekrutierungsprozess automatisiert und globale Talente mit Ihrem Unternehmen verbindet.</p>
+                <div style="margin-top: 3rem;">
+                    <a href="#simulator" class="btn btn-primary pulse-btn">Simulator starten <i class="fas fa-play"
+                            style="margin-left: 0.5rem;"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Tiles Section -->
+        <section class="container reveal">
+            <div class="demo-interactive-grid">
+                <div class="interactive-card matching">
+                    <div class="card-visual matching-visual">
+                        <div class="ai-ring"></div>
+                        <div class="ai-core"><i class="fas fa-robot"></i></div>
+                    </div>
+                    <h3>KI-Matching</h3>
+                    <p>Erfahren Sie, wie unsere Algorithmen Skill-Gaps identifizieren und passgenaue Kandidaten finden.
+                    </p>
+                </div>
+                <div class="interactive-card automation">
+                    <div class="card-visual automation-visual">
+                        <div class="gear-container">
+                            <i class="fas fa-cog gear-main"></i>
+                        </div>
+                        <div class="data-flow">
+                            <div class="data-bit"></div>
+                        </div>
+                    </div>
+                    <h3>Automatisierung</h3>
+                    <p>Sehen Sie, wie papiergebundene Prozesse in digitale Workflows umgewandelt werden.</p>
+                </div>
+                <div class="interactive-card compliance">
+                    <div class="card-visual compliance-visual">
+                        <div class="shield-box">
+                            <i class="fas fa-shield-alt"></i>
+                            <div class="scan-line"></div>
+                        </div>
+                    </div>
+                    <h3>Rechtssicherheit</h3>
+                    <p>Keine Sorgen mehr um Visa-Fragen – wir simulieren den Compliance-Check live.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Live Demo Simulator -->
+        <section id="simulator" class="container reveal" style="padding-top: 6rem; padding-bottom: 3rem;">
+            <div class="section-title text-center">
+                <h2 style="margin-bottom: 2rem;">Interaktiver Simulator</h2>
+                <p>Klicken Sie auf die Menüpunkte links, um verschiedene Funktionen der Plattform zu testen.</p>
+            </div>
+
+            <div class="demo-simulator">
+                <div class="demo-sidebar">
+                    <div class="demo-nav-item active" onclick="switchScreen('dashboard')">
+                        <i class="fas fa-th-large"></i>
+                        <span>Dashboard</span>
+                    </div>
+                    <div class="demo-nav-item" onclick="switchScreen('matching')">
+                        <i class="fas fa-users"></i>
+                        <span>Talent Matching</span>
+                    </div>
+                    <div class="demo-nav-item" onclick="switchScreen('documents')">
+                        <i class="fas fa-file-signature"></i>
+                        <span>Dokumente</span>
+                    </div>
+                    <div class="demo-nav-item" onclick="switchScreen('visa')">
+                        <i class="fas fa-passport"></i>
+                        <span>Visum-Status</span>
+                    </div>
+                </div>
+
+                <div class="demo-content">
+                    <!-- Dashboard Screen -->
+                    <div id="screen-dashboard" class="demo-screen active">
+                        <div class="d-flex justify-content-between align-items-center mb-4">
+                            <h2 style="margin-bottom: 0;">Dashboard Übersicht</h2>
+                            <span class="status-badge status-completed"><i class="fas fa-sync fa-spin"
+                                    style="margin-right: 0.5rem;"></i> Live Update</span>
+                        </div>
+                        <img src="image/demo_dashboard.png" alt="Dashboard Mockup"
+                            style="width: 60%; margin: 0 auto 3rem; display: block; border-radius: var(--radius); box-shadow: var(--shadow-lg);">
+
+                        <div class="grid"
+                            style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 2.5rem;">
+                            <div class="mock-ui-card" style="margin-top: 0;">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <h4 style="margin-bottom: 0;">Offene Stellen</h4>
+                                    <i class="fas fa-briefcase text-muted"></i>
+                                </div>
+                                <p
+                                    style="font-size: 2.2rem; font-weight: 700; color: var(--primary); margin: 0.5rem 0;">
+                                    12</p>
+                                <div class="stat-bar-container">
+                                    <div class="stat-bar-fill" style="--fill-width: 75%;"></div>
+                                </div>
+                                <p class="text-muted small mt-2">+2 seit letzter Woche</p>
+                            </div>
+                            <div class="mock-ui-card" style="margin-top: 0;">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <h4 style="margin-bottom: 0;">Kandidaten</h4>
+                                    <i class="fas fa-user-check text-muted"></i>
+                                </div>
+                                <p
+                                    style="font-size: 2.2rem; font-weight: 700; color: var(--primary); margin: 0.5rem 0;">
+                                    148</p>
+                                <div class="stat-bar-container">
+                                    <div class="stat-bar-fill" style="--fill-width: 85%; background: #10b981;"></div>
+                                </div>
+                                <p class="text-muted small mt-2">+15 neue Bewerbungen</p>
+                            </div>
+                        </div>
+
+                        <div class="recent-activity">
+                            <h4 style="margin-bottom: 1.5rem;">Kürzliche Aktivitäten</h4>
+                            <div class="activity-item" style="animation-delay: 0.1s;">
+                                <div style="width: 8px; height: 8px; background: #3b82f6; border-radius: 50%;"></div>
+                                <span class="text-muted small">Vor 2 Min.</span>
+                                <span>Neuer Kandidat für <strong>Software Engineer</strong> gematcht.</span>
+                            </div>
+                            <div class="activity-item" style="animation-delay: 0.2s;">
+                                <div style="width: 8px; height: 8px; background: #10b981; border-radius: 50%;"></div>
+                                <span class="text-muted small">Vor 15 Min.</span>
+                                <span>Visumantrag von <strong>Alex J.</strong> genehmigt.</span>
+                            </div>
+                            <div class="activity-item" style="animation-delay: 0.3s; border-bottom: none;">
+                                <div style="width: 8px; height: 8px; background: #f59e0b; border-radius: 50%;"></div>
+                                <span class="text-muted small">Vor 1 Std.</span>
+                                <span>Dokumentenprüfung für <strong>Elena R.</strong> gestartet.</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Matching Screen -->
+                    <div id="screen-matching" class="demo-screen">
+                        <h2 style="margin-bottom: 1.5rem;">Talent Matching System</h2>
+                        <p style="margin-bottom: 2.5rem; color: var(--text-muted);">Unsere KI analysiert Anforderungen
+                            in Echtzeit und findet die besten Talente weltweit.</p>
+                        <div class="mock-ui-card">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <strong>Senior Cloud Engineer</strong>
+                                <span class="status-badge status-processing">98% Match</span>
+                            </div>
+                            <p class="text-muted mt-2">Kandidat: Marcus S. | 10 Jahre Erfahrung | Spezialisierung:
+                                AWS/Azure</p>
+                            <button class="btn btn-outline-primary btn-sm mt-3"
+                                onclick="alert('Matching-Details werden geladen...')">Details ansehen</button>
+                        </div>
+                        <div class="mock-ui-card">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <strong>Frontend Architect</strong>
+                                <span class="status-badge status-processing">85% Match</span>
+                            </div>
+                            <p class="text-muted mt-2">Kandidat: Elena P. | 6 Jahre Erfahrung | Spezialisierung:
+                                React/Vue</p>
+                            <button class="btn btn-outline-primary btn-sm mt-3">Kontaktieren</button>
+                        </div>
+                    </div>
+
+                    <!-- Documents Screen -->
+                    <div id="screen-documents" class="demo-screen">
+                        <h2 style="margin-bottom: 2.5rem;">Automatisierung-Workflows</h2>
+                        <img src="image/demo_automation.png" alt="Automation Mockup"
+                            style="width: 60%; margin: 0 auto 3.5rem; display: block; border-radius: var(--radius);">
+                        <div class="mock-ui-card">
+                            <div class="d-flex justify-content-between">
+                                <span>Arbeitsvertrag_Entwurf.pdf</span>
+                                <span class="status-badge status-completed">Signiert</span>
+                            </div>
+                        </div>
+                        <div class="mock-ui-card">
+                            <div class="d-flex justify-content-between">
+                                <span>Qualifikationsnachweis.zip</span>
+                                <span class="status-badge status-processing">Prüfung läuft</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Visa Screen -->
+                    <div id="screen-visa" class="demo-screen">
+                        <div class="d-flex justify-content-between align-items-center mb-4">
+                            <h2>Visum Verfolgung</h2>
+                            <div class="visa-percentage" style="text-align: right;">
+                                <span style="font-size: 1.5rem; font-weight: 700; color: #3b82f6;">65%</span>
+                                <p class="text-muted small">Abgeschlossen</p>
+                            </div>
+                        </div>
+
+                        <!-- Progress Bar -->
+                        <div
+                            style="width: 100%; height: 8px; background: var(--border); border-radius: 100px; margin-bottom: 3rem; overflow: hidden;">
+                            <div
+                                style="width: 65%; height: 100%; background: linear-gradient(90deg, #3b82f6, #60a5fa); border-radius: 100px; box-shadow: 0 0 15px rgba(59, 130, 246, 0.4);">
+                            </div>
+                        </div>
+
+                        <div class="grid" style="display: grid; grid-template-columns: 1.5fr 1fr; gap: 2rem;">
+                            <div class="timeline"
+                                style="border-left: 2px dashed var(--border); padding-left: 2rem; position: relative; margin-left: 1rem;">
+                                <div class="timeline-item" style="margin-bottom: 2rem; position: relative;">
+                                    <div
+                                        style="position: absolute; left: -2.6rem; top: 0; width: 1.2rem; height: 1.2rem; background: #10b981; border-radius: 50%; border: 3px solid var(--bg-main);">
+                                    </div>
+                                    <h4 style="margin-bottom: 0.25rem;">Dokumenteneinreichung</h4>
+                                    <p class="text-muted small">Vollständig geprüft am 15.03.2026</p>
+                                </div>
+                                <div class="timeline-item" style="margin-bottom: 2rem; position: relative;">
+                                    <div
+                                        style="position: absolute; left: -2.6rem; top: 0; width: 1.2rem; height: 1.2rem; background: #3b82f6; border-radius: 50%; border: 3px solid var(--bg-main); box-shadow: 0 0 10px rgba(59, 130, 246, 0.5);">
+                                    </div>
+                                    <h4 style="margin-bottom: 0.25rem;">Behördliche Prüfung</h4>
+                                    <p class="text-muted small">Aktueller Status: In Bearbeitung durch BAMF</p>
+                                </div>
+                                <div class="timeline-item" style="position: relative;">
+                                    <div
+                                        style="position: absolute; left: -2.6rem; top: 0; width: 1.2rem; height: 1.2rem; background: var(--border); border-radius: 50%; border: 3px solid var(--bg-main);">
+                                    </div>
+                                    <h4 style="margin-bottom: 0.25rem; opacity: 0.6;">Visumserteilung</h4>
+                                    <p class="text-muted small">Erwartet: Ende April 2026</p>
+                                </div>
+                            </div>
+
+                            <div class="visa-stats-cards">
+                                <div class="mock-ui-card" style="margin-top: 0; padding: 1.25rem;">
+                                    <p class="text-muted small mb-1">Verbleibende Zeit</p>
+                                    <p style="font-weight: 700; font-size: 1.1rem;">~ 14 Tage</p>
+                                </div>
+                                <div class="mock-ui-card" style="margin-top: 1rem; padding: 1.25rem;">
+                                    <p class="text-muted small mb-1">Nächster Schritt</p>
+                                    <p style="font-weight: 700; font-size: 1.1rem; color: #3b82f6;">Finaler Termin</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final CTA -->
+        <section class="reveal" style="padding-top: 3rem;">
+            <div class="container">
+                <div class="final-cta">
+                    <h2>Interesse geweckt?</h2>
+                    <p>Lassen Sie uns persönlich über Ihre Anforderungen sprechen.</p>
+                    <a href="contact.html" class="btn-cta">Beratung vereinbaren</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo"><img src="image/logo.png" alt="OpenRise Logo"
+                            class="brand-logo"></a>
+                    <p>Ihre Brücke zu globalen Talenten. Wir vereinfachen die komplexe Welt der internationalen
+                        Personalbeschaffung mit modernster KI.</p>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-heading">Plattform</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="features.html">Features</a></li>
+                        <li><a href="demo.html">Demo</a></li>
+                        <li><a href="team.html">Team & Vision</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-heading">Ressourcen</h4>
+                    <ul class="footer-links">
+                        <li><a href="contact.html">Kontakt</a></li>
+                        <li><a href="datenschutz.html">Datenschutz</a></li>
+                        <li><a href="impressum.html">Impressum</a></li>
+                    </ul>
+                </div>
+                <div class="footer-newsletter">
+                    <h4 class="footer-heading">Aktuell bleiben</h4>
+                    <p>Bleibe auf dem Laufenden mit den neuesten OpenRise-Nachrichten und Updates.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="E-Mail Adresse">
+                        <button type="submit" class="btn-icon"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/background.js"></script>
+    <script src="js/interactive.js"></script>
+    <script src="js/script.js"></script>
+    <script>
+        function switchScreen(screenId) {
+            // Remove active class from all nav items
+            document.querySelectorAll('.demo-nav-item').forEach(item => {
+                item.classList.remove('active');
+            });
+
+            // Add active class to clicked nav item
+            const clickedItem = Array.from(document.querySelectorAll('.demo-nav-item')).find(item => {
+                return item.getAttribute('onclick', '').includes(screenId);
+            });
+            if (clickedItem) clickedItem.classList.add('active');
+
+            // Hide all screens
+            document.querySelectorAll('.demo-screen').forEach(screen => {
+                screen.classList.remove('active');
+            });
+
+            // Show selected screen
+            document.getElementById('screen-' + screenId).classList.add('active');
+        }
+    </script>
+</body>
+
+</html>
