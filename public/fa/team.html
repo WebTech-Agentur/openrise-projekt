@@ -4,129 +4,357 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>تیم و چشم‌انداز | OpenRise</title>
+    <title>تیم و چشم‌انداز - OpenRise</title>
     <link rel="icon" type="image/png" href="../image/favicon.png?v=4">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100;300;400;700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Vazirmatn', sans-serif !important; direction: rtl; text-align: right; }
-        .team-timeline { position: relative; padding: 2rem 0; width: 100%; direction: rtl; }
-        .timeline-spine { position: absolute; left: 50%; transform: translateX(-50%); width: 2px; height: 100%; background: var(--border); }
-        .team-row { display: flex; align-items: center; justify-content: flex-start; width: 100%; margin-bottom: 4rem; position: relative; direction: rtl; }
-        .team-row.row-reverse { flex-direction: row-reverse !important; justify-content: flex-end; }
-        .member-info { flex: 1; padding: 0 2rem; text-align: right; }
-        .member-image-box { flex: 0 0 200px; }
-        .member-image img { border-radius: 50%; width: 100%; box-shadow: var(--shadow-lg); transition: transform 0.3s; }
-        .member-image img:hover { transform: scale(1.05); }
-        [dir="rtl"] .logo { margin-left: auto !important; margin-right: 0 !important; }
-        [dir="rtl"] .nav-links { flex-direction: row-reverse !important; }
-        .vision-list { padding-right: 1.5rem; }
+        body {
+            font-family: 'Vazirmatn', sans-serif;
+        }
+
+        .hero, .final-cta {
+            text-align: center !important;
+        }
+
+        .hero .container, .final-cta {
+            display: flex;
+            flex-direction: column;
+            align-items: center !important;
+        }
+
+        .nav-container {
+            flex-direction: row-reverse !important;
+        }
+
+        .nav-links {
+            flex-direction: row !important;
+            gap: 1.5rem !important;
+            margin-left: 0 !important;
+            margin-right: auto !important;
+        }
+
+        .logo {
+            margin-right: 0 !important;
+            margin-left: auto !important;
+            display: flex;
+        }
+
+        .nav-links a {
+            margin: 0 !important;
+        }
+
+        #team-vision {
+            padding-top: 4rem !important;
+        }
+        .vision-list li {
+            text-align: right;
+            padding-right: 1.5rem;
+            padding-left: 0;
+        }
+        .vision-list li::before {
+            right: 0;
+            left: auto;
+        }
+        .team-row {
+            flex-direction: row;
+        }
+        .team-row.row-reverse {
+            flex-direction: row-reverse;
+        }
+        .member-details li {
+            text-align: right;
+        }
+        .timeline-spine {
+            right: 50%;
+            left: auto;
+            transform: translateX(50%);
+        }
+        .timeline-dot {
+            right: 50%;
+            left: auto;
+            transform: translateX(50%);
+        }
+        @media (max-width: 768px) {
+            .timeline-spine {
+                right: 20px;
+                left: auto;
+            }
+            .timeline-dot {
+                right: 11px;
+                left: auto;
+            }
+            .team-row, .team-row.row-reverse {
+                flex-direction: column;
+                padding-right: 40px;
+                padding-left: 0;
+            }
+        }
     </style>
 </head>
 
 <body>
+    <!-- Interactive UI Elements -->
     <div class="scroll-progress-container">
         <div class="scroll-progress-bar" id="scroll-progress"></div>
     </div>
 
     <nav>
         <div class="container nav-container">
-            <a href="index.html" class="logo"><img src="../image/logo.png" alt="OpenRise" class="brand-logo"></a>
+            <a href="index.html" class="logo"><img src="../image/logo.png" alt="OpenRise Logo" class="brand-logo"></a>
+            <div class="mobile-menu-toggle"><i class="fas fa-bars"></i></div>
             <div class="nav-links">
-                <a href="index.html">خانه</a>
-                <a href="features.html">ویژگی‌ها</a>
-                <a href="demo.html">دمو</a>
-                <a href="team.html" class="active">تیم و چشم‌انداز</a>
-                <a href="contact.html">تماس</a>
+                <div class="theme-switch-wrapper">
+                    <label class="theme-switch" for="checkbox">
+                        <input type="checkbox" id="checkbox" />
+                        <div class="slider round">
+                            <i class="fas fa-sun sun-icon"></i>
+                            <i class="fas fa-moon moon-icon"></i>
+                        </div>
+                    </label>
+                </div>
                 <div class="lang-switcher-nav">
                     <a href="../team.html" class="lang-link">DE</a>
                     <a href="../en/team.html" class="lang-link">EN</a>
                     <a href="team.html" class="lang-link active">FA</a>
                 </div>
+                <a href="index.html">خانه</a>
+                <a href="features.html">ویژگی‌ها</a>
+                <a href="demo.html">دمو</a>
+                <a href="team.html" class="active">تیم و چشم‌انداز</a>
+                <a href="contact.html">تماس</a>
             </div>
         </div>
     </nav>
 
     <main>
-        <section class="hero reveal" style="padding-top: 8rem;">
+        <!-- Hero Section -->
+        <section id="team-hero" class="hero reveal" style="position: relative; overflow: hidden;">
+            <div class="hero-bg-accent"></div>
             <div class="container">
                 <h1>چشم‌انداز و تیم ما</h1>
-                <p class="sub">ما جهانی می‌سازیم که در آن استعداد مرزی نمی‌شناسد.</p>
+                <p class="sub">ما در حال ساختن جهانی هستیم که در آن استعداد مرزی نمی‌شناسد.</p>
             </div>
         </section>
 
-        <section class="container reveal">
-            <div class="split-section">
+        <!-- Vision Section -->
+        <section id="team-vision" class="reveal">
+            <div class="container split-section">
+                <div class="image-container">
+                    <img src="../image/0ce5943337d557b487cead46494403b1.png" alt="Vision Illustration">
+                </div>
                 <div class="content">
                     <h2>چرا OpenRise</h2>
-                    <p>چشم‌انداز ما:<br>ما رویای بازار کاری بدون شکاف را داریم – سیستمی که در آن موقعیت‌های شغلی خالی دیگر به پرسنل فعلی فشار وارد نمی‌کنند.</p>
+                    <p>چشم‌انداز ما:<br>
+                        ما رویای بازار کاری بدون شکاف را در سر داریم – سیستمی که در آن موقعیت‌های شغلی خالی دیگر بر کارکنان فعلی فشار وارد نمی‌کنند. انگیزه ما برای توسعه و تاسیس این پلتفرم در مشکلات اجتماعی نهفته است که هر روز احساس می‌شوند:</p>
                     <ul class="vision-list">
-                        <li>کاهش زمان انتظار برای خدمات بهداشتی</li>
-                        <li>رفع موانع ترافیکی ناشی از پروژه‌های ساختمانی طولانی</li>
-                        <li>کاهش زمان انتظار برای نوبت‌های فنی</li>
-                        <li>حل دشواری در پر کردن موقعیت‌های کلیدی در شرکت‌ها</li>
-                        <li>رفع کمبود در بخش مراقبت و پرستاری</li>
+                        <li>زمان انتظار طولانی برای خدمات بهداشتی</li>
+                        <li>اختلالات ترافیکی ناشی از کارگاه‌های ساختمانی دائمی</li>
+                        <li>زمان انتظار طولانی برای قرار ملاقات با تعمیرکاران</li>
+                        <li>دشواری در پر کردن پست‌های کلیدی در شرکت‌ها</li>
+                        <li>کمبود در مراقبت‌های پرستاری</li>
+                        <li>تاخیر در درخواست‌های رسمی و اداری</li>
                     </ul>
                 </div>
-                <div class="image-container"><img src="../image/0ce5943337d557b487cead46494403b1.png" alt="Vision"></div>
             </div>
         </section>
 
-        <section class="reveal" style="padding: 6rem 0;">
+        <!-- Team Section -->
+        <section id="team-members" class="reveal team-members-section" style="padding: 6rem 0 0;">
             <div class="container">
-                <h2 class="text-center">ما OpenRise هستیم</h2>
+                <h2 class="text-center mb-4">ما OpenRise هستیم</h2>
+                <p class="text-center text-muted" style="max-width: 600px; margin: 0 auto 6rem;">در اینجا افرادی کار می‌کنند که نوآوری را زندگی می‌کنند!</p>
+
                 <div class="team-timeline">
-                    <!-- Member 1 -->
-                    <div class="team-row">
-                        <div class="member-image-box"><div class="member-image"><img src="../image/member_marcus.png" alt="Amirali"></div></div>
+                    <div class="timeline-spine"></div>
+
+                    <!-- Team Member 1 -->
+                    <div class="team-row reveal-left">
+                        <div class="timeline-dot"></div>
+                        <div class="member-image-box">
+                            <div class="member-image"><img src="../image/member_marcus.png" alt="Amirali"></div>
+                        </div>
                         <div class="member-info">
                             <h3>Amirali</h3>
-                            <span class="team-role">موسس / CTO</span>
+                            <span class="team-role">Founder / CTO</span>
                             <ul class="member-details">
-                                <li>متخصص انفورماتیک اقتصادی و موسس</li>
-                                <li>توسعه‌دهنده فول‌استک وب و اپلیکیشن</li>
+                                <li>متخصص انفورماتیک بازرگانی و بنیان‌گذار</li>
+                                <li>توسعه‌دهنده فول استک وب و اپلیکیشن</li>
                                 <li>مشاوره فنی</li>
-                                <li>اتصال استراتژی با تکنولوژی</li>
-                                <li>محقق در راهکارهای نوآورانه هوش مصنوعی</li>
+                                <li>ترکیب استراتژی با تکنولوژی</li>
+                                <li>علاقه به ریاضیات و منطق</li>
+                                <li>تحقیق در مورد راهکارهای نوآورانه هوش مصنوعی</li>
+                                <li>حل‌کننده مشکلات با تفکر کارآفرینی</li>
                             </ul>
                         </div>
                     </div>
-                    <!-- Member 2 -->
-                    <div class="team-row row-reverse">
-                        <div class="member-image-box"><div class="member-image"><img src="../image/member_elena.png" alt="A. Golestan"></div></div>
+
+                    <!-- Team Member 2 -->
+                    <div class="team-row reveal-right row-reverse">
+                        <div class="timeline-dot"></div>
+                        <div class="member-image-box">
+                            <div class="member-image"><img src="../image/member_elena.png" alt="A. Golestan"></div>
+                        </div>
                         <div class="member-info">
                             <h3>A. Golestan</h3>
-                            <span class="team-role">مدیر عملیات فناوری و نوآوری / COO</span>
+                            <span class="team-role">IT Operations and Innovation Lead / COO</span>
                             <ul class="member-details">
                                 <li>مدیر IT با بیش از ۲۰ سال تجربه</li>
                                 <li>تیم‌ساز و رهبر تیم</li>
                                 <li>دقیق و صریح در روش کار</li>
                                 <li>درک عمیق از علوم کامپیوتر</li>
+                                <li>ساختار یافته و راه‌حل‌محور</li>
+                                <li>ارتباط‌ برقرارکننده شفاف و آینده‌نگر</li>
                             </ul>
                         </div>
                     </div>
-                    <!-- Member 3 -->
-                    <div class="team-row">
-                        <div class="member-image-box"><div class="member-image"><img src="../image/Bildschirmfoto-2025-05-18-um-14.31.44-248x300.png" alt="S. Pakseresht"></div></div>
+
+                    <!-- Team Member 3 -->
+                    <div class="team-row reveal-left">
+                        <div class="timeline-dot"></div>
+                        <div class="member-image-box">
+                            <div class="member-image"><img src="../image/Bildschirmfoto-2025-05-18-um-14.31.44-248x300.png" alt="S. Pakseresht"></div>
+                        </div>
                         <div class="member-info">
                             <h3>S. Pakseresht</h3>
-                            <span class="team-role">مدیر / HRM</span>
+                            <span class="team-role">Manager / HRM</span>
                             <ul class="member-details">
-                                <li>دکترا در جامعه‌شناسی</li>
+                                <li>دکتری جامعه‌شناسی</li>
                                 <li>۸ سال استاد دانشگاه</li>
                                 <li>همکاری نزدیک با سازمان بین‌المللی کار (ILO)</li>
+                                <li>پژوهشگر با‌تجربه</li>
                                 <li>متخصص در درک رفتارهای انسانی</li>
+                                <li>دانشمند علوم اجتماعی عمل‌گرا</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Team Member 4 -->
+                    <div class="team-row reveal-right row-reverse">
+                        <div class="timeline-dot"></div>
+                        <div class="member-image-box">
+                            <div class="member-image"><img src="../image/Bildschirmfoto-2025-05-20-um-11.53.55-288x300.png" alt="A Golestan"></div>
+                        </div>
+                        <div class="member-info">
+                            <h3>A Golestan</h3>
+                            <span class="team-role">Design / UI</span>
+                            <ul class="member-details">
+                                <li>ایده‌پرداز خلاق</li>
+                                <li>متفکر قوی در حوزه طراحی</li>
+                                <li>با‌تجربه در هویت بصری شرکتی</li>
+                                <li>متخصص UI/UX با فیگما</li>
+                                <li>طراحی کاربر‌محور</li>
+                                <li>درک روندها و تاثیر برند</li>
+                                <li>عمل‌گرا و راه‌حل‌محور</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Team Member 5 -->
+                    <div class="team-row reveal-left">
+                        <div class="timeline-dot"></div>
+                        <div class="member-image-box">
+                            <div class="member-image"><img src="../image/WhatsApp-Image-2025-04-14-at-08.14.46-300x300.png" alt="A. Panahi"></div>
+                        </div>
+                        <div class="member-info">
+                            <h3>A. Panahi</h3>
+                            <span class="team-role">Fullstack Developer</span>
+                            <ul class="member-details">
+                                <li>توسعه‌دهنده فول استک با‌تجربه</li>
+                                <li>مسلط به تکنولوژی‌های فرانت‌اند و بک‌اند</li>
+                                <li>ماهر در زبان‌های مختلف برنامه‌نویسی</li>
+                                <li>توسعه و بهینه‌سازی پایگاه داده</li>
+                                <li>رابط‌های API و یکپارچه‌سازی سیستم</li>
+                                <li>روش کار چابک و راه‌حل‌محور</li>
+                                <li>تمرکز بر راهکارهای تمیز و مقیاس‌پذیر</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Team Member 6 -->
+                    <div class="team-row reveal-right row-reverse">
+                        <div class="timeline-dot"></div>
+                        <div class="member-image-box">
+                            <div class="member-image"><img src="../image/Bildschirmfoto-2025-04-11-um-17.51.24-300x240.png" alt="M. Jannatipour"></div>
+                        </div>
+                        <div class="member-info">
+                            <h3>M. Jannatipour</h3>
+                            <span class="team-role">Infrastructure Engineer</span>
+                            <ul class="member-details">
+                                <li>سرور و زیرساخت</li>
+                                <li>متخصص دوآپس (DevOps)</li>
+                                <li>متخصص در خط لوله‌های CI/CD</li>
+                                <li>توسعه و بهینه‌سازی پایگاه داده</li>
+                                <li>تمرکز بر اتوماسیون و مقیاس‌پذیری</li>
+                                <li>تجربه کار با ابر (مانند AWS، Azure، GCP)</li>
+                                <li>بهینه‌سازی عملکرد و امنیت</li>
+                                <li>تحلیل سیستماتیک خطا و مانیتورینگ</li>
                             </ul>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+
+        <!-- Final CTA -->
+        <section class="reveal" style="padding: 0 0 8rem;">
+            <div class="container">
+                <div class="final-cta">
+                    <h2>بخشی از چشم‌انداز ما شوید</h2>
+                    <p>بیایید با هم آینده کار را شکل دهیم.</p>
+                    <a href="contact.html" class="btn-cta">با ما تماس بگیرید</a>
+                </div>
+            </div>
+        </section>
     </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo"><img src="../image/logo.png" alt="OpenRise Logo" class="brand-logo"></a>
+                    <p>دروازه شما به سوی استعدادهای جهانی. ما استخدام بین‌المللی را از طریق راهکارهای هوشمند هوش مصنوعی ساده می‌کنیم.</p>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-heading">پلتفرم</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">خانه</a></li>
+                        <li><a href="features.html">ویژگی‌ها</a></li>
+                        <li><a href="demo.html">دمو</a></li>
+                        <li><a href="team.html">تیم و چشم‌انداز</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-heading">منابع</h4>
+                    <ul class="footer-links">
+                        <li><a href="contact.html">تماس</a>
+                            <div class="lang-switcher-nav">
+                                <a href="../team.html" class="lang-link">DE</a>
+                                <a href="../en/team.html" class="lang-link">EN</a>
+                                <a href="team.html" class="lang-link active">FA</a>
+                            </div>
+                        </li>
+                        <li><a href="../blog-fachkraeftemangel.html">بلاگ</a></li>
+                        <li><a href="../datenschutz.html">حریم خصوصی</a></li>
+                        <li><a href="../impressum.html">اطلاعات حقوقی</a></li>
+                    </ul>
+                </div>
+                <div class="footer-newsletter">
+                    <h4 class="footer-heading">به‌روز بمانید</h4>
+                    <p>با آخرین اخبار و به‌روزرسانی‌های OpenRise همراه باشید.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="آدرس ایمیل">
+                        <button type="submit" class="btn-icon"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </footer>
 
     <script src="../js/background.js"></script>
     <script src="../js/interactive.js"></script>
     <script src="../js/script.js"></script>
 </body>
+
 </html>

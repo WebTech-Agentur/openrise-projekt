@@ -4,13 +4,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Features | OpenRise</title>
+    <title>Features - OpenRise</title>
     <link rel="icon" type="image/png" href="../image/favicon.png?v=4">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Button Spacing */
+        .split-section .content .btn-primary { margin-top: 3.5rem !important; display: inline-block; }
+    </style>
 </head>
 
 <body>
+    <!-- Interactive UI Elements -->
     <div class="scroll-progress-container">
         <div class="scroll-progress-bar" id="scroll-progress"></div>
     </div>
@@ -30,15 +35,26 @@
                     <a href="features.html" class="lang-link active">EN</a>
                     <a href="../fa/features.html" class="lang-link">FA</a>
                 </div>
+                <div class="theme-switch-wrapper">
+                    <label class="theme-switch" for="checkbox">
+                        <input type="checkbox" id="checkbox">
+                        <div class="slider round">
+                            <i class="fas fa-sun sun-icon"></i>
+                            <i class="fas fa-moon moon-icon"></i>
+                        </div>
+                    </label>
+                </div>
             </div>
         </div>
     </nav>
 
     <main>
-        <section class="features-hero reveal" style="padding-top: 8rem;">
+        <!-- Hero Section -->
+        <section id="features-hero" class="hero reveal" style="position: relative; overflow: hidden; padding-top: 10rem;">
+            <div class="hero-bg-accent"></div>
             <div class="container">
-                <h1>Powerful Features for Global Hiring</h1>
-                <p class="sub">Discover how OpenRise uses technology to solve the skilled labor shortage in Germany.</p>
+                <h1>Our Features</h1>
+                <p class="sub">Advanced platform functions that simplify global recruitment and ensure long-term success.</p>
             </div>
         </section>
 
@@ -46,65 +62,282 @@
         <section id="features-split" class="container split-section reveal">
             <div class="content">
                 <h2>Targeted Recruitment of International Talent – Efficient, Flexible, Perfectly Matched.</h2>
-                <p>Access international skilled professionals – with RiseHub by OpenRise! You choose the suitable candidates – we take care of the rest: immigration procedures, visa, recognition & more.</p>
+                <p>Access to international skilled professionals – with RiseHub by OpenRise!
+                    You choose the suitable candidates – we take care of the rest: immigration procedures, visa,
+                    recognition & more.</p>
+                <a href="contact.html" class="btn btn-primary">Learn More</a>
             </div>
-            <div class="image-container"><img src="../image/085aeb5f97b73b4380e984bb291af05c.png" alt="Features"></div>
+            <div class="image-container">
+                <img src="../image/085aeb5f97b73b4380e984bb291af05c.png" alt="Features Illustration">
+            </div>
         </section>
 
-        <!-- Bento Grid -->
+        <!-- Process Section -->
         <section class="reveal">
             <div class="container">
                 <h2 class="text-center mb-4" style="font-size: 3rem;">Hidden Processes:</h2>
+                <p class="text-center text-muted" style="max-width: 650px; margin: 0 auto 4rem; font-size: 1.15rem;">An optimized workflow that reduces the complexity of international recruitment and paves the way for global talent.</p>
+
                 <div class="bento-grid">
-                    <!-- 1 Visa -->
                     <div class="bento-item bento-large">
-                        <div class="bento-visual interactive-visa"><div class="visa-doc doc-main"><div class="doc-stamp">Approved</div></div></div>
+                        <div class="bento-visual interactive-visa">
+                            <div class="visa-scene">
+                                <div class="visa-doc doc-main">
+                                    <div class="doc-header"></div>
+                                    <div class="doc-stamp"><i class="fas fa-stamp"></i> Approved</div>
+                                </div>
+                                <div class="passport"><i class="fas fa-passport"></i></div>
+                            </div>
+                        </div>
+                        <div class="visa-status-tracker">
+                            <div class="tracker-step completed">
+                                <i class="fas fa-check"></i>
+                                <span>Check</span>
+                            </div>
+                            <div class="tracker-step active">
+                                <i class="fas fa-spinner fa-spin"></i>
+                                <span>Authorities</span>
+                            </div>
+                            <div class="tracker-step">
+                                <i class="fas fa-clock"></i>
+                                <span>Visa</span>
+                            </div>
+                        </div>
                         <div class="bento-text">
                             <h3>Visa Documents</h3>
-                            <p>Navigating through the administrative requirements for a smooth visa issuance.</p>
+                            <p>A complex web of governmental requirements that is nearly impossible to navigate without experienced specialists. We handle the detailed preparation, verification, and submission of all necessary documents for a smooth visa issuance.</p>
                         </div>
                     </div>
-                    <!-- 2 Translation -->
+
                     <div class="bento-item bento-wide">
-                        <div class="bento-visual translate-visual"><div class="lang-bubble">EN</div><i class="fas fa-arrow-right-long"></i><div class="lang-bubble">DE</div></div>
-                        <div class="bento-text"><h3>Translations</h3><p>Official and legally valid translations by certified translation offices.</p></div>
+                        <div class="bento-visual translate-visual">
+                            <div class="lang-bubble from-lang">EN</div>
+                            <i class="fas fa-arrow-right-arrow-left exchange-icon"></i>
+                            <div class="lang-bubble to-lang">DE</div>
+                        </div>
+                        <div class="bento-text">
+                            <h3>Translations</h3>
+                            <p>Official and legally valid translation of multiple documents by certified translation agencies into the exactly required target languages.</p>
+                        </div>
                     </div>
-                    <!-- 3 Seal -->
-                    <div class="bento-item bento-square"><div class="bento-visual"><i class="fas fa-certificate"></i></div><div class="bento-text"><h3>Notarizations</h3><p>Securing legal recognition by German authorities.</p></div></div>
-                    <!-- 4 House -->
-                    <div class="bento-item bento-square"><div class="bento-visual"><i class="fas fa-home"></i></div><div class="bento-text"><h3>Housing Search</h3><p>Active support in finding safe housing on-site.</p></div></div>
-                    <!-- 5 Interpreter -->
-                    <div class="bento-item bento-wide"><div class="bento-visual audio-visual"><i class="fas fa-globe"></i></div><div class="bento-text"><h3>Interpreter Service</h3><p>Breaking language barriers for a smooth process.</p></div></div>
-                    <!-- 6 Authorities -->
-                    <div class="bento-item bento-wide"><div class="bento-visual gov-visual"><i class="fas fa-landmark"></i></div><div class="bento-text"><h3>Administrative Support</h3><p>Accelerating coordination with local authorities.</p></div></div>
+
+                    <div class="bento-item bento-square">
+                        <div class="bento-visual seal-visual">
+                            <div class="seal-ring">
+                                <i class="fas fa-certificate seal-icon"></i>
+                            </div>
+                        </div>
+                        <div class="bento-text">
+                            <h3>Notarizations</h3>
+                            <p>Ensuring legal recognition by German authorities.</p>
+                        </div>
+                    </div>
+
+                    <div class="bento-item bento-square">
+                        <div class="bento-visual house-visual">
+                            <i class="fas fa-home house-base"></i>
+                            <i class="fas fa-map-marker-alt map-pin floating"></i>
+                        </div>
+                        <div class="bento-text">
+                            <h3>Housing Search</h3>
+                            <p>Active support in finding safe housing on-site.</p>
+                        </div>
+                    </div>
+
+                    <div class="bento-item bento-wide">
+                        <div class="bento-visual audio-visual">
+                            <i class="fas fa-globe globe-center"></i>
+                            <div class="sound-waves">
+                                <span></span><span></span><span></span><span></span><span></span>
+                            </div>
+                        </div>
+                        <div class="bento-text">
+                            <h3>Interpreter Service</h3>
+                            <p>Breaking language barriers: A reliable interpreter service is essential for avoiding misunderstandings and ensuring a smooth workflow.</p>
+                        </div>
+                    </div>
+
+                    <div class="bento-item bento-wide">
+                        <div class="bento-visual gov-visual">
+                            <i class="fas fa-landmark gov-building"></i>
+                            <div class="moving-papers">
+                                <i class="fas fa-file-alt paper p1"></i>
+                                <i class="fas fa-file-alt paper p2"></i>
+                            </div>
+                        </div>
+                        <div class="bento-text">
+                            <h3>Administrative Tasks</h3>
+                            <p>We handle the complicated coordination with authorities and significantly accelerate the often lengthy procedures so that new talents can start faster.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Circle Section -->
-        <section class="feature-circle-section reveal">
+        <!-- Interactive Circle Section -->
+        <section class="feature-circle-section reveal" style="padding-bottom: 2rem;">
             <div class="container">
                 <h2 class="text-center mb-4">Accompanied Integration</h2>
+                <p class="text-center text-muted" style="max-width: 600px; margin: 0 auto 4rem;">Interactive overview of our social integration services.</p>
+
                 <div class="circle-container">
                     <div class="feature-circle">
-                        <div class="circle-icon icon-1" data-title="Club Registration" data-desc="Assistance in registering with local clubs (sports, culture)."><i class="fas fa-users"></i></div>
-                        <div class="circle-icon icon-2" data-title="Leisure Activities" data-desc="Discovering the best local tips for outings and hobbies."><i class="fas fa-calendar-alt"></i></div>
-                        <div class="circle-icon icon-3" data-title="Conflict Management" data-desc="Coaching support in case of challenges or obstacles."><i class="fas fa-hands-helping"></i></div>
-                        <div class="circle-icon icon-4" data-title="Online Meetings" data-desc="Monthly networking with other international talents."><i class="fas fa-video"></i></div>
+                        <div class="circle-icon icon-1" data-title="Club Registration"
+                            data-desc="We support you with registration in local clubs – from sports to culture, for a perfect start in your new social environment.">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="circle-icon icon-2" data-title="Leisure Activities"
+                            data-desc="Discover the best leisure offers near you. We give you tips for outings, events, and hobbies that suit you.">
+                            <i class="fas fa-calendar-alt"></i>
+                        </div>
+                        <div class="circle-icon icon-3" data-title="Conflict Management"
+                            data-desc="Problems in the team or in everyday life? Our coaching team is by your side during challenges and finds solutions with you.">
+                            <i class="fas fa-hands-helping"></i>
+                        </div>
+                        <div class="circle-icon icon-4" data-title="Online Meetings"
+                            data-desc="Network with other talents at our monthly online events and exchange experiences about living and working in Germany.">
+                            <i class="fas fa-video"></i>
+                        </div>
+                        <div class="circle-icon icon-5" data-title="Language Tandem"
+                            data-desc="Find language partners near you and improve your German playfully in direct exchange with native speakers.">
+                            <i class="fas fa-language"></i>
+                        </div>
+                        <div class="circle-icon icon-6" data-title="Cultural Coaching"
+                            data-desc="Understand the nuances of German culture and the working world through our practical workshops and personal feedback.">
+                            <i class="fas fa-landmark"></i>
+                        </div>
+                        <div class="circle-icon icon-7" data-title="Authorities Guide"
+                            data-desc="No fear of bureaucracy. We guide you step-by-step through all necessary registrations and administrative tasks.">
+                            <i class="fas fa-id-card"></i>
+                        </div>
+                        <div class="circle-icon icon-8" data-title="Event Calendar"
+                            data-desc="Keep overview of all important networking events, workshops, and community meetings in your region.">
+                            <i class="fas fa-map-marked-alt"></i>
+                        </div>
                     </div>
                     <div class="center-box">
                         <div id="center-text-content">
                             <h3>OpenRise Integration</h3>
-                            <p id="center-desc">Creating a sense of belonging in the new environment.</p>
+                            <p id="center-desc">Accompanied integration with OpenRise: With social integration functions such as club registration, leisure activities, conflict management, and monthly online meetings, we create orientation and belonging in the new environment.</p>
                         </div>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final CTA -->
+        <section class="reveal" style="padding-top: 2rem;">
+            <div class="container">
+                <div class="final-cta" style="text-align: center !important;">
+                    <h2 style="text-align: center !important;">Ready to grow your team?</h2>
+                    <p style="text-align: center !important;">Experience the power of our features today.</p>
+                    <a href="contact.html" class="btn-cta">Start Now</a>
                 </div>
             </div>
         </section>
     </main>
 
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo"><img src="../image/logo.png" alt="OpenRise Logo" class="brand-logo"></a>
+                    <p>Your bridge to global talent. We simplify the complex world of international recruitment with state-of-the-art AI.</p>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-heading">Platform</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="features.html">Features</a></li>
+                        <li><a href="demo.html">Demo</a></li>
+                        <li><a href="team.html">Team & Vision</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-heading">Resources</h4>
+                    <ul class="footer-links">
+                        <li><a href="contact.html">Contact</a><div class="lang-switcher-nav"><a href="../features.html" class="lang-link">DE</a><a href="features.html" class="lang-link active">EN</a><a href="../fa/features.html" class="lang-link">FA</a></div></li>
+                        <li><a href="../blog-fachkraeftemangel.html">Blog</a></li>
+                        <li><a href="../datenschutz.html">Privacy</a></li>
+                        <li><a href="../impressum.html">Legal</a></li>
+                    </ul>
+                </div>
+                <div class="newsletter-form">
+                    <h4 class="footer-heading">Stay Updated</h4>
+                    <p>Stay up to date with the latest OpenRise news and updates.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Email Address">
+                        <button type="submit" class="btn-icon"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </footer>
+
     <script src="../js/background.js"></script>
     <script src="../js/interactive.js"></script>
     <script src="../js/script.js"></script>
+    
+    <!-- Circle Interaction JS Fix -->
+    <script>
+        (function() {
+            const circleElement = document.querySelector('.feature-circle');
+            const iconElements = document.querySelectorAll('.circle-icon');
+            const containerElement = document.querySelector('.circle-container');
+
+            if (!circleElement) return;
+
+            let rotationValue = 0;
+            let currentSpeed = 0.15;
+            let targetSpeedValue = 0.15;
+
+            function animateCircle() {
+                if (window.innerWidth > 768) {
+                    rotationValue += currentSpeed;
+                    circleElement.style.setProperty('--rot', `${rotationValue}deg`);
+                    circleElement.style.transform = `rotate(${rotationValue}deg)`;
+
+                    iconElements.forEach(icon => {
+                        icon.style.setProperty('--icon-rot', `${-rotationValue}deg`);
+                        icon.style.transform = `translate(-50%, -50%) rotate(${-rotationValue}deg)`;
+                    });
+
+                    currentSpeed += (targetSpeedValue - currentSpeed) * 0.05;
+                }
+                requestAnimationFrame(animateCircle);
+            }
+
+            animateCircle();
+
+            containerElement.addEventListener('mouseenter', () => { targetSpeedValue = 0.03; });
+            containerElement.addEventListener('mouseleave', () => { targetSpeedValue = 0.15; });
+
+            iconElements.forEach(icon => {
+                const updateCenterText = () => {
+                    const title = icon.getAttribute('data-title');
+                    const desc = icon.getAttribute('data-desc');
+                    const content = document.getElementById('center-text-content');
+                    if(!content) return;
+
+                    content.style.opacity = '0';
+                    content.style.transform = 'scale(0.95)';
+
+                    setTimeout(() => {
+                        content.querySelector('h3').textContent = title;
+                        document.getElementById('center-desc').textContent = desc;
+                        content.style.opacity = '1';
+                        content.style.transform = 'scale(1)';
+                    }, 200);
+
+                    iconElements.forEach(i => i.classList.remove('active'));
+                    icon.classList.add('active');
+                };
+
+                icon.addEventListener('mouseenter', updateCenterText);
+                icon.addEventListener('click', updateCenterText);
+            });
+        })();
+    </script>
 </body>
+
 </html>

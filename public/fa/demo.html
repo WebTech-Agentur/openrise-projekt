@@ -8,111 +8,862 @@
     <link rel="icon" type="image/png" href="../image/favicon.png?v=4">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100;300;400;700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Vazirmatn', sans-serif !important; direction: rtl; text-align: right; }
-        .demo-simulator { display: grid; grid-template-columns: 280px 1fr; border-radius: 20px; overflow: hidden; background: var(--card-bg); border: 1px solid var(--border); min-height: 600px; }
-        [dir="rtl"] .demo-simulator { grid-template-columns: 1fr 280px; }
-        .demo-sidebar { background: rgba(15, 23, 42, 0.03); padding: 2rem 1rem; border-left: 1px solid var(--border); }
-        .demo-nav-item { display: flex; align-items: center; gap: 1rem; padding: 1rem; cursor: pointer; transition: 0.3s; color: var(--text-muted); }
-        .demo-nav-item.active { background: var(--primary); color: white; border-radius: 10px; }
-        .demo-content { padding: 3rem; }
-        .demo-screen { display: none; }
-        .demo-screen.active { display: block; }
-        .text-center { text-align: center !important; }
-        [dir="rtl"] .logo { margin-left: auto !important; margin-right: 0 !important; }
-        [dir="rtl"] .nav-links { flex-direction: row-reverse !important; margin-right: auto !important; margin-left: 0 !important; }
-        .status-badge { padding: 0.25rem 0.75rem; border-radius: 100px; font-size: 0.8rem; }
-        .status-completed { background: rgba(16, 185, 129, 0.1); color: #0fb880; }
-        .mock-ui-card { background: var(--card-bg); border: 1px solid var(--border); padding: 1.5rem; margin-top: 1.5rem; border-radius: 12px; }
+        body {
+            font-family: 'Vazirmatn', sans-serif;
+        }
+
+        .nav-container {
+            flex-direction: row-reverse !important;
+        }
+
+        .nav-links {
+            flex-direction: row !important;
+            gap: 1.5rem !important;
+            margin-left: 0 !important;
+            margin-right: auto !important;
+        }
+
+        .logo {
+            margin-right: 0 !important;
+            margin-left: auto !important;
+            display: flex;
+        }
+
+        .nav-links a {
+            margin: 0 !important;
+        }
+
+        .demo-hero {
+            text-align: center !important;
+        }
+
+        .demo-hero .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center !important;
+            margin: 0 auto !important;
+        }
+
+        .demo-simulator {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: calc(var(--radius) * 1.5);
+            box-shadow: var(--shadow-lg);
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            min-height: 600px;
+            margin: 4rem 0;
+            position: relative;
+        }
+
+        .demo-sidebar {
+            background: rgba(15, 23, 42, 0.03);
+            border-left: 1px solid var(--border);
+            border-right: none;
+            padding: 2rem 1rem;
+        }
+
+        [data-theme="dark"] .demo-sidebar {
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .demo-nav-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            border-radius: var(--radius);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-bottom: 0.5rem;
+            color: var(--text-muted);
+            border: 1px solid transparent;
+        }
+
+        .demo-nav-item:hover {
+            background: rgba(59, 130, 246, 0.05);
+            color: var(--primary);
+        }
+
+        .demo-nav-item.active {
+            background: var(--primary);
+            color: white;
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+        }
+
+        .demo-content {
+            padding: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .demo-screen {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .demo-screen.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .mock-ui-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            margin-top: 1.5rem;
+            box-shadow: var(--shadow);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            z-index: 1;
+        }
+
+        .mock-ui-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(37, 99, 235, 0.2);
+        }
+
+        .mock-ui-card:hover h4,
+        .mock-ui-card:hover strong,
+        .mock-ui-card:hover span {
+            color: var(--primary);
+            transition: color 0.3s ease;
+        }
+
+        .status-badge {
+            padding: 0.25rem 0.75rem;
+            border-radius: 100px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .status-processing {
+            background: rgba(59, 130, 246, 0.1);
+            color: #3b82f6;
+        }
+
+        .status-completed {
+            background: rgba(16, 185, 129, 0.1);
+            color: #0fb880;
+        }
+
+        .status-pending {
+            background: rgba(245, 158, 11, 0.1);
+            color: #f59e0b;
+        }
+
+        .stat-bar-container {
+            width: 100%;
+            height: 6px;
+            background: var(--border);
+            border-radius: 10px;
+            margin-top: 1rem;
+            overflow: hidden;
+        }
+
+        .stat-bar-fill {
+            height: 100%;
+            background: var(--primary);
+            border-radius: 10px;
+            animation: growBar 2s ease-out forwards;
+            float: right;
+        }
+
+        @keyframes growBar {
+            from {
+                width: 0;
+            }
+
+            to {
+                width: var(--fill-width);
+            }
+        }
+
+        .activity-item {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            animation: slideIn 0.5s ease backwards;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .card-visual {
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .matching-visual .ai-ring {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            border: 2px dashed rgba(59, 130, 246, 0.4);
+            border-radius: 50%;
+            animation: rotate-cw 15s linear infinite;
+        }
+
+        .matching-visual .ai-ring-inner {
+            position: absolute;
+            width: 70px;
+            height: 70px;
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            border-radius: 50%;
+            animation: rotate-ccw 10s linear infinite;
+        }
+
+        .matching-visual .ai-scan {
+            position: absolute;
+            width: 80px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--primary), transparent);
+            top: 50%;
+            left: 50%;
+            margin-left: -40px;
+            opacity: 0;
+            animation: scanner 3s ease-in-out infinite;
+        }
+
+        .ai-core {
+            position: relative;
+            z-index: 3;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes rotate-cw { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+        @keyframes rotate-ccw { from { transform: rotate(0deg); } to { transform: rotate(-360deg); } }
+        @keyframes scanner { 
+            0%, 100% { transform: translateY(-40px); opacity: 0; }
+            50% { transform: translateY(40px); opacity: 0.5; }
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+
+        .automation-visual .gear-container {
+            position: relative;
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .automation-visual .gear-main {
+            font-size: 3.5rem;
+            color: #8b5cf6;
+            animation: rotate-cw 8s linear infinite;
+        }
+
+        .automation-visual .gear-secondary {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            font-size: 1.8rem;
+            color: #a78bfa;
+            animation: rotate-ccw 5s linear infinite;
+        }
+
+        .compliance-visual .shield-container {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .compliance-visual .shield-icon {
+            font-size: 3.5rem;
+            color: #10b981;
+            filter: drop-shadow(0 0 10px rgba(16, 185, 129, 0.2));
+        }
+
+        .compliance-visual .scan-wave {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            border: 2px solid #10b981;
+            border-radius: 50%;
+            opacity: 0;
+            animation: shieldPulse 2s ease-out infinite;
+        }
+
+        @keyframes shieldPulse {
+            0% { width: 40px; height: 40px; opacity: 0.8; }
+            100% { width: 100px; height: 100px; opacity: 0; }
+        }
+
+        .demo-interactive-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .interactive-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 2.5rem;
+            text-align: center;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: pointer;
+            position: relative;
+        }
+
+        .interactive-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .hero-bg-accent {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, rgba(37, 99, 235, 0.05) 0%, transparent 70%);
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .demo-interactive-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .interactive-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 2.5rem;
+            text-align: center;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: pointer;
+            position: relative;
+        }
+
+        .interactive-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .card-visual {
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .matching-visual .ai-ring {
+            position: absolute;
+            width: 90px;
+            height: 90px;
+            border: 2px dashed rgba(59, 130, 246, 0.6);
+            border-radius: 50%;
+            animation: rotate 12s linear infinite;
+        }
+
+        .ai-core {
+            position: relative;
+            z-index: 3;
+        }
+
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .automation-visual .gear-icon {
+            animation: pulse-gear 3s ease-in-out infinite;
+        }
+
+        @keyframes pulse-gear {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.1);
+            }
+        }
+
+        /* Responsive Improvements */
+        @media (max-width: 992px) {
+            .demo-simulator {
+                grid-template-columns: 1fr;
+            }
+
+            .demo-sidebar {
+                display: flex;
+                overflow-x: auto;
+                border-left: none;
+                border-bottom: 1px solid var(--border);
+                padding: 1rem;
+                gap: 0.5rem;
+            }
+
+            .demo-nav-item {
+                margin-bottom: 0;
+                padding: 0.75rem 1rem;
+                white-space: nowrap;
+            }
+
+            .demo-content {
+                padding: 1.5rem;
+            }
+
+            .demo-hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .demo-simulator {
+                margin: 2rem 0;
+            }
+
+            #screen-dashboard .grid,
+            #screen-visa .grid {
+                grid-template-columns: 1fr !important;
+                gap: 1.5rem !important;
+            }
+
+            .demo-simulator img {
+                width: 90% !important;
+            }
+
+            .timeline {
+                padding-right: 1.5rem !important;
+                padding-left: 0 !important;
+            }
+        }
+
+        /* RTL Adjustments */
+        .timeline {
+            border-right: 2px dashed var(--border);
+            border-left: none !important;
+            padding-right: 2rem;
+            padding-left: 0 !important;
+        }
+
+        .timeline-item div[style*="left: -2.6rem"] {
+            left: auto !important;
+            right: -2.6rem !important;
+        }
+
+        .status-badge i {
+            margin-right: 0 !important;
+            margin-left: 0.5rem !important;
+        }
+
+        .btn i {
+            margin-left: 0 !important;
+            margin-right: 0.5rem !important;
+        }
     </style>
 </head>
 
 <body>
+    <div class="scroll-progress-container">
+        <div class="scroll-progress-bar" id="scroll-progress"></div>
+    </div>
+
     <nav>
         <div class="container nav-container">
-            <a href="index.html" class="logo"><img src="../image/logo.png" alt="OpenRise" class="brand-logo"></a>
+            <a href="index.html" class="logo"><img src="../image/logo.png" alt="OpenRise Logo" class="brand-logo"></a>
+            <div class="mobile-menu-toggle"><i class="fas fa-bars"></i></div>
             <div class="nav-links">
-                <a href="index.html">خانه</a>
-                <a href="features.html">ویژگی‌ها</a>
-                <a href="demo.html" class="active">دمو</a>
-                <a href="team.html">تیم و چشم‌انداز</a>
-                <a href="contact.html">تماس</a>
+                <div class="theme-switch-wrapper">
+                    <label class="theme-switch" for="checkbox">
+                        <input type="checkbox" id="checkbox" />
+                        <div class="slider round">
+                            <i class="fas fa-sun sun-icon"></i>
+                            <i class="fas fa-moon moon-icon"></i>
+                        </div>
+                    </label>
+                </div>
                 <div class="lang-switcher-nav">
                     <a href="../demo.html" class="lang-link">DE</a>
                     <a href="../en/demo.html" class="lang-link">EN</a>
                     <a href="demo.html" class="lang-link active">FA</a>
                 </div>
+                <a href="index.html">خانه</a>
+                <a href="features.html">ویژگی‌ها</a>
+                <a href="demo.html" class="active">دمو</a>
+                <a href="team.html">تیم و چشم‌انداز</a>
+                <a href="contact.html">تماس</a>
             </div>
         </div>
     </nav>
 
     <main>
-        <section class="demo-hero reveal" style="padding-top: 8rem; text-align: center;">
-            <div class="container">
-                <h1>پلتفرم را در عمل تجربه کنید</h1>
-                <p class="sub">به صورت تعاملی کشف کنید که چگونه OpenRise فرآیند استخدام را خودکار کرده و استعدادهای جهانی را به شرکت شما متصل می‌کند.</p>
+        <!-- Hero Section -->
+        <section class="demo-hero reveal">
+            <div class="hero-bg-accent"></div>
+            <div class="container"
+                style="display: flex; flex-direction: column; align-items: center; text-align: center; margin: 0 auto;">
+                <h1 style="width: 100%; text-align: center;">پلتفرم را در عمل تجربه کنید</h1>
+                <p class="sub" style="max-width: 700px; margin: 0 auto; text-align: center;">به صورت تعاملی کشف کنید که
+                    چگونه OpenRise فرآیند استخدام را خودکار کرده و استعدادهای جهانی را به شرکت شما متصل می‌کند.</p>
+                <div style="margin-top: 3rem;">
+                    <a href="#simulator" class="btn btn-primary pulse-btn">شروع شبیه‌ ساز <i class="fas fa-play"
+                            style="margin-right: 0.5rem;"></i></a>
+                </div>
             </div>
         </section>
 
-        <section id="simulator" class="container reveal" style="padding-bottom: 4rem;">
-            <div class="demo-simulator">
-                <div class="demo-content">
-                    <!-- Dashboard -->
-                    <div id="screen-dashboard" class="demo-screen active">
-                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
-                            <h2>نمای کلی داشبورد</h2>
-                            <span class="status-badge status-completed">به‌روزرسانی زنده</span>
+        <!-- Interactive Tiles Section -->
+        <section class="container reveal">
+            <div class="demo-interactive-grid">
+                <div class="interactive-card matching">
+                    <div class="card-visual matching-visual">
+                        <div class="ai-ring"></div>
+                        <div class="ai-ring-inner"></div>
+                        <div class="ai-scan"></div>
+                        <div class="ai-core"><i class="fas fa-robot" style="font-size: 3.5rem; color: #3b82f6;"></i>
                         </div>
-                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
-                            <div class="mock-ui-card">
-                                <h4>موقعیت‌های باز</h4>
-                                <p style="font-size: 2rem; font-weight: 700; color: var(--primary);">۱۲</p>
+                    </div>
+                    <h3>تطبیق با هوش مصنوعی</h3>
+                    <p>بیاموزید که چگونه الگوریتم‌های ما شکاف‌های مهارتی را شناسایی کرده و کاندیداهای مناسب را پیدا می‌کنند.</p>
+                </div>
+                <div class="interactive-card automation">
+                    <div class="card-visual automation-visual">
+                        <div class="gear-container">
+                            <i class="fas fa-cog gear-main"></i>
+                            <i class="fas fa-cog gear-secondary"></i>
+                        </div>
+                    </div>
+                    <h3>اتوماسیون</h3>
+                    <p>ببینید چگونه فرآیندهای کاغذی به جریان‌های کاری دیجیتال تبدیل می‌شوند.</p>
+                </div>
+                <div class="interactive-card compliance">
+                    <div class="card-visual compliance-visual">
+                        <div class="shield-container">
+                            <div class="scan-wave"></div>
+                            <i class="fas fa-shield-alt shield-icon"></i>
+                        </div>
+                    </div>
+                    <h3>امنیت قانونی</h3>
+                    <p>دیگر نگران مسائل ویزا نباشید – ما بررسی انطباق را به صورت زنده شبیه‌ساز می‌کنیم.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Live Demo Simulator -->
+        <section id="simulator" class="container reveal" style="padding-top: 6rem; padding-bottom: 3rem;">
+            <div class="section-title text-center">
+                <h2 style="margin-bottom: 2rem;">شبیه‌ساز تعاملی</h2>
+                <p>روی موارد منو در سمت راست کلیک کنید تا عملکردهای مختلف پلتفرم را آزمایش کنید.</p>
+            </div>
+
+            <div class="demo-simulator">
+                <div class="demo-sidebar">
+                    <div class="demo-nav-item active" onclick="switchScreen('dashboard')">
+                        <i class="fas fa-th-large"></i>
+                        <span>داشبورد</span>
+                    </div>
+                    <div class="demo-nav-item" onclick="switchScreen('matching')">
+                        <i class="fas fa-users"></i>
+                        <span>تطبیق استعداد</span>
+                    </div>
+                    <div class="demo-nav-item" onclick="switchScreen('documents')">
+                        <i class="fas fa-file-signature"></i>
+                        <span>مدارک</span>
+                    </div>
+                    <div class="demo-nav-item" onclick="switchScreen('visa')">
+                        <i class="fas fa-passport"></i>
+                        <span>وضعیت ویزا</span>
+                    </div>
+                </div>
+
+                <div class="demo-content">
+                    <!-- Dashboard Screen -->
+                    <div id="screen-dashboard" class="demo-screen active">
+                        <div class="d-flex justify-content-between align-items-center mb-4">
+                            <h2 style="margin-bottom: 0;">نمای کلی داشبورد</h2>
+                            <span class="status-badge status-completed"><i class="fas fa-sync fa-spin"
+                                    style="margin-left: 0.5rem;"></i> آپدیت زنده</span>
+                        </div>
+                        <img src="../image/demo_dashboard.png" alt="Dashboard Mockup"
+                            style="width: 60%; margin: 0 auto 3rem; display: block; border-radius: var(--radius); box-shadow: var(--shadow-lg);">
+
+                        <div class="grid"
+                            style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 2.5rem;">
+                            <div class="mock-ui-card" style="margin-top: 0;">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <h4 style="margin-bottom: 0;">موقعیت‌های شغلی باز</h4>
+                                    <i class="fas fa-briefcase text-muted"></i>
+                                </div>
+                                <p
+                                    style="font-size: 2.2rem; font-weight: 700; color: var(--primary); margin: 0.5rem 0;">
+                                    ۱۲</p>
+                                <div class="stat-bar-container">
+                                    <div class="stat-bar-fill" style="--fill-width: 75%;"></div>
+                                </div>
+                                <p class="text-muted small mt-2">+۲ از هفته گذشته</p>
                             </div>
-                            <div class="mock-ui-card">
-                                <h4>کاندیداها</h4>
-                                <p style="font-size: 2rem; font-weight: 700; color: var(--primary);">۱۴۸</p>
+                            <div class="mock-ui-card" style="margin-top: 0;">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <h4 style="margin-bottom: 0;">کاندیداها</h4>
+                                    <i class="fas fa-user-check text-muted"></i>
+                                </div>
+                                <p
+                                    style="font-size: 2.2rem; font-weight: 700; color: var(--primary); margin: 0.5rem 0;">
+                                    ۱۴۸</p>
+                                <div class="stat-bar-container">
+                                    <div class="stat-bar-fill" style="--fill-width: 85%; background: #10b981;"></div>
+                                </div>
+                                <p class="text-muted small mt-2">+۱۵ درخواست جدید</p>
+                            </div>
+                        </div>
+
+                        <div class="recent-activity">
+                            <h4 style="margin-bottom: 1.5rem;">فعالیت‌های اخیر</h4>
+                            <div class="activity-item" style="animation-delay: 0.1s;">
+                                <div style="width: 8px; height: 8px; background: #3b82f6; border-radius: 50%;"></div>
+                                <span class="text-muted small">۲ دقیقه پیش</span>
+                                <span>کاندیدای جدید برای <strong>مهندس نرم‌افزار</strong> مطابقت یافت.</span>
+                            </div>
+                            <div class="activity-item" style="animation-delay: 0.2s;">
+                                <div style="width: 8px; height: 8px; background: #10b981; border-radius: 50%;"></div>
+                                <span class="text-muted small">۱۵ دقیقه پیش</span>
+                                <span>درخواست ویزای <strong>الکس جی.</strong> تایید شد.</span>
+                            </div>
+                            <div class="activity-item" style="animation-delay: 0.3s; border-bottom: none;">
+                                <div style="width: 8px; height: 8px; background: #f59e0b; border-radius: 50%;"></div>
+                                <span class="text-muted small">۱ ساعت پیش</span>
+                                <span>بررسی مدارک برای <strong>النا آر.</strong> شروع شد.</span>
                             </div>
                         </div>
                     </div>
-                    <!-- Matching -->
+
+                    <!-- Matching Screen -->
                     <div id="screen-matching" class="demo-screen">
-                        <h2>تطبیق استعدادها</h2>
+                        <h2 style="margin-bottom: 1.5rem;">سیستم تطبیق استعداد</h2>
+                        <p style="margin-bottom: 2.5rem; color: var(--text-muted);">هوش مصنوعی ما الزامات را در لحظه
+                            تحلیل کرده و بهترین استعدادها را در سراسر جهان پیدا می‌کند.</p>
                         <div class="mock-ui-card">
-                            <strong>مهندس کلود ارشد</strong>
-                            <span class="status-badge status-completed">۹۸٪ تطابق</span>
-                            <p>کاندیدا: مارکوس اس. | ۱۰ سال تجربه</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <strong>Senior Cloud Engineer</strong>
+                                <span class="status-badge status-processing">۹۸٪ تطبیق</span>
+                            </div>
+                            <p class="text-muted mt-2">کاندیدا: مارکوس اس. | ۱۰ سال تجربه | تخصص: AWS/Azure</p>
+                            <button class="btn btn-outline-primary btn-sm mt-3"
+                                onclick="alert('در حال بارگذاری جزئیات...')">مشاهده جزئیات</button>
+                        </div>
+                        <div class="mock-ui-card">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <strong>Frontend Architect</strong>
+                                <span class="status-badge status-processing">۸۵٪ تطبیق</span>
+                            </div>
+                            <p class="text-muted mt-2">کاندیدا: النا پی. | ۶ سال تجربه | تخصص: React/Vue</p>
+                            <button class="btn btn-outline-primary btn-sm mt-3">تماس گرفتن</button>
+                        </div>
+                    </div>
+
+                    <!-- Documents Screen -->
+                    <div id="screen-documents" class="demo-screen">
+                        <h2 style="margin-bottom: 2.5rem;">جریان‌های کاری اتوماسیون</h2>
+                        <img src="../image/demo_automation.png" alt="Automation Mockup"
+                            style="width: 60%; margin: 0 auto 3.5rem; display: block; border-radius: var(--radius);">
+                        <div class="mock-ui-card">
+                            <div class="d-flex justify-content-between">
+                                <span>پیش‌نویس_قرارداد_کار.pdf</span>
+                                <span class="status-badge status-completed">امضا شده</span>
+                            </div>
+                        </div>
+                        <div class="mock-ui-card">
+                            <div class="d-flex justify-content-between">
+                                <span>گواهی_صلاحیت.zip</span>
+                                <span class="status-badge status-processing">در حال بررسی</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Visa Screen -->
+                    <div id="screen-visa" class="demo-screen">
+                        <div class="d-flex justify-content-between align-items-center mb-4">
+                            <h2>پیگیری ویزا</h2>
+                            <div class="visa-percentage" style="text-align: left;">
+                                <span style="font-size: 1.5rem; font-weight: 700; color: #3b82f6;">۶۵٪</span>
+                                <p class="text-muted small">تکمیل شده</p>
+                            </div>
+                        </div>
+
+                        <!-- Progress Bar -->
+                        <div
+                            style="width: 100%; height: 8px; background: var(--border); border-radius: 100px; margin-bottom: 3rem; overflow: hidden;">
+                            <div
+                                style="width: 65%; height: 100%; background: linear-gradient(90deg, #3b82f6, #60a5fa); border-radius: 100px; box-shadow: 0 0 15px rgba(59, 130, 246, 0.4); float: right;">
+                            </div>
+                        </div>
+
+                        <div class="grid" style="display: grid; grid-template-columns: 1.5fr 1fr; gap: 2rem;">
+                            <div class="timeline"
+                                style="border-right: 2px dashed var(--border); padding-right: 2rem; position: relative; margin-right: 1rem;">
+                                <div class="timeline-item" style="margin-bottom: 2rem; position: relative;">
+                                    <div
+                                        style="position: absolute; right: -2.6rem; top: 0; width: 1.2rem; height: 1.2rem; background: #10b981; border-radius: 50%; border: 3px solid var(--bg-main);">
+                                    </div>
+                                    <h4 style="margin-bottom: 0.25rem;">ارسال مدارک</h4>
+                                    <p class="text-muted small">به طور کامل در تاریخ ۲۰۲۶/۰۳/۱۵ بررسی شد</p>
+                                </div>
+                                <div class="timeline-item" style="margin-bottom: 2rem; position: relative;">
+                                    <div
+                                        style="position: absolute; right: -2.6rem; top: 0; width: 1.2rem; height: 1.2rem; background: #3b82f6; border-radius: 50%; border: 3px solid var(--bg-main); box-shadow: 0 0 10px rgba(59, 130, 246, 0.5);">
+                                    </div>
+                                    <h4 style="margin-bottom: 0.25rem;">بررسی مقامات</h4>
+                                    <p class="text-muted small">وضعیت فعلی: در حال پردازش توسط BAMF</p>
+                                </div>
+                                <div class="timeline-item" style="position: relative;">
+                                    <div
+                                        style="position: absolute; right: -2.6rem; top: 0; width: 1.2rem; height: 1.2rem; background: var(--border); border-radius: 50%; border: 3px solid var(--bg-main);">
+                                    </div>
+                                    <h4 style="margin-bottom: 0.25rem; opacity: 0.6;">صدور ویزا</h4>
+                                    <p class="text-muted small">پیش‌بینی شده: اواخر آوریل ۲۰۲۶</p>
+                                </div>
+                            </div>
+
+                            <div class="visa-stats-cards">
+                                <div class="mock-ui-card" style="margin-top: 0; padding: 1.25rem;">
+                                    <p class="text-muted small mb-1">زمان باقی‌ مانده</p>
+                                    <p style="font-weight: 700; font-size: 1.1rem;">~ ۱۴ روز</p>
+                                </div>
+                                <div class="mock-ui-card" style="margin-top: 1rem; padding: 1.25rem;">
+                                    <p class="text-muted small mb-1">گام بعدی</p>
+                                    <p style="font-weight: 700; font-size: 1.1rem; color: #3b82f6;">قرار نهایی</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="demo-sidebar">
-                    <div class="demo-nav-item active" onclick="switchScreen('dashboard')">
-                        <i class="fas fa-th-large"></i><span>داشبورد</span>
-                    </div>
-                    <div class="demo-nav-item" onclick="switchScreen('matching')">
-                        <i class="fas fa-users"></i><span>تطبیق استعداد</span>
-                    </div>
-                    <div class="demo-nav-item" onclick="switchScreen('documents')">
-                        <i class="fas fa-file-signature"></i><span>اسناد</span>
-                    </div>
-                    <div class="demo-nav-item" onclick="switchScreen('visa')">
-                        <i class="fas fa-passport"></i><span>وضعیت ویزا</span>
-                    </div>
+            </div>
+        </section>
+
+        <!-- Final CTA -->
+        <section class="reveal" style="padding-top: 3rem;">
+            <div class="container">
+                <div class="final-cta">
+                    <h2>علاقه‌مند شدید؟</h2>
+                    <p>بیایید به طور شخصی در مورد نیازهای شما صحبت کنیم.</p>
+                    <a href="contact.html" class="btn-cta">درخواست مشاوره</a>
                 </div>
             </div>
         </section>
     </main>
 
-    <script>
-        function switchScreen(screenId) {
-            document.querySelectorAll('.demo-screen').forEach(s => s.classList.remove('active'));
-            document.querySelectorAll('.demo-nav-item').forEach(i => i.classList.remove('active'));
-            document.getElementById('screen-' + screenId).classList.add('active');
-            event.currentTarget.classList.add('active');
-        }
-    </script>
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <img src="../image/logo.png" alt="OpenRise Logo" class="brand-logo">
+                    <p>دروازه شما به سوی استعدادهای جهانی. ما استخدام بین‌المللی را از طریق راهکارهای هوشمند هوش مصنوعی
+                        ساده می‌کنیم.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-heading">پلتفرم</h4>
+                    <ul class="footer-links">
+                        <li><a href="features.html">ویژگی‌ها</a></li>
+                        <li><a href="demo.html">دمو</a></li>
+                        <li><a href="team.html">تیم و چشم‌انداز</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-heading">منابع</h4>
+                    <ul class="footer-links">
+                        <li><a href="contact.html">تماس</a>
+                            <div class="lang-switcher-nav"><a href="../demo.html" class="lang-link">DE</a><a
+                                    href="../en/demo.html" class="lang-link">EN</a><a href="demo.html"
+                                    class="lang-link active">FA</a></div>
+                        </li>
+                        <li><a href="../blog-fachkraeftemangel.html">بلاگ</a></li>
+                        <li><a href="../datenschutz.html">حریم خصوصی</a></li>
+                        <li><a href="../impressum.html">اطلاعات حقوقی</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 OpenRise. تمامی حقوق محفوظ است. | <i class="fas fa-globe"></i> Global Hiring Solution
+                </p>
+            </div>
+        </div>
+    </footer>
+
     <script src="../js/background.js"></script>
     <script src="../js/interactive.js"></script>
     <script src="../js/script.js"></script>
+    <script>
+        function switchScreen(screenId) {
+            // Remove active class from all nav items
+            document.querySelectorAll('.demo-nav-item').forEach(item => {
+                item.classList.remove('active');
+            });
+
+            // Add active class to clicked nav item
+            const clickedItem = Array.from(document.querySelectorAll('.demo-nav-item')).find(item => {
+                return item.getAttribute('onclick', '').includes(screenId);
+            });
+            if (clickedItem) clickedItem.classList.add('active');
+
+            // Hide all screens
+            document.querySelectorAll('.demo-screen').forEach(screen => {
+                screen.classList.remove('active');
+            });
+
+            // Show selected screen
+            document.getElementById('screen-' + screenId).classList.add('active');
+        }
+    </script>
 </body>
+
 </html>
