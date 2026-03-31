@@ -61,8 +61,58 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, observerOptions);
 
-    document.querySelectorAll('section, .card, .team-row, .timeline-spine').forEach(el => {
+    document.querySelectorAll('section, .card, .team-row, .timeline-spine, .fade-in').forEach(el => {
         el.classList.add('reveal');
         observer.observe(el);
     });
+
+    // Number Counter Animation for Statistics
+    const countItems = document.querySelectorAll('.stat-number');
+    const countObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if(entry.isIntersecting && !entry.target.classList.contains('counted')) {
+                const target = entry.target;
+                const finalValue = parseInt(target.innerText.replace('.', ''));
+                let current = 0;
+                const duration = 2000;
+                const startTime = performance.now();
+
+                const animate = (now) => {
+                    const elapsed = now - startTime;
+                    const progress = Math.min(elapsed / duration, 1);
+                    
+                    // Cubic ease-out
+                    const eased = 1 - Math.pow(1 - progress, 3);
+                    const val = Math.floor(eased * finalValue);
+                    
+                    target.innerText = val.toLocaleString('de-DE');
+
+                    if (progress < 1) {
+                        requestAnimationFrame(animate);
+                    } else {
+                        target.innerText = finalValue.toLocaleString('de-DE');
+                        target.classList.add('counted');
+                    }
+                };
+
+                requestAnimationFrame(animate);
+                countObserver.unobserve(target);
+            }
+        });
+    }, { threshold: 0.5 });
+
+    // Scroll Progress Bar
+    const progressBar = document.getElementById('scroll-progress');
+    if (progressBar) {
+        window.addEventListener('scroll', () => {
+            const h = document.documentElement,
+                  b = document.body,
+                  st = 'scrollTop',
+                  sh = 'scrollHeight';
+            const percent = (h[st] || b[st]) / ((h[sh] || b[sh]) - h.clientHeight) * 100;
+            progressBar.style.width = percent + '%';
+        });
+    }
+
+    countItems.forEach(item => countObserver.observe(item));
 });
