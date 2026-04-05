@@ -3157,22 +3157,28 @@ input:not(:checked)+.slider .sun-icon {
     text-align: right;
 }
 
-[dir='rtl'] .hero-split,
-[dir='rtl'] .split-section,
-[dir='rtl'] .why-grid,
-[dir='rtl'] .footer-grid,
-[dir='rtl'] .nav-container,
-[dir='rtl'] .hero-reels-right,
-[dir='rtl'] .team-row {
+[dir='rtl'] body {
+    font-family: 'Vazirmatn', -apple-system, system-ui, sans-serif !important;
+}
+
+@media (min-width: 901px) {
+    [dir='rtl'] .hero-split,
+    [dir='rtl'] .nav-links,
+    [dir='rtl'] .hero-reels-right,
+    [dir='rtl'] .team-row,
+    [dir='rtl'] .split-section,
+    [dir='rtl'] .why-grid,
+    [dir='rtl'] .footer-grid {
+        flex-direction: row-reverse;
+    }
+}
+
+[dir='rtl'] .nav-container {
     flex-direction: row-reverse;
 }
 
 [dir='rtl'] .team-row.row-reverse {
     flex-direction: row;
-}
-
-[dir='rtl'] .nav-links {
-    flex-direction: row-reverse;
 }
 
 [dir='rtl'] .logo {
@@ -3185,8 +3191,10 @@ input:not(:checked)+.slider .sun-icon {
     margin-right: 0;
 }
 
-[dir='rtl'] .hero-content-left {
-    text-align: right;
+@media (min-width: 901px) {
+    [dir='rtl'] .hero-content-left {
+        text-align: right;
+    }
 }
 
 [dir='rtl'] .why-number {
@@ -3203,47 +3211,14 @@ input:not(:checked)+.slider .sun-icon {
 }
 
 
-/* --- Stronger RTL Overrides --- */
-[dir='rtl'] h1, [dir='rtl'] h2, [dir='rtl'] h3, [dir='rtl'] h4, [dir='rtl'] h5, [dir='rtl'] h6, [dir='rtl'] p, [dir='rtl'] span, [dir='rtl'] a, [dir='rtl'] li {
-    text-align: right !important;
-}
-
-[dir='rtl'] .text-center {
-    text-align: center !important;
-}
+/* Removed aggressive RTL overrides */
 
 [dir='rtl'] .hero-content-left {
     padding-left: 0 !important;
     padding-right: 0 !important;
 }
 
-[dir='rtl'] .cta-buttons {
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: flex-end;
-    gap: 1rem;
-}
 
-[dir='rtl'] .btn-outline {
-    margin: 0 !important;
-}
-
-[dir='rtl'] .btn-primary {
-    margin: 0 !important;
-}
-
-[dir='rtl'] .premium-solution-card {
-    direction: rtl !important;
-}
-
-[dir='rtl'] .showcase-text {
-    text-align: right !important;
-}
-
-[dir='rtl'] .showcase-badge {
-    margin-right: 0 !important;
-    margin-left: auto !important;
-}
 
 [dir='rtl'] .detail-item i {
     margin-right: 0 !important;
@@ -3251,7 +3226,7 @@ input:not(:checked)+.slider .sun-icon {
 }
 
 [dir='rtl'] .progress-header {
-    flex-direction: row-reverse;
+    flex-direction: row;
 }
 
 [dir='rtl'] .progress-percentage {

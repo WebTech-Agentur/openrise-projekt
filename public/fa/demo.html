@@ -9,113 +9,9 @@
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100;300;400;700&display=swap" rel="stylesheet">
+    
+
     <style>
-        body {
-            font-family: 'Vazirmatn', sans-serif;
-        }
-
-        /* Advanced Header Layout (Parity with Request) */
-        .nav-container {
-            display: flex !important;
-            align-items: center !important;
-            justify-content: center !important;
-            position: relative;
-            flex-direction: row !important;
-        }
-
-        .nav-container .logo {
-            position: absolute !important;
-            left: 0 !important;
-            margin: 0 !important;
-        }
-
-        .footer-brand {
-            text-align: right !important;
-        }
-
-        .footer-brand .logo {
-            position: static !important;
-            display: inline-block !important;
-        }
-
-        .nav-links {
-            display: flex !important;
-            flex-direction: row !important;
-            align-items: center !important;
-            justify-content: center !important;
-            width: 100% !important;
-            margin: 0 !important;
-            gap: 0 !important;
-        }
-
-        .nav-menu {
-            display: flex;
-            align-items: center;
-            gap: 2.5rem;
-            margin: 0 auto;
-        }
-
-        .nav-actions {
-            position: absolute !important;
-            right: 0 !important;
-            display: flex;
-            align-items: center;
-            gap: 1.5rem;
-        }
-
-        .mobile-menu-toggle {
-            position: absolute !important;
-            right: 0 !important;
-            margin: 0 !important;
-            z-index: 1002;
-        }
-
-        @media (max-width: 900px) {
-            .nav-menu, 
-            .nav-actions {
-                position: static !important;
-                flex-direction: column;
-                width: 100%;
-                gap: 2rem;
-                text-align: center;
-            }
-            
-            .nav-links {
-                position: fixed !important;
-                top: 0;
-                right: -100% !important;
-                width: 80% !important;
-                height: 100vh !important;
-                flex-direction: column !important;
-                justify-content: center !important;
-                background: var(--card-bg) !important;
-                transition: right 0.3s ease !important;
-                z-index: 1001;
-                padding: 2rem;
-            }
-            
-            .nav-links.active {
-                right: 0 !important;
-            }
-            
-            .nav-actions {
-                margin-top: 2rem;
-                padding-top: 2rem;
-                border-top: 1px solid var(--border);
-            }
-        }
-
-        .demo-hero {
-            text-align: center !important;
-        }
-
-        .demo-hero .container {
-            display: flex;
-            flex-direction: column;
-            align-items: center !important;
-            margin: 0 auto !important;
-        }
-
         .demo-simulator {
             background: var(--card-bg);
             border: 1px solid var(--border);
@@ -131,8 +27,7 @@
 
         .demo-sidebar {
             background: rgba(15, 23, 42, 0.03);
-            border-left: 1px solid var(--border);
-            border-right: none;
+            border-right: 1px solid var(--border);
             padding: 2rem 1rem;
         }
 
@@ -251,7 +146,6 @@
             background: var(--primary);
             border-radius: 10px;
             animation: growBar 2s ease-out forwards;
-            float: right;
         }
 
         @keyframes growBar {
@@ -276,13 +170,64 @@
         @keyframes slideIn {
             from {
                 opacity: 0;
-                transform: translateX(10px);
+                transform: translateX(-10px);
             }
 
             to {
                 opacity: 1;
                 transform: translateX(0);
             }
+        }
+
+        .demo-hero {
+            text-align: center;
+            padding: 8rem 0 2rem;
+            position: relative;
+        }
+
+        .demo-hero h1 {
+            font-size: 4.2rem;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, var(--text-main) 0%, var(--primary) 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-bg-accent {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, rgba(37, 99, 235, 0.05) 0%, transparent 70%);
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .demo-interactive-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+
+        .interactive-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 2.5rem;
+            text-align: center;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: pointer;
+            position: relative;
+        }
+
+        .interactive-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary);
+            box-shadow: var(--shadow-lg);
         }
 
         .card-visual {
@@ -394,116 +339,6 @@
             100% { width: 100px; height: 100px; opacity: 0; }
         }
 
-        .demo-interactive-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 4rem;
-        }
-
-        .interactive-card {
-            background: var(--card-bg);
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            padding: 2.5rem;
-            text-align: center;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            cursor: pointer;
-            position: relative;
-        }
-
-        .interactive-card:hover {
-            transform: translateY(-10px);
-            border-color: var(--primary);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .hero-bg-accent {
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle at center, rgba(37, 99, 235, 0.05) 0%, transparent 70%);
-            pointer-events: none;
-            z-index: -1;
-        }
-
-        .demo-interactive-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 4rem;
-        }
-
-        .interactive-card {
-            background: var(--card-bg);
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            padding: 2.5rem;
-            text-align: center;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            cursor: pointer;
-            position: relative;
-        }
-
-        .interactive-card:hover {
-            transform: translateY(-10px);
-            border-color: var(--primary);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .card-visual {
-            height: 100px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 2rem;
-            position: relative;
-            z-index: 2;
-        }
-
-        .matching-visual .ai-ring {
-            position: absolute;
-            width: 90px;
-            height: 90px;
-            border: 2px dashed rgba(59, 130, 246, 0.6);
-            border-radius: 50%;
-            animation: rotate 12s linear infinite;
-        }
-
-        .ai-core {
-            position: relative;
-            z-index: 3;
-        }
-
-        @keyframes rotate {
-            from {
-                transform: rotate(0deg);
-            }
-
-            to {
-                transform: rotate(360deg);
-            }
-        }
-
-        .automation-visual .gear-icon {
-            animation: pulse-gear 3s ease-in-out infinite;
-        }
-
-        @keyframes pulse-gear {
-
-            0%,
-            100% {
-                transform: scale(1);
-            }
-
-            50% {
-                transform: scale(1.1);
-            }
-        }
-
         /* Responsive Improvements */
         @media (max-width: 992px) {
             .demo-simulator {
@@ -513,7 +348,7 @@
             .demo-sidebar {
                 display: flex;
                 overflow-x: auto;
-                border-left: none;
+                border-right: none;
                 border-bottom: 1px solid var(--border);
                 padding: 1rem;
                 gap: 0.5rem;
@@ -548,32 +383,8 @@
             }
 
             .timeline {
-                padding-right: 1.5rem !important;
-                padding-left: 0 !important;
+                padding-left: 1.5rem !important;
             }
-        }
-
-        /* RTL Adjustments */
-        .timeline {
-            border-right: 2px dashed var(--border);
-            border-left: none !important;
-            padding-right: 2rem;
-            padding-left: 0 !important;
-        }
-
-        .timeline-item div[style*="left: -2.6rem"] {
-            left: auto !important;
-            right: -2.6rem !important;
-        }
-
-        .status-badge i {
-            margin-right: 0 !important;
-            margin-left: 0.5rem !important;
-        }
-
-        .btn i {
-            margin-left: 0 !important;
-            margin-right: 0.5rem !important;
         }
     </style>
 </head>
@@ -588,14 +399,14 @@
             <a href="index.html" class="logo"><img src="../image/logo.png" alt="OpenRise Logo" class="brand-logo"></a>
             <div class="mobile-menu-toggle"><i class="fas fa-bars"></i></div>
             <div class="nav-links">
-                <div class="nav-menu">
+
                     <a href="index.html">خانه</a>
                     <a href="features.html">ویژگی‌ها</a>
                     <a href="demo.html" class="active">دمو</a>
                     <a href="team.html">تیم و چشم‌انداز</a>
                     <a href="contact.html">تماس</a>
-                </div>
-                <div class="nav-actions">
+                
+
                     <div class="lang-switcher-nav">
                         <a href="../demo.html" class="lang-link">DE</a>
                         <a href="../en/demo.html" class="lang-link">EN</a>
@@ -609,8 +420,8 @@
                                 <i class="fas fa-moon moon-icon"></i>
                             </div>
                         </label>
-                    </div>
-                </div>
+                    
+            </div>
             </div>
         </div>
     </nav>
@@ -877,7 +688,7 @@
                 <div class="footer-brand">
                     <a href="index.html" class="logo"><img src="../image/logo.png" alt="OpenRise Logo"
                             class="brand-logo"></a>
-                    <p style="text-align: right !important;">پل شما به استعدادهای جهانی. ما دنیای پیچیده استخدام بین‌المللی را با هوش مصنوعی پیشرفته ساده می‌کنیم.</p>
+                    <p>پل شما به استعدادهای جهانی. ما دنیای پیچیده استخدام بین‌المللی را با هوش مصنوعی پیشرفته ساده می‌کنیم.</p>
                     <div class="footer-status">
                         <div class="status-indicator">
                             <span class="status-dot"></span>
