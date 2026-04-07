@@ -3182,8 +3182,8 @@ input:not(:checked)+.slider .sun-icon {
 }
 
 [dir='rtl'] .logo {
-    margin-left: auto;
-    margin-right: 0;
+    margin-left: 0;
+    margin-right: auto;
 }
 
 [dir='rtl'] .nav-links a {
