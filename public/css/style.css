@@ -1774,7 +1774,7 @@ input:not(:checked)+.slider .sun-icon {
 /* Team Timeline Section */
 .team-timeline {
     position: relative;
-    padding: 4rem 0;
+    padding: 2rem 0;
 }
 
 .timeline-spine {
@@ -1804,7 +1804,7 @@ input:not(:checked)+.slider .sun-icon {
     align-items: center;
     /* Vertical alignment fix */
     gap: 8rem;
-    margin-bottom: 12rem;
+    margin-bottom: 6rem;
     position: relative;
     z-index: 2;
     transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
@@ -1987,20 +1987,31 @@ input:not(:checked)+.slider .sun-icon {
     }
 
     .team-row {
-        grid-template-columns: 1fr;
-        gap: 3rem;
+        flex-direction: column;
+        align-items: flex-start !important;
+        text-align: left !important;
+        gap: 2rem;
         margin-bottom: 6rem;
-        padding-left: 60px;
+        padding-left: 70px;
+    }
+
+    .team-row.row-reverse {
+        flex-direction: column;
     }
 
     .team-row.row-reverse .member-image-box,
     .team-row.row-reverse .member-info {
-        grid-column: 1;
         text-align: left;
     }
 
     .member-image-box {
         justify-content: flex-start;
+        width: 100%;
+    }
+
+    .member-info {
+        padding: 0;
+        width: 100%;
     }
 
     .timeline-dot {
@@ -3192,8 +3203,11 @@ input:not(:checked)+.slider .sun-icon {
 }
 
 @media (min-width: 901px) {
+    [dir='rtl'] .hero {
+        text-align: center;
+    }
     [dir='rtl'] .hero-content-left {
-        text-align: right;
+        text-align: center;
     }
 }
 
@@ -3231,6 +3245,38 @@ input:not(:checked)+.slider .sun-icon {
 
 [dir='rtl'] .progress-percentage {
     margin-left: 0 !important;
+}
+
+/* RTL Responsive adjustments for Team Page */
+@media (max-width: 768px) {
+    [dir='rtl'] .timeline-spine {
+        left: auto;
+        right: 30px;
+    }
+    
+    [dir='rtl'] .timeline-dot {
+        left: auto !important;
+        right: 30px !important;
+    }
+
+    [dir='rtl'] .team-row {
+        padding-left: 0;
+        padding-right: 70px;
+        text-align: right !important;
+        align-items: flex-end !important;
+    }
+    
+    [dir='rtl'] .team-row.row-reverse .member-info {
+        text-align: right !important;
+    }
+
+    [dir='rtl'] .member-image-box {
+        justify-content: flex-end;
+    }
+    
+    [dir='rtl'] .member-info .member-details li {
+        padding-right: 0;
+    }
 }
 
 
