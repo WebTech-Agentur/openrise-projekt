@@ -1988,8 +1988,8 @@ input:not(:checked)+.slider .sun-icon {
 
     .team-row {
         flex-direction: column;
-        align-items: flex-start !important;
-        text-align: left !important;
+        align-items: center !important;
+        text-align: center !important;
         gap: 2rem;
         margin-bottom: 6rem;
         padding-left: 70px;
@@ -2001,11 +2001,11 @@ input:not(:checked)+.slider .sun-icon {
 
     .team-row.row-reverse .member-image-box,
     .team-row.row-reverse .member-info {
-        text-align: left;
+        text-align: center;
     }
 
     .member-image-box {
-        justify-content: flex-start;
+        justify-content: center;
         width: 100%;
     }
 
@@ -2287,6 +2287,8 @@ input:not(:checked)+.slider .sun-icon {
         padding-left: 50px !important;
         width: 100% !important;
         overflow-x: hidden !important;
+        align-items: center !important;
+        text-align: center !important;
     }
 
     .timeline-spine,
@@ -3176,7 +3178,6 @@ input:not(:checked)+.slider .sun-icon {
     [dir='rtl'] .hero-split,
     [dir='rtl'] .nav-links,
     [dir='rtl'] .hero-reels-right,
-    [dir='rtl'] .team-row,
     [dir='rtl'] .split-section,
     [dir='rtl'] .why-grid,
     [dir='rtl'] .footer-grid {
@@ -3188,9 +3189,7 @@ input:not(:checked)+.slider .sun-icon {
     flex-direction: row-reverse;
 }
 
-[dir='rtl'] .team-row.row-reverse {
-    flex-direction: row;
-}
+/* Removed team-row overrides to keep layout identical to EN/DE */
 
 [dir='rtl'] .logo {
     margin-left: 0;
@@ -3247,35 +3246,31 @@ input:not(:checked)+.slider .sun-icon {
     margin-left: 0 !important;
 }
 
-/* RTL Responsive adjustments for Team Page */
+/* RTL Team Page Fixes: Force LTR layout flow to match EN/DE exactly, only text changes direction */
+[dir='rtl'] .team-timeline {
+    direction: ltr;
+}
+
+[dir='rtl'] .member-info {
+    direction: rtl;
+    text-align: right !important;
+}
+
+[dir='rtl'] .member-info .member-role {
+    letter-spacing: normal; /* Better for Persian fonts */
+}
+
 @media (max-width: 768px) {
-    [dir='rtl'] .timeline-spine {
-        left: auto;
-        right: 30px;
-    }
-    
-    [dir='rtl'] .timeline-dot {
-        left: auto !important;
-        right: 30px !important;
-    }
-
+    /* Since we forced direction: ltr on the container, 
+       base mobile styles (left padding, left spine) now work 
+       identically for Persian without extra overrides. 
+       We only need to center the info block text to match DE/EN mobile. */
     [dir='rtl'] .team-row {
-        padding-left: 0;
-        padding-right: 70px;
-        text-align: right !important;
-        align-items: flex-end !important;
-    }
-    
-    [dir='rtl'] .team-row.row-reverse .member-info {
-        text-align: right !important;
+        align-items: center !important;
     }
 
-    [dir='rtl'] .member-image-box {
-        justify-content: flex-end;
-    }
-    
-    [dir='rtl'] .member-info .member-details li {
-        padding-right: 0;
+    [dir='rtl'] .member-info {
+        text-align: center !important;
     }
 }
 
