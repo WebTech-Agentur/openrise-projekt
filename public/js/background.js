@@ -25,8 +25,8 @@ class AnimatedBackground {
 
     getParticleColor() {
         const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
-        // Use primary color blue, very soft
-        return isDark ? 'rgba(59, 130, 246, 0.2)' : 'rgba(37, 99, 235, 0.15)';
+        // Use primary color blue, more visible in light mode as requested
+        return isDark ? 'rgba(59, 130, 246, 0.2)' : 'rgba(37, 99, 235, 0.35)';
     }
 
     init() {
