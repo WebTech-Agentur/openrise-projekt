@@ -87,8 +87,8 @@
                         <h3 class="pricing-title-sm">Starter</h3>
                         
                         <div class="pricing-price-container">
-                            <div class="pricing-price" data-price-monthly="1399,99 €" data-price-quarterly="767 €" data-price-yearly="699,99 €">
-                                <span class="amount">699,99 €</span> <span class="suffix">/Monat</span>
+                            <div class="pricing-price" data-price-monthly="1399,99 €" data-price-quarterly="767 €" data-price-yearly="699,99 €" data-discount-monthly="" data-discount-quarterly="-45%" data-discount-yearly="-50%">
+                                <span class="amount">699,99 €</span> <span class="suffix">/Monat</span><span class="discount-badge" style="display:inline-block;">-50%</span>
                             </div>
                             <div class="billed-yearly-hint" data-note-monthly="" data-note-quarterly="Wird als 2300€ alle 3 Monate abgerechnet" data-note-yearly="Wird als 8399,88€ jährlich abgerechnet">
                                 Wird als 8399,88€ jährlich abgerechnet
@@ -122,8 +122,8 @@
                         <h3 class="pricing-title-sm">Basic</h3>
                         
                         <div class="pricing-price-container">
-                            <div class="pricing-price" data-price-monthly="1999,99 €" data-price-quarterly="1100 €" data-price-yearly="999,99 €">
-                                <span class="amount">999,99 €</span> <span class="suffix">/Monat</span>
+                            <div class="pricing-price" data-price-monthly="1999,99 €" data-price-quarterly="1100 €" data-price-yearly="999,99 €" data-discount-monthly="" data-discount-quarterly="-45%" data-discount-yearly="-50%">
+                                <span class="amount">999,99 €</span> <span class="suffix">/Monat</span><span class="discount-badge" style="display:inline-block;">-50%</span>
                             </div>
                             <div class="billed-yearly-hint" data-note-monthly="" data-note-quarterly="Wird als 3300€ alle 3 Monate abgerechnet" data-note-yearly="Wird als 11999,88€ jährlich abgerechnet">
                                 Wird als 11999,88€ jährlich abgerechnet
@@ -158,8 +158,8 @@
                         <h3 class="pricing-title-sm">Pro</h3>
                         
                         <div class="pricing-price-container">
-                            <div class="pricing-price" data-price-monthly="2599,99 €" data-price-quarterly="1433 €" data-price-yearly="1299,99 €">
-                                <span class="amount">1299,99 €</span> <span class="suffix">/Monat</span>
+                            <div class="pricing-price" data-price-monthly="2599,99 €" data-price-quarterly="1433 €" data-price-yearly="1299,99 €" data-discount-monthly="" data-discount-quarterly="-45%" data-discount-yearly="-50%">
+                                <span class="amount">1299,99 €</span> <span class="suffix">/Monat</span><span class="discount-badge" style="display:inline-block;">-50%</span>
                             </div>
                             <div class="billed-yearly-hint" data-note-monthly="" data-note-quarterly="Wird als 4299€ alle 3 Monate abgerechnet" data-note-yearly="Wird als 15599,88€ jährlich abgerechnet">
                                 Wird als 15599,88€ jährlich abgerechnet
@@ -245,9 +245,19 @@
 
                     prices.forEach(priceEl => {
                         const newAmount = priceEl.getAttribute("data-price-" + period);
+                        const newDiscount = priceEl.getAttribute("data-discount-" + period);
                         if (newAmount) {
                             const amountSpan = priceEl.querySelector(".amount");
                             if (amountSpan) amountSpan.textContent = newAmount;
+                        }
+                        const discountBadge = priceEl.querySelector(".discount-badge");
+                        if (discountBadge) {
+                            if (newDiscount) {
+                                discountBadge.textContent = newDiscount;
+                                discountBadge.style.display = "inline-block";
+                            } else {
+                                discountBadge.style.display = "none";
+                            }
                         }
                     });
 

@@ -96,7 +96,7 @@ nav {
     background: var(--nav-bg);
     backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--border);
-    padding: 1rem 0;
+    padding: 0.7rem 0;
 }
 
 .nav-container {
@@ -965,11 +965,7 @@ nav {
 .hero h1 {
     max-width: 900px;
     margin: 0 auto 1.5rem;
-    background: linear-gradient(135deg, var(--text-main) 0%, var(--primary) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    filter: drop-shadow(0 2px 10px rgba(37, 99, 235, 0.15));
+    color: #7c3aed;
     text-align: center;
 }
 

@@ -262,3 +262,15 @@ body {
 .text-danger {
     color: #ef4444;
 }
+
+.discount-badge {
+    font-size: 0.75rem;
+    background: #10b981;
+    color: white;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    margin-left: 0.5rem;
+    vertical-align: super;
+    font-weight: 600;
+    letter-spacing: normal;
+}
