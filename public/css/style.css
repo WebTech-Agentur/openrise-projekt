@@ -96,7 +96,7 @@ nav {
     background: var(--nav-bg);
     backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--border);
-    padding: 0.7rem 0;
+    padding: 0.6rem 0;
 }
 
 .nav-container {
