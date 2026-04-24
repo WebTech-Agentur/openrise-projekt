@@ -55,15 +55,12 @@
     line-height: 1.5;
 }
 
+/* Updated Vercel-like subtle icons for freemium grid */
 .freemium-item i {
-    color: #10b981;
-    font-size: 1.1rem;
+    color: #64748b;
+    font-size: 1.2rem;
     margin-top: 0.2rem;
-    background: #d1fae5;
-    padding: 0.3rem;
-    border-radius: 50%;
     min-width: 24px;
-    height: 24px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -281,7 +278,7 @@
     flex-grow: 1;
 }
 
-/* Features aligned left */
+/* Vercel-style Features aligned left with individual icons */
 .pricing-features li {
     display: flex;
     justify-content: flex-start;
@@ -303,24 +300,32 @@
     line-height: 1.5;
 }
 
-.pricing-features li i.fa-check,
-.pricing-features li i.fa-times {
-    color: var(--primary);
-    background: var(--primary-soft);
-    border-radius: 50%;
-    font-size: 0.7rem;
-    min-width: 22px;
-    height: 22px;
+/* Style for the new distinct icons (no background circle, muted color) */
+.pricing-features li i {
+    color: #94a3b8; /* slate-400 */
+    font-size: 1.15rem;
+    min-width: 24px;
+    height: 24px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 0.2rem; /* Aligns with text nicely */
+    margin-top: 0.15rem; /* Aligns with text nicely */
     flex-shrink: 0;
+    transition: color 0.2s;
 }
 
-.pricing-card.highlight .pricing-features li i.fa-check {
-    color: #b45309;
-    background: #fde68a;
+/* Hover effect on the list item lights up the icon */
+.pricing-features li:hover i {
+    color: var(--primary);
+}
+
+.pricing-card.highlight .pricing-features li:hover i {
+    color: #a16207;
+}
+
+/* Special red color for the locked/upgrade icon */
+.pricing-features li i.fa-lock {
+    color: #ef4444 !important;
 }
 
 .btn-pricing {
