@@ -70,9 +70,9 @@
                     <div class="filter-box">
                         <span class="filter-label">Zeitrahmen <i class="fas fa-calendar-alt" style="color:var(--primary)"></i></span>
                         <div class="filter-tags">
-                            <button class="filter-tag">Monatliche Abrechnung</button>
-                            <button class="filter-tag">Quartalsweise</button>
-                            <button class="filter-tag active">Jährliche Abrechnung (~50% sparen)</button>
+                            <button class="filter-tag" data-period="monthly">Monatliche Abrechnung</button>
+                            <button class="filter-tag" data-period="quarterly">Quartalsweise</button>
+                            <button class="filter-tag active" data-period="yearly">Jährliche Abrechnung (~50% sparen)</button>
                         </div>
                     </div>
                 </div>
@@ -90,8 +90,8 @@
                         <div class="pricing-status">
                             <span class="status-badge">Verfügbar</span> Status:
                         </div>
-                        <div class="pricing-price">
-                            0€
+                        <div class="pricing-price" data-price-monthly="0€" data-price-quarterly="0€" data-price-yearly="0€">
+                            <span class="amount">0€</span>
                         </div>
                         <ul class="pricing-features">
                             <li><span class="feature-text">Konto erstellen</span> <i class="fas fa-check"></i></li>
@@ -99,6 +99,7 @@
                             <li><span class="feature-text">Qualifizierte Lebensläufe ansehen</span> <i class="fas fa-check"></i></li>
                             <li><span class="feature-text text-danger">Kontakt & Interviews: Upgrade nötig</span> <i class="fas fa-times" style="background:#fee2e2; color:#ef4444;"></i></li>
                         </ul>
+                        <div class="billed-yearly-hint" data-note-monthly="" data-note-quarterly="" data-note-yearly="" style="display:none;"></div>
                         <button class="btn-pricing">Kostenlos registrieren</button>
                     </div>
 
@@ -114,8 +115,8 @@
                         <div class="pricing-status">
                             <span class="status-badge">Verfügbar</span> Status:
                         </div>
-                        <div class="pricing-price">
-                            699,99€ <span>/ mtl.</span>
+                        <div class="pricing-price" data-price-monthly="1399,99€" data-price-quarterly="767€" data-price-yearly="699,99€">
+                            <span class="amount">699,99€</span> <span class="suffix">/ mtl.</span>
                         </div>
                         <ul class="pricing-features">
                             <li><span class="feature-text">Unbegrenzter Zugriff auf Lebensläufe</span> <i class="fas fa-check"></i></li>
@@ -127,7 +128,7 @@
                             <li><span class="feature-text">Übersichtliches Dashboard</span> <i class="fas fa-check"></i></li>
                             <li><span class="feature-text">Flexibel kündbar nach Laufzeit</span> <i class="fas fa-check"></i></li>
                         </ul>
-                        <div class="billed-yearly-hint">
+                        <div class="billed-yearly-hint" data-note-monthly="" data-note-quarterly="Wird als 2300€ alle 3 Monate abgerechnet" data-note-yearly="Wird als 8399,88€ jährlich abgerechnet">
                             Wird als 8399,88€ jährlich abgerechnet
                         </div>
                         <button class="btn-pricing">Starter wählen</button>
@@ -145,8 +146,8 @@
                         <div class="pricing-status">
                             <span class="status-badge" style="background:#fef3c7; color:#b45309;">Beliebt</span> Status:
                         </div>
-                        <div class="pricing-price">
-                            999,99€ <span>/ mtl.</span>
+                        <div class="pricing-price" data-price-monthly="1999,99€" data-price-quarterly="1100€" data-price-yearly="999,99€">
+                            <span class="amount">999,99€</span> <span class="suffix">/ mtl.</span>
                         </div>
                         <ul class="pricing-features">
                             <li><span class="feature-text">Unbegrenzter Zugriff auf Lebensläufe</span> <i class="fas fa-check"></i></li>
@@ -159,7 +160,7 @@
                             <li><span class="feature-text">Team-Zugang (bis 2 Nutzer)</span> <i class="fas fa-check"></i></li>
                             <li><span class="feature-text">Flexibel kündbar nach Laufzeit</span> <i class="fas fa-check"></i></li>
                         </ul>
-                        <div class="billed-yearly-hint">
+                        <div class="billed-yearly-hint" data-note-monthly="" data-note-quarterly="Wird als 3300€ alle 3 Monate abgerechnet" data-note-yearly="Wird als 11999,88€ jährlich abgerechnet">
                             Wird als 11999,88€ jährlich abgerechnet
                         </div>
                         <button class="btn-pricing">Basic wählen</button>
@@ -177,8 +178,8 @@
                         <div class="pricing-status">
                             <span class="status-badge">Verfügbar</span> Status:
                         </div>
-                        <div class="pricing-price">
-                            1299,99€ <span>/ mtl.</span>
+                        <div class="pricing-price" data-price-monthly="2599,99€" data-price-quarterly="1433€" data-price-yearly="1299,99€">
+                            <span class="amount">1299,99€</span> <span class="suffix">/ mtl.</span>
                         </div>
                         <ul class="pricing-features">
                             <li><span class="feature-text">Unbegrenzter Zugriff auf Lebensläufe</span> <i class="fas fa-check"></i></li>
@@ -191,7 +192,7 @@
                             <li><span class="feature-text">Optionale HR-API Anbindung</span> <i class="fas fa-check"></i></li>
                             <li><span class="feature-text">Flexibel kündbar nach Laufzeit</span> <i class="fas fa-check"></i></li>
                         </ul>
-                        <div class="billed-yearly-hint">
+                        <div class="billed-yearly-hint" data-note-monthly="" data-note-quarterly="Wird als 4299€ alle 3 Monate abgerechnet" data-note-yearly="Wird als 15599,88€ jährlich abgerechnet">
                             Wird als 15599,88€ jährlich abgerechnet
                         </div>
                         <button class="btn-pricing">Pro wählen</button>
@@ -238,6 +239,46 @@
     <script src="js/background.js"></script>
     <script src="js/interactive.js"></script>
     <script src="js/script.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const tabs = document.querySelectorAll(".filter-tag[data-period]");
+            const prices = document.querySelectorAll(".pricing-price");
+            const hints = document.querySelectorAll(".billed-yearly-hint");
+
+            tabs.forEach(tab => {
+                tab.addEventListener("click", function () {
+                    // Update active state on tabs
+                    tabs.forEach(t => t.classList.remove("active"));
+                    this.classList.add("active");
+
+                    const period = this.getAttribute("data-period");
+
+                    // Update price amounts
+                    prices.forEach(priceEl => {
+                        const newAmount = priceEl.getAttribute("data-price-" + period);
+                        if (newAmount) {
+                            const amountSpan = priceEl.querySelector(".amount");
+                            if (amountSpan) amountSpan.textContent = newAmount;
+                        }
+                    });
+
+                    // Update billing notes below features
+                    hints.forEach(hintEl => {
+                        const newNote = hintEl.getAttribute("data-note-" + period);
+                        if (newNote !== null) {
+                            hintEl.textContent = newNote;
+                            // Add a visual fade effect (optional but nice)
+                            hintEl.style.opacity = "0";
+                            setTimeout(() => {
+                                hintEl.style.display = newNote === "" ? "none" : "block";
+                                hintEl.style.opacity = "1";
+                            }, 50);
+                        }
+                    });
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>
