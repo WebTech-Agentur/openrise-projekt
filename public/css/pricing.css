@@ -1,0 +1,309 @@
+/* New Pricing Page Styles */
+.pricing-page-hero {
+    padding-top: 8rem;
+    padding-bottom: 5rem;
+    background-color: #f6f6f9; /* Light grey background similar to the image */
+}
+
+/* Freemium Features List */
+.freemium-section {
+    margin-bottom: 4rem;
+}
+
+.freemium-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: #333;
+    text-align: left;
+}
+
+.freemium-features-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.freemium-feature {
+    background: white;
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-weight: 600;
+    color: #444;
+    border: 1px solid #eaeaea;
+}
+
+.freemium-feature i {
+    color: #10b981; /* Green checkmark */
+    font-size: 1.1rem;
+}
+
+/* Subscriptions Section */
+.subs-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #333;
+    text-align: left;
+}
+
+.subs-desc {
+    text-align: center;
+    font-style: italic;
+    color: #555;
+    max-width: 800px;
+    margin: 0 auto 2rem;
+    line-height: 1.5;
+    font-size: 0.95rem;
+}
+
+/* Tabs */
+.pricing-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+}
+
+.pricing-tab {
+    padding: 0.6rem 1.5rem;
+    border-radius: 30px;
+    border: 1px solid #8b5cf6; /* Purple */
+    background: transparent;
+    color: #8b5cf6;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: 0.95rem;
+}
+
+.pricing-tab.active {
+    background: #8b5cf6;
+    color: white;
+}
+
+.pricing-tab:hover:not(.active) {
+    background: #f3f0ff;
+}
+
+/* Grid */
+.pricing-grid-new {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    align-items: stretch;
+}
+
+@media (max-width: 1100px) {
+    .pricing-grid-new {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 650px) {
+    .pricing-grid-new {
+        grid-template-columns: 1fr;
+    }
+}
+
+.pricing-card-new {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem 1.5rem;
+    border: 1px solid #eaeaea;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.pricing-card-new:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+}
+
+.pricing-card-new.highlight {
+    border: 2px solid #8b5cf6;
+    box-shadow: 0 8px 15px rgba(139, 92, 246, 0.15);
+}
+
+/* Ribbon Badge for Highlight */
+.ribbon-wrapper {
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    width: 85px;
+    height: 85px;
+    overflow: hidden;
+    border-radius: 0 12px 0 0;
+}
+
+.ribbon {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: white;
+    text-align: center;
+    transform: rotate(45deg);
+    position: relative;
+    padding: 5px 0;
+    left: -5px;
+    top: 15px;
+    width: 120px;
+    background-color: #8b5cf6;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.plan-name {
+    text-align: center;
+    color: #8b5cf6; /* Purple */
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+}
+
+.plan-price {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #333;
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+}
+
+.plan-price span {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #666;
+    margin-left: 0.2rem;
+}
+
+.plan-features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 2rem 0;
+    flex-grow: 1;
+}
+
+.plan-features li {
+    position: relative;
+    padding-left: 1rem;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    color: #444;
+    line-height: 1.4;
+    font-weight: 600;
+}
+
+.plan-features li::before {
+    content: "•";
+    color: #8b5cf6;
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+    font-size: 1.2rem;
+    line-height: 1;
+}
+
+.plan-features li.text-danger {
+    color: #dc2626; /* Red color for 'Upgrade nötig' */
+}
+
+.plan-features li.sub-feature {
+    padding-left: 1.5rem;
+    margin-top: -0.5rem;
+    font-size: 0.85rem;
+}
+
+.plan-features li.sub-feature::before {
+    content: "▪";
+    font-size: 0.8rem;
+    left: 0.5rem;
+}
+
+.billed-yearly {
+    font-weight: 800;
+    color: #333;
+    font-size: 0.85rem;
+    margin-left: 1rem;
+    margin-top: -0.5rem;
+    margin-bottom: 1rem;
+}
+
+.plan-features li.billed-yearly {
+    padding-left: 1rem;
+    margin-top: 0;
+}
+
+.plan-features li.billed-yearly::before {
+    content: "•";
+}
+
+.btn-plan {
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    background-color: #8b5cf6;
+    color: white;
+    text-align: center;
+    font-weight: 700;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: auto;
+}
+
+.btn-plan:hover {
+    background-color: #7c3aed;
+}
+
+/* Dark mode support (assuming data-theme="dark" is used) */
+[data-theme="dark"] .pricing-page-hero {
+    background-color: #0f172a; /* matches existing dark mode card-bg/bg */
+}
+
+[data-theme="dark"] .freemium-title,
+[data-theme="dark"] .subs-title {
+    color: #f8fafc;
+}
+
+[data-theme="dark"] .freemium-feature {
+    background: #1e293b;
+    border-color: #334155;
+    color: #e2e8f0;
+}
+
+[data-theme="dark"] .subs-desc {
+    color: #94a3b8;
+}
+
+[data-theme="dark"] .pricing-card-new {
+    background: #1e293b;
+    border-color: #334155;
+}
+
+[data-theme="dark"] .plan-price {
+    color: #f8fafc;
+}
+
+[data-theme="dark"] .plan-price span {
+    color: #94a3b8;
+}
+
+[data-theme="dark"] .plan-features li {
+    color: #cbd5e1;
+}
+
+[data-theme="dark"] .billed-yearly {
+    color: #f8fafc;
+}
