@@ -43,158 +43,150 @@
 
     <main>
         <section class="pricing-page-hero">
-            <div class="container">
+            <div class="container" style="max-width: 1200px;">
                 
-                <h1 class="pricing-title">Kostenfreie Freemium-Leistungen</h1>
-                <p class="pricing-subtitle">Nutzen Sie unsere Basis-Funktionen völlig kostenlos.</p>
-
-                <div class="freemium-container">
-                    <div class="freemium-grid">
-                        <div class="freemium-item"><i class="fas fa-user-plus"></i> Konto erstellen</div>
-                        <div class="freemium-item"><i class="fas fa-building"></i> Zugang zum Unternehmensprofiling</div>
-                        <div class="freemium-item"><i class="fas fa-file-alt"></i> Kostenloser Zugriff auf qualifizierte Lebensläufe</div>
-                        <div class="freemium-item"><i class="fas fa-bullhorn"></i> Kostenfreie Veröffentlichung von Stellenanzeigen (unbegrenzt)</div>
-                        <div class="freemium-item"><i class="fas fa-map"></i> Kostenfreie Roadmap</div>
-                        <div class="freemium-item"><i class="fas fa-eye"></i> Überblick über Abo-Optionen nach Bestätigung Lebenslauf</div>
-                    </div>
-                </div>
-
-                <h2 class="pricing-title" style="margin-top: 5rem;">Abonnements</h2>
-                <p class="pricing-subtitle">
-                    Ihr Zugang zur Plattform (inkl. Lebensläufe und Features) ist für die Dauer des gewählten
-                    Abrechnungszeitraums aktiv (1 Monat bei monatlicher, 3 Monate bei quartalsweiser, 12 Monate bei
-                    jährlicher Abrechnung).
-                </p>
-
                 <div class="pricing-filters-container">
-                    <div class="filter-box">
-                        <div class="filter-tags">
-                            <button class="filter-tag" data-period="monthly">Monatliche Abrechnung</button>
-                            <button class="filter-tag" data-period="quarterly">Quartalsweise</button>
-                            <button class="filter-tag active" data-period="yearly">Jährliche Abrechnung (~50% sparen)</button>
-                        </div>
+                    <div class="filter-tags">
+                        <button class="filter-tag" data-period="monthly">Monatlich</button>
+                        <button class="filter-tag" data-period="quarterly">Quartalsweise</button>
+                        <button class="filter-tag active" data-period="yearly">Jährlich</button>
                     </div>
                 </div>
 
                 <div class="pricing-grid">
                     <!-- Card 1: Freemium -->
-                    <div class="pricing-card">
-                        <div class="pricing-header">
-                            <div>
-                                <h3 class="pricing-title-sm">Freemium</h3>
-                                <p class="pricing-desc">Ideal zum Kennenlernen der Plattform und zur ersten Sichtung passender Kandidatenprofile.</p>
+                    <div class="pricing-card grey-bg">
+                        <h3 class="pricing-title-sm">Freemium</h3>
+                        
+                        <div class="pricing-price-container">
+                            <div class="pricing-price" data-price-monthly="Kostenlos" data-price-quarterly="Kostenlos" data-price-yearly="Kostenlos">
+                                <span class="amount" style="font-size: 1.5rem;">Kostenlos</span>
                             </div>
-                            <div class="pricing-icon"><i class="fas fa-leaf"></i></div>
                         </div>
-                        <div class="pricing-status">
-                            <span class="status-badge" style="background:#dcfce7; color:#166534;">Dauerhaft Kostenlos</span>
+
+                        <button class="btn-pricing white">Abo auswählen</button>
+
+                        <div class="pricing-desc-box">
+                            <p class="desc-label">Wähle Freemium, wenn du:</p>
+                            <p class="desc-text">Idealer Einstieg zum Kennenlernen der Plattform und zur ersten Sichtung passender Kandidatenprofile.</p>
                         </div>
-                        <div class="pricing-price" data-price-monthly="0€" data-price-quarterly="0€" data-price-yearly="0€">
-                            <span class="amount">0€</span>
+
+                        <div class="pricing-features-box">
+                            <p class="features-label">Enthält:</p>
+                            <ul class="pricing-features">
+                                <li><i class="fas fa-check grey"></i> <span class="feature-text">Konto erstellen</span></li>
+                                <li><i class="fas fa-check grey"></i> <span class="feature-text">Unbegrenzt Vakanzen schalten</span></li>
+                                <li><i class="fas fa-check grey"></i> <span class="feature-text">Qualifizierte Lebensläufe ansehen</span></li>
+                                <li><i class="fas fa-lock grey" style="color:#aaa;"></i> <span class="feature-text text-danger">Kontakt & Interviews: Upgrade nötig</span></li>
+                            </ul>
                         </div>
-                        <ul class="pricing-features">
-                            <li><i class="fas fa-user-plus"></i> <span class="feature-text">Konto erstellen</span></li>
-                            <li><i class="fas fa-bullhorn"></i> <span class="feature-text">Unbegrenzt Vakanzen schalten</span></li>
-                            <li><i class="fas fa-file-alt"></i> <span class="feature-text">Qualifizierte Lebensläufe ansehen</span></li>
-                            <li><i class="fas fa-lock"></i> <span class="feature-text text-danger">Kontakt & Interviews: Upgrade nötig</span></li>
-                        </ul>
-                        <div class="billed-yearly-hint" data-note-monthly="" data-note-quarterly="" data-note-yearly="" style="display:none;"></div>
-                        <button class="btn-pricing" style="background:#10b981; color:white; border:none;">Kostenlos starten</button>
                     </div>
 
                     <!-- Card 2: Starter -->
                     <div class="pricing-card">
-                        <div class="pricing-header">
-                            <div>
-                                <h3 class="pricing-title-sm">Starter</h3>
-                                <p class="pricing-desc">Für erste internationale Einstellungen mit klaren Limits und vollem Zugriff auf Kandidatenprofile.</p>
+                        <h3 class="pricing-title-sm">Starter</h3>
+                        
+                        <div class="pricing-price-container">
+                            <div class="pricing-price" data-price-monthly="1399,99 €" data-price-quarterly="767 €" data-price-yearly="699,99 €">
+                                <span class="amount">699,99 €</span> <span class="suffix">/Monat</span>
                             </div>
-                            <div class="pricing-icon"><i class="fas fa-paper-plane"></i></div>
+                            <div class="billed-yearly-hint" data-note-monthly="" data-note-quarterly="Wird als 2300€ alle 3 Monate abgerechnet" data-note-yearly="Wird als 8399,88€ jährlich abgerechnet">
+                                Wird als 8399,88€ jährlich abgerechnet
+                            </div>
                         </div>
-                        <div class="pricing-status">
-                            <span class="status-badge">Verfügbar</span>
+
+                        <button class="btn-pricing black">Abo auswählen</button>
+
+                        <div class="pricing-desc-box">
+                            <p class="desc-label">Wähle Starter, wenn du:</p>
+                            <p class="desc-text">Für erste internationale Einstellungen mit klaren Limits und vollem Zugriff auf Kandidatenprofile.</p>
                         </div>
-                        <div class="pricing-price" data-price-monthly="1399,99€" data-price-quarterly="767€" data-price-yearly="699,99€">
-                            <span class="amount">699,99€</span> <span class="suffix">/ mtl.</span>
+
+                        <div class="pricing-features-box">
+                            <p class="features-label">Hauptfunktionen:</p>
+                            <ul class="pricing-features">
+                                <li><i class="fas fa-check-circle green"></i> <span class="feature-text">Unbegrenzter Zugriff auf Lebensläufe</span></li>
+                                <li><i class="fas fa-check-circle green"></i> <span class="feature-text">Bis zu 2 Fachkräfte einstellen / mtl.</span></li>
+                                <li><i class="fas fa-check-circle green"></i> <span class="feature-text">Bis zu 3 Interviews pro Kandidat</span></li>
+                                <li><i class="fas fa-check-circle green"></i> <span class="feature-text">Passende Profile für Ihre Vakanzen</span></li>
+                                <li><i class="fas fa-check-circle green"></i> <span class="feature-text">Lebensläufe als PDF downloaden</span></li>
+                                <li><i class="fas fa-check-circle green"></i> <span class="feature-text">Basis-Matching</span></li>
+                                <li><i class="fas fa-check-circle green"></i> <span class="feature-text">Übersichtliches Dashboard</span></li>
+                                <li><i class="fas fa-check-circle green"></i> <span class="feature-text">Flexibel kündbar nach Laufzeit</span></li>
+                            </ul>
                         </div>
-                        <ul class="pricing-features">
-                            <li><i class="fas fa-unlock-alt"></i> <span class="feature-text">Unbegrenzter Zugriff auf Lebensläufe</span></li>
-                            <li><i class="fas fa-user-check"></i> <span class="feature-text">Bis zu 2 Fachkräfte einstellen / mtl.</span></li>
-                            <li><i class="fas fa-comments"></i> <span class="feature-text">Bis zu 3 Interviews pro Kandidat</span></li>
-                            <li><i class="fas fa-user-tie"></i> <span class="feature-text">Passende Profile für Ihre Vakanzen</span></li>
-                            <li><i class="fas fa-file-pdf"></i> <span class="feature-text">Lebensläufe als PDF downloaden</span></li>
-                            <li><i class="fas fa-puzzle-piece"></i> <span class="feature-text">Basis-Matching</span></li>
-                            <li><i class="fas fa-chart-line"></i> <span class="feature-text">Übersichtliches Dashboard</span></li>
-                            <li><i class="fas fa-clock"></i> <span class="feature-text">Flexibel kündbar nach Laufzeit</span></li>
-                        </ul>
-                        <div class="billed-yearly-hint" data-note-monthly="" data-note-quarterly="Wird als 2300€ alle 3 Monate abgerechnet" data-note-yearly="Wird als 8399,88€ jährlich abgerechnet">
-                            Wird als 8399,88€ jährlich abgerechnet
-                        </div>
-                        <button class="btn-pricing">Starter wählen</button>
                     </div>
 
-                    <!-- Card 3: Basic (Highlight) -->
-                    <div class="pricing-card highlight">
-                        <div class="pricing-header">
-                            <div>
-                                <h3 class="pricing-title-sm">Basic</h3>
-                                <p class="pricing-desc">Das empfohlene Paket für Teams, die mehrere Einstellungen parallel sauber koordinieren wollen.</p>
+                    <!-- Card 3: Basic -->
+                    <div class="pricing-card">
+                        <h3 class="pricing-title-sm">Basic</h3>
+                        
+                        <div class="pricing-price-container">
+                            <div class="pricing-price" data-price-monthly="1999,99 €" data-price-quarterly="1100 €" data-price-yearly="999,99 €">
+                                <span class="amount">999,99 €</span> <span class="suffix">/Monat</span>
                             </div>
-                            <div class="pricing-icon"><i class="fas fa-rocket"></i></div>
+                            <div class="billed-yearly-hint" data-note-monthly="" data-note-quarterly="Wird als 3300€ alle 3 Monate abgerechnet" data-note-yearly="Wird als 11999,88€ jährlich abgerechnet">
+                                Wird als 11999,88€ jährlich abgerechnet
+                            </div>
                         </div>
-                        <div class="pricing-status">
-                            <span class="status-badge">Empfohlen</span>
+
+                        <button class="btn-pricing black">Abo auswählen</button>
+
+                        <div class="pricing-desc-box">
+                            <p class="desc-label">Wähle Basic, wenn du:</p>
+                            <p class="desc-text">Das empfohlene Paket für Teams, die mehrere Einstellungen parallel sauber koordinieren wollen.</p>
                         </div>
-                        <div class="pricing-price" data-price-monthly="1999,99€" data-price-quarterly="1100€" data-price-yearly="999,99€">
-                            <span class="amount">999,99€</span> <span class="suffix">/ mtl.</span>
+
+                        <div class="pricing-features-box">
+                            <p class="features-label">Hauptfunktionen:</p>
+                            <ul class="pricing-features">
+                                <li><i class="fas fa-check-circle green"></i> <span class="feature-text">Unbegrenzter Zugriff auf Lebensläufe</span></li>
+                                <li><i class="fas fa-check-circle green"></i> <span class="feature-text">Bis zu 4 Fachkräfte einstellen / mtl.</span></li>
+                                <li><i class="fas fa-check-circle green"></i> <span class="feature-text">Bis zu 3 Interviews pro Kandidat</span></li>
+                                <li><i class="fas fa-check-circle green"></i> <span class="feature-text">Passende Profile für Ihre Vakanzen</span></li>
+                                <li><i class="fas fa-check-circle green"></i> <span class="feature-text">Alle Starter-Funktionen</span></li>
+                                <li><i class="fas fa-check-circle green"></i> <span class="feature-text">Benachrichtigung bei neuen Profilen</span></li>
+                                <li><i class="fas fa-check-circle green"></i> <span class="feature-text">Terminplanung (Google/Outlook)</span></li>
+                                <li><i class="fas fa-check-circle green"></i> <span class="feature-text">Team-Zugang (bis 2 Nutzer)</span></li>
+                                <li><i class="fas fa-check-circle green"></i> <span class="feature-text">Flexibel kündbar nach Laufzeit</span></li>
+                            </ul>
                         </div>
-                        <ul class="pricing-features">
-                            <li><i class="fas fa-unlock-alt"></i> <span class="feature-text">Unbegrenzter Zugriff auf Lebensläufe</span></li>
-                            <li><i class="fas fa-users"></i> <span class="feature-text">Bis zu 4 Fachkräfte einstellen / mtl.</span></li>
-                            <li><i class="fas fa-comments"></i> <span class="feature-text">Bis zu 3 Interviews pro Kandidat</span></li>
-                            <li><i class="fas fa-user-tie"></i> <span class="feature-text">Passende Profile für Ihre Vakanzen</span></li>
-                            <li><i class="fas fa-arrow-circle-up"></i> <span class="feature-text">Alle Starter-Funktionen</span></li>
-                            <li><i class="fas fa-bell"></i> <span class="feature-text">Benachrichtigung bei neuen Profilen</span></li>
-                            <li><i class="fas fa-calendar-alt"></i> <span class="feature-text">Terminplanung (Google/Outlook)</span></li>
-                            <li><i class="fas fa-user-friends"></i> <span class="feature-text">Team-Zugang (bis 2 Nutzer)</span></li>
-                            <li><i class="fas fa-clock"></i> <span class="feature-text">Flexibel kündbar nach Laufzeit</span></li>
-                        </ul>
-                        <div class="billed-yearly-hint" data-note-monthly="" data-note-quarterly="Wird als 3300€ alle 3 Monate abgerechnet" data-note-yearly="Wird als 11999,88€ jährlich abgerechnet">
-                            Wird als 11999,88€ jährlich abgerechnet
-                        </div>
-                        <button class="btn-pricing">Basic wählen</button>
                     </div>
 
-                    <!-- Card 4: Pro (Premium) -->
-                    <div class="pricing-card premium">
-                        <div class="pricing-header">
-                            <div>
-                                <h3 class="pricing-title-sm">Pro</h3>
-                                <p class="pricing-desc">Für größere Recruiting-Teams mit mehr Kapazität, stärkerem Matching und API-Systemanbindung.</p>
+                    <!-- Card 4: Pro -->
+                    <div class="pricing-card">
+                        <h3 class="pricing-title-sm">Pro</h3>
+                        
+                        <div class="pricing-price-container">
+                            <div class="pricing-price" data-price-monthly="2599,99 €" data-price-quarterly="1433 €" data-price-yearly="1299,99 €">
+                                <span class="amount">1299,99 €</span> <span class="suffix">/Monat</span>
                             </div>
-                            <div class="pricing-icon"><i class="fas fa-meteor"></i></div>
+                            <div class="billed-yearly-hint" data-note-monthly="" data-note-quarterly="Wird als 4299€ alle 3 Monate abgerechnet" data-note-yearly="Wird als 15599,88€ jährlich abgerechnet">
+                                Wird als 15599,88€ jährlich abgerechnet
+                            </div>
                         </div>
-                        <div class="pricing-status">
-                            <span class="status-badge">Enterprise</span>
+
+                        <button class="btn-pricing black">Vertrieb kontaktieren</button>
+
+                        <div class="pricing-desc-box">
+                            <p class="desc-label">Wähle Pro, wenn du:</p>
+                            <p class="desc-text">Für größere Recruiting-Teams mit mehr Kapazität, stärkerem Matching und API-Systemanbindung.</p>
                         </div>
-                        <div class="pricing-price" data-price-monthly="2599,99€" data-price-quarterly="1433€" data-price-yearly="1299,99€">
-                            <span class="amount">1299,99€</span> <span class="suffix">/ mtl.</span>
+
+                        <div class="pricing-features-box">
+                            <p class="features-label">Hauptfunktionen:</p>
+                            <ul class="pricing-features">
+                                <li><i class="fas fa-check-circle green"></i> <span class="feature-text">Unbegrenzter Zugriff auf Lebensläufe</span></li>
+                                <li><i class="fas fa-check-circle green"></i> <span class="feature-text">Bis zu 8 Fachkräfte einstellen / mtl.</span></li>
+                                <li><i class="fas fa-check-circle green"></i> <span class="feature-text">Bis zu 3 Interviews pro Kandidat</span></li>
+                                <li><i class="fas fa-check-circle green"></i> <span class="feature-text">Passende Profile für Ihre Vakanzen</span></li>
+                                <li><i class="fas fa-check-circle green"></i> <span class="feature-text">Alle Basic-Funktionen</span></li>
+                                <li><i class="fas fa-check-circle green"></i> <span class="feature-text">KI-gestütztes Matching & Ranking</span></li>
+                                <li><i class="fas fa-check-circle green"></i> <span class="feature-text">Wunschtermine für Interviews</span></li>
+                                <li><i class="fas fa-check-circle green"></i> <span class="feature-text">Optionale HR-API Anbindung</span></li>
+                                <li><i class="fas fa-check-circle green"></i> <span class="feature-text">Flexibel kündbar nach Laufzeit</span></li>
+                            </ul>
                         </div>
-                        <ul class="pricing-features">
-                            <li><i class="fas fa-unlock-alt"></i> <span class="feature-text">Unbegrenzter Zugriff auf Lebensläufe</span></li>
-                            <li><i class="fas fa-users-cog"></i> <span class="feature-text">Bis zu 8 Fachkräfte einstellen / mtl.</span></li>
-                            <li><i class="fas fa-comments"></i> <span class="feature-text">Bis zu 3 Interviews pro Kandidat</span></li>
-                            <li><i class="fas fa-user-tie"></i> <span class="feature-text">Passende Profile für Ihre Vakanzen</span></li>
-                            <li><i class="fas fa-arrow-circle-up"></i> <span class="feature-text">Alle Basic-Funktionen</span></li>
-                            <li><i class="fas fa-robot"></i> <span class="feature-text">KI-gestütztes Matching & Ranking</span></li>
-                            <li><i class="fas fa-calendar-check"></i> <span class="feature-text">Wunschtermine für Interviews</span></li>
-                            <li><i class="fas fa-code"></i> <span class="feature-text">Optionale HR-API Anbindung</span></li>
-                            <li><i class="fas fa-clock"></i> <span class="feature-text">Flexibel kündbar nach Laufzeit</span></li>
-                        </ul>
-                        <div class="billed-yearly-hint" data-note-monthly="" data-note-quarterly="Wird als 4299€ alle 3 Monate abgerechnet" data-note-yearly="Wird als 15599,88€ jährlich abgerechnet">
-                            Wird als 15599,88€ jährlich abgerechnet
-                        </div>
-                        <button class="btn-pricing">Pro wählen</button>
                     </div>
 
                 </div>
@@ -246,13 +238,11 @@
 
             tabs.forEach(tab => {
                 tab.addEventListener("click", function () {
-                    // Update active state on tabs
                     tabs.forEach(t => t.classList.remove("active"));
                     this.classList.add("active");
 
                     const period = this.getAttribute("data-period");
 
-                    // Update price amounts
                     prices.forEach(priceEl => {
                         const newAmount = priceEl.getAttribute("data-price-" + period);
                         if (newAmount) {
@@ -261,12 +251,10 @@
                         }
                     });
 
-                    // Update billing notes below features
                     hints.forEach(hintEl => {
                         const newNote = hintEl.getAttribute("data-note-" + period);
                         if (newNote !== null) {
                             hintEl.textContent = newNote;
-                            // Add a visual fade effect
                             hintEl.style.opacity = "0";
                             setTimeout(() => {
                                 hintEl.style.display = newNote === "" ? "none" : "block";
