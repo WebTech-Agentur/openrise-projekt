@@ -36,17 +36,20 @@ body {
     margin-bottom: 5rem;
     text-align: left;
 }
+
 .freemium-container h2 {
     font-size: 1.4rem;
     margin-bottom: 1.5rem;
     color: #000;
     font-weight: 600;
 }
+
 .freemium-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 1.2rem;
 }
+
 .freemium-item {
     display: flex;
     align-items: flex-start;
@@ -56,6 +59,7 @@ body {
     font-size: 0.95rem;
     line-height: 1.5;
 }
+
 .freemium-item i {
     color: #000;
     font-size: 0.9rem;
@@ -68,14 +72,17 @@ body {
     justify-content: center;
     margin-bottom: 3rem;
 }
+
 .filter-tags {
     display: flex;
     gap: 0.2rem;
     background: #ffffff;
     padding: 0.25rem;
     border-radius: 50px;
-    border: 2px solid #34d399; /* Bright mint green border */
+    border: 2px solid #34d399;
+    /* Bright mint green border */
 }
+
 .filter-tag {
     padding: 0.8rem 1.5rem;
     border: none;
@@ -87,8 +94,10 @@ body {
     font-weight: 500;
     color: #000;
 }
+
 .filter-tag.active {
-    background: #171717; /* Solid black/dark grey */
+    background: #171717;
+    /* Solid black/dark grey */
     color: #ffffff;
     box-shadow: none;
 }
@@ -107,6 +116,7 @@ body {
         grid-template-columns: repeat(2, 1fr);
         border: none;
     }
+
     .pricing-card {
         border: 1px solid #eaeaea;
         margin-bottom: 1rem;
@@ -126,9 +136,11 @@ body {
     display: flex;
     flex-direction: column;
 }
+
 .pricing-card:last-child {
     border-right: none;
 }
+
 .pricing-card.grey-bg {
     background-color: #fafafa;
 }
@@ -144,7 +156,8 @@ body {
 /* Prices */
 .pricing-price-container {
     margin-bottom: 2rem;
-    min-height: 80px; /* stabilize height */
+    min-height: 80px;
+    /* stabilize height */
 }
 
 .pricing-price {
@@ -190,6 +203,7 @@ body {
     color: #fff;
     border: 1px solid #000;
 }
+
 .btn-pricing.black:hover {
     background: #333;
 }
@@ -199,6 +213,7 @@ body {
     color: #000;
     border: 1px solid #ccc;
 }
+
 .btn-pricing.white:hover {
     border-color: #000;
 }
@@ -207,17 +222,20 @@ body {
 .pricing-desc-box {
     margin-bottom: 2rem;
 }
+
 .desc-label {
     font-size: 0.85rem;
     color: #000;
     font-weight: 600;
     margin-bottom: 0.8rem;
 }
+
 .desc-text {
     font-size: 0.85rem;
     color: #333;
     line-height: 1.6;
 }
+
 .desc-text li {
     margin-bottom: 0.5rem;
     margin-left: 1rem;

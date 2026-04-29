@@ -1,18 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
+<!DOCTYPE html><html lang="en"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Skilled Worker Shortage in Germany 2026: Strategies & Solutions | OpenRise</title>
-    <meta name="description"
-        content="Skilled worker shortage in Germany 2026: Current statistics on IT & engineering as well as tips for attracting professionals from abroad (Opportunity Card & Visa).">
+    <title>Skilled Worker Shortage in Germany 2026: Strategies &amp; Solutions | OpenRise</title>
+    <meta name="description" content="Skilled worker shortage in Germany 2026: Current statistics on IT &amp; engineering as well as tips for attracting professionals from abroad (Opportunity Card &amp; Visa).">
     <link rel="icon" type="image/png" href="../image/favicon.png?v=4">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         .blog-header {
-            padding: 12rem 0 6rem;
+            padding: 12rem 0 8rem;
             background: linear-gradient(rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.9)), url('../image/blog-header.png');
             background-size: cover;
             background-position: center;
@@ -65,7 +61,7 @@
 
         .blog-content {
             max-width: 800px;
-            margin: -4rem auto 2rem;
+            margin: -1.5rem auto 1rem;
             background: var(--card-bg);
             padding: 4rem;
             border-radius: 2rem;
@@ -125,15 +121,20 @@
             align-items: center;
             gap: 1rem;
             margin: 3.5rem 0 1.5rem;
-            color: var(--primary);
+            color: var(--text-main);
+            font-size: 1.8rem;
+            font-weight: 800;
             position: relative;
+            line-height: 1.3;
         }
 
         .blog-content h2 i {
-            font-size: 1.5rem;
-            opacity: 0.8;
-            background: var(--primary-soft);
-            padding: 0.5rem;
+            font-size: 1.2rem;
+            opacity: 1;
+            background: var(--bg);
+            border: 1px solid var(--border);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            padding: 0.6rem;
             border-radius: 12px;
             color: var(--primary);
         }
@@ -172,36 +173,26 @@
         }
 
         .blog-section {
-            padding: 4rem 0 2rem;
+            padding: 4rem 0 0;
             position: relative;
             overflow: visible;
         }
 
         .cta-section {
-            padding: 2rem 0 8rem;
+            padding: 0 0 8rem;
         }
 
-        .blog-content h2 {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin: 3.5rem 0 1.5rem;
-            color: var(--primary);
-            position: relative;
-        }
+        
 
-        .blog-content h2 i {
-            font-size: 1.5rem;
-            opacity: 0.8;
-            background: var(--primary-soft);
-            padding: 0.5rem;
-            border-radius: 12px;
-            color: var(--primary);
-        }
+        
 
         .blog-content h3 {
             margin: 2.5rem 0 1rem;
+            color: var(--text-main);
+            font-size: 1.4rem;
             font-weight: 700;
+            border-left: 3px solid var(--primary);
+            padding-left: 0.75rem;
         }
 
         .blog-content p {
@@ -526,7 +517,107 @@
                 font-size: 1rem;
             }
         }
-    </style>
+    
+        .blog-cards-container {
+            display: flex;
+            flex-direction: column;
+            gap: 2.5rem;
+            max-width: 900px;
+            margin: -1.5rem auto 1rem;
+            position: relative;
+            z-index: 10;
+        }
+
+        .blog-card {
+            background: var(--card-bg);
+            padding: 3rem;
+            border-radius: 2rem;
+            box-shadow: var(--shadow-lg);
+            border: 1px solid var(--border);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        [data-theme="dark"] .blog-card {
+            background: rgba(15, 23, 42, 0.6);
+            border-color: rgba(255, 255, 255, 0.05);
+        }
+
+        .blog-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(37, 99, 235, 0.15);
+            border-color: var(--primary);
+        }
+
+        .blog-card h2 {
+            color: var(--primary);
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            line-height: 1.3;
+        }
+
+        .blog-card p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+
+        .btn-read-more {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.75rem 1.5rem;
+            background: var(--primary-soft);
+            color: var(--primary);
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-read-more:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateX(5px);
+        }
+
+        @media (max-width: 768px) {
+            .blog-card {
+                padding: 2rem;
+                border-radius: 1.5rem;
+            }
+            .blog-card h2 {
+                font-size: 1.5rem;
+            }
+        }
+
+
+        /* Unique borders for each card */
+        .blog-card:nth-child(1) { border: 2px solid rgba(245, 158, 11, 0.5); }
+        .blog-card:nth-child(1):hover { border-color: #f59e0b; box-shadow: 0 10px 30px rgba(245, 158, 11, 0.15); }
+
+        .blog-card:nth-child(2) { border: 2px solid rgba(16, 185, 129, 0.5); }
+        .blog-card:nth-child(2):hover { border-color: #10b981; box-shadow: 0 10px 30px rgba(16, 185, 129, 0.15); }
+
+        .blog-card:nth-child(3) { border: 2px solid rgba(59, 130, 246, 0.5); }
+        .blog-card:nth-child(3):hover { border-color: #3b82f6; box-shadow: 0 10px 30px rgba(59, 130, 246, 0.15); }
+
+        .blog-card:nth-child(4) { border: 2px solid rgba(139, 92, 246, 0.5); }
+        .blog-card:nth-child(4):hover { border-color: #8b5cf6; box-shadow: 0 10px 30px rgba(139, 92, 246, 0.15); }
+
+        .blog-card:nth-child(5) { border: 2px solid rgba(236, 72, 153, 0.5); }
+        .blog-card:nth-child(5):hover { border-color: #ec4899; box-shadow: 0 10px 30px rgba(236, 72, 153, 0.15); }
+
+        .blog-card:nth-child(6) { border: 2px solid rgba(6, 182, 212, 0.5); }
+        .blog-card:nth-child(6):hover { border-color: #06b6d4; box-shadow: 0 10px 30px rgba(6, 182, 212, 0.15); }
+
+        .blog-card:nth-child(7) { border: 2px solid rgba(244, 63, 94, 0.5); }
+        .blog-card:nth-child(7):hover { border-color: #f43f5e; box-shadow: 0 10px 30px rgba(244, 63, 94, 0.15); }
+
+</style>
 </head>
 
 <body>
@@ -537,18 +628,18 @@
 
     <nav>
         <div class="container nav-container">
-            <a href="index" class="logo"><img src="../image/logo.png" alt="OpenRise Logo" class="brand-logo"></a>
+            <a href="index.html" class="logo"><img src="../image/logo.png" alt="OpenRise Logo" class="brand-logo"></a>
             <div class="mobile-menu-toggle"><i class="fas fa-bars"></i></div>
             <div class="nav-links">
-                <a href="index">Home</a>
-                <a href="features">Features</a>
-                <a href="../pricing">Pricing</a>
-                <a href="demo">Demo</a>
-                <a href="team">Team & Vision</a>
-                <a href="contact">Contact</a><div class="lang-switcher-nav"><a href="../blog-fachkraeftemangel" class="lang-link">DE</a><a href="blog-fachkraeftemangel" class="lang-link active">EN</a><a href="../fa/blog-fachkraeftemangel" class="lang-link">FA</a></div>
+                <a href="index.html">Home</a>
+                <a href="features.html">Features</a>
+                <a href="../pricing.html">Pricing</a>
+                <a href="demo.html">Demo</a>
+                <a href="team.html">Team &amp; Vision</a>
+                <a href="contact.html">Contact</a><div class="lang-switcher-nav"><a href="../blog-fachkraeftemangel.html" class="lang-link">DE</a><a href="blog-fachkraeftemangel.html" class="lang-link active">EN</a><a href="../fa/blog-fachkraeftemangel.html" class="lang-link">FA</a></div>
                 <div class="theme-switch-wrapper">
                     <label class="theme-switch" for="checkbox">
-                        <input type="checkbox" id="checkbox" />
+                        <input type="checkbox" id="checkbox">
                         <div class="slider round">
                             <i class="fas fa-sun sun-icon"></i>
                             <i class="fas fa-moon moon-icon"></i>
@@ -578,94 +669,49 @@
             <div class="abstract-shape shape-1"></div>
             <div class="abstract-shape shape-2"></div>
 
-            <article class="blog-content fade-in">
-                <a href="index" class="back-link"><i class="fas fa-arrow-left"></i> Back to Overview</a>
-
-                <p>The <strong>skilled worker shortage in Germany</strong> is no longer just an abstract prognosis, but a reality in almost all sectors of the economy. Despite economic fluctuations, the structural gap caused by demographic changes remains one of the greatest hurdles for German economic growth. In this article, we highlight the current situation and show ways for companies to <strong>attract professionals from abroad</strong>.</p>
-
-                <h2 id="statistik-2026" class="fade-in"><i class="fas fa-chart-bar"></i> 1. The Status Quo: Skilled Worker Shortage in Figures</h2>
-                <img src="../image/blog_vibe_1.png" alt="Illustration Matching" class="side-illustration fade-in">
-                <p class="fade-in">According to current reports from the Institute of the German Economy (IW Cologne) and industry associations like Bitkom and VDI, there is a clear demand as of early 2026:</p>
-
-                <div class="stat-grid fade-in">
-                    <div class="stat-card">
-                        <span class="stat-number" id="stat-it">109,000</span>
-                        <span class="stat-label">Open IT positions (Bitkom)</span>
-                    </div>
-                    <div class="stat-card">
-                        <span class="stat-number" id="stat-mint">148,500</span>
-                        <span class="stat-label">STEM gap (IW Cologne)</span>
-                    </div>
-                    <div class="stat-card">
-                        <span class="stat-number" id="stat-ing">99,470</span>
-                        <span class="stat-label">Open Engineering positions (VDI)</span>
-                    </div>
-                    <div class="stat-card">
-                        <span class="stat-number" id="stat-lehr">68,000</span>
-                        <span class="stat-label">Missing Teachers (KMK)</span>
-                    </div>
-                </div>
-
-                <h3>IT and Technology: The Heart of Digitalization</h3>
-                <p>Digital transformation is driving demand for specialists massively. Particularly sought after are software developers, IT security analysts, and experts in artificial intelligence. According to Bitkom, 79 % of companies expect the shortage to worsen in the future.
-                </p>
-                <h3>Engineering and the Energy Transition</h3>
-                <p>Without qualified engineers, projects like the energy transition or the expansion of digital infrastructure cannot be implemented. The VDI continues to report high demand, particularly for civil engineers and specialists for renewable energies.</p>
-
-                <h2 id="ausland-gewinnen"><i class="fas fa-globe-americas"></i> 2. Attracting professionals from abroad
-                </h2>
-                <img src="../image/blog_vibe_2.png" alt="Onboarding Illustration" class="side-illustration fade-in"
-                    style="float: left; margin: 1rem 2rem 1rem 0;">
-                <p>In view of the increasing shortage of skilled workers in Germany, attracting professionals from abroad is becoming increasingly important. International talent plays a decisive role in filling vacancies in fields such as IT, engineering and healthcare.
-                <br><br>
-                    Germany has significantly improved its legal framework in recent years to facilitate the immigration of qualified labor. This includes simplified visa procedures, faster recognition of qualifications and targeted programs for the integration of international professionals.
-                <br><br>
-                    For companies, recruiting international talent offers great opportunities: they not only secure their personnel requirements, but also strengthen innovation and competitiveness in a global market.</p>
-
-                <div class="highlight-box">
-                    <h4>Advantages of international talent:</h4>
-                    <ul style="list-style: none; padding-left: 0;">
-                        <li><i class="fas fa-check-circle"></i> Closing specific qualification gaps</li>
-                        <li><i class="fas fa-check-circle"></i> Increasing innovation through diverse perspectives
-                        </li>
-                        <li><i class="fas fa-check-circle"></i> Strengthening global competitiveness</li>
-                    </ul>
-                </div>
-
-                <h2 id="visum-prozesse" class="fade-in"><i class="fas fa-passport"></i> 3. Visa and entry processes: The new Skilled Immigration Act</h2>
-                <p class="fade-in">The modernized Skilled Immigration Act offers two central paths for access to the German labor market and makes it easier to attract skilled workers from abroad.</p>
-
-                <div class="info-grid fade-in">
-                    <div class="info-card">
-                        <h3>The Opportunity Card</h3>
-                        <p>Since 2024, the Opportunity Card has allowed skilled workers from non-EU countries to enter Germany to look for work. Allocation is based on a points system considering qualifications, language skills (German A1 or English B2), experience, and age. <strong>Working in Germany Visa</strong> processes have become significantly more flexible as a result.</p>
-                        <div class="hover-reveal">
-                            <span>Requirements in detail</span>
-                            <div class="reveal-content">
-                                German A1 or English B2, professional experience and a minimum age are requirements for the points system.
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="info-card">
-                        <h3>The EU Blue Card</h3>
-                        <p>For highly qualified academics and IT specialists, the EU Blue Card remains the gold standard. With adjusted salary thresholds (as of 2026: approx. €45,934 for shortage occupations), access to the German labor market for experts is easier than ever.</p>
-                        <div class="hover-reveal">
-                            <span>Current salary limits</span>
-                            <div class="reveal-content">
-                                Approx. €45,934 for shortage occupations (such as IT and engineering) in 2026.
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <h2 id="fazit"><i class="fas fa-check-double"></i> Conclusion: Proactive Recruitment as the Key</h2>
-                <p>The skilled worker shortage is an ongoing challenge. Companies that invest in international recruitment, automated onboarding processes, and an open corporate culture secure the best talents of tomorrow. With OpenRise, you can digitalize your recruiting processes and find the right professionals worldwide.</p>
-
-                <div style="text-align: center; margin-top: 3rem;">
-                    <a href="contact" class="btn btn-primary">Request Consultation</a>
-                </div>
-            </article>
+            <div class="blog-cards-container">
+            <div class="blog-card fade-in">
+                <h2>The Status Quo: Skilled Worker Shortage in Figures</h2>
+                <p>A brief insight into the current statistics on the skilled worker shortage in Germany and its impact on the economy.</p>
+                <a href="blog-1.html" class="btn-read-more">Read more <i class="fas fa-arrow-right"></i></a>
+            </div>
+        
+            <div class="blog-card fade-in">
+                <h2>Attracting Professionals from Abroad</h2>
+                <p>Strategies and benefits of international recruitment for your company to fill vacancies in the long term.</p>
+                <a href="blog-2.html" class="btn-read-more">Read more <i class="fas fa-arrow-right"></i></a>
+            </div>
+        
+            <div class="blog-card fade-in">
+                <h2>Visa and Entry Processes: The New Skilled Immigration Act</h2>
+                <p>A detailed overview of legal frameworks and simplifications introduced by the modernized law.</p>
+                <a href="blog-3.html" class="btn-read-more">Read more <i class="fas fa-arrow-right"></i></a>
+            </div>
+        
+            <div class="blog-card fade-in">
+                <h2>Finding Qualified Employees in Times of Talent Shortage</h2>
+                <p>Effective ways and methods to identify and recruit the best international talents despite a lack of applicants.</p>
+                <a href="blog-4.html" class="btn-read-more">Read more <i class="fas fa-arrow-right"></i></a>
+            </div>
+        
+            <div class="blog-card fade-in">
+                <h2>Are Foreign Workers Qualified?</h2>
+                <p>An objective look at international educational standards and how they compare with German qualification levels.</p>
+                <a href="blog-5.html" class="btn-read-more">Read more <i class="fas fa-arrow-right"></i></a>
+            </div>
+        
+            <div class="blog-card fade-in">
+                <h2>How to Determine if International Professionals Meet German Qualifications?</h2>
+                <p>Everything about the recognition process and proven methods for verifying skills and certificates.</p>
+                <a href="blog-6.html" class="btn-read-more">Read more <i class="fas fa-arrow-right"></i></a>
+            </div>
+        
+            <div class="blog-card fade-in">
+                <h2>What Are the Costs of Recruiting from Abroad?</h2>
+                <p>A transparent breakdown of recruitment costs and an analysis of the Return on Investment (ROI).</p>
+                <a href="blog-7.html" class="btn-read-more">Read more <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
         </section>
 
         <!-- Final CTA Section -->
@@ -674,7 +720,7 @@
                 <div class="final-cta">
                     <h2>Together against the shortage</h2>
                     <p>Let's optimize your recruiting strategy for 2026 together.</p>
-                    <a href="contact" class="btn-cta">Contact Us</a>
+                    <a href="contact.html" class="btn-cta">Contact Us</a>
                 </div>
             </div>
         </section>
@@ -684,8 +730,7 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
-                    <a href="index" class="logo"><img src="../image/logo.png" alt="OpenRise Logo"
-                            class="brand-logo"></a>
+                    <a href="index.html" class="logo"><img src="../image/logo.png" alt="OpenRise Logo" class="brand-logo"></a>
                     <p>Your bridge to global talent. We simplify the complex world of international recruitment with state-of-the-art AI.</p>
                     <div class="footer-status">
                         <div class="status-indicator">
@@ -697,20 +742,20 @@
                 <div class="footer-col">
                     <h4 class="footer-heading">Platform</h4>
                     <ul class="footer-links">
-                        <li><a href="index">Home</a></li>
-                        <li><a href="features">Features</a></li>
-                        <li><a href="../pricing">Pricing</a></li>
-                        <li><a href="demo">Demo</a></li>
-                        <li><a href="team">Team & Vision</a></li>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="features.html">Features</a></li>
+                        <li><a href="../pricing.html">Pricing</a></li>
+                        <li><a href="demo.html">Demo</a></li>
+                        <li><a href="team.html">Team &amp; Vision</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
                     <h4 class="footer-heading">Resources</h4>
                     <ul class="footer-links">
-                        <li><a href="contact">Contact</a></li>
-                        <li><a href="blog-fachkraeftemangel">Blog</a></li>
-                        <li><a href="datenschutz">Data Privacy</a></li>
-                        <li><a href="impressum">Legal Notice</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="blog-fachkraeftemangel.html">Blog</a></li>
+                        <li><a href="datenschutz.html">Data Privacy</a></li>
+                        <li><a href="impressum.html">Legal Notice</a></li>
                         <li><a href="#" class="cookie-settings-trigger">Cookie Settings</a></li>
                     </ul>
                 </div>
@@ -723,9 +768,9 @@
                     </form>
                     <div class="footer-lang-selector" style="margin-top: 2rem;">
                         <div class="lang-switcher-nav" style="margin: 0; padding: 0; border: none;">
-                            <a href="../blog-fachkraeftemangel" class="lang-link">DE</a>
-                            <a href="blog-fachkraeftemangel" class="lang-link active">EN</a>
-                            <a href="../fa/blog-fachkraeftemangel" class="lang-link">FA</a>
+                            <a href="../blog-fachkraeftemangel.html" class="lang-link">DE</a>
+                            <a href="blog-fachkraeftemangel.html" class="lang-link active">EN</a>
+                            <a href="../fa/blog-fachkraeftemangel.html" class="lang-link">FA</a>
                         </div>
                     </div>
                 </div>
@@ -743,6 +788,7 @@
     <script src="../js/background.js"></script>
     <script src="../js/interactive.js"></script>
     <script src="../js/script.js"></script>
-</body>
 
-</html>
+
+
+</body></html>
