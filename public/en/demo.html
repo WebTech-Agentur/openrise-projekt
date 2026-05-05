@@ -9,7 +9,7 @@
         .demo-simulator {
             background: var(--card-bg);
             border: 1px solid var(--border);
-            border-radius: calc(var(--radius) * 1.5);
+            border-radius: var(--radius);
             box-shadow: var(--shadow-lg);
             overflow: hidden;
             display: grid;
@@ -20,7 +20,7 @@
         }
 
         .demo-sidebar {
-            background: rgba(15, 23, 42, 0.03);
+            background: var(--primary-soft);
             border-right: 1px solid var(--border);
             padding: 2rem 1rem;
         }
@@ -48,9 +48,9 @@
         }
 
         .demo-nav-item.active {
-            background: var(--primary);
+            background: var(--secondary);
             color: white;
-            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+            box-shadow: none;
         }
 
         .demo-content {
@@ -94,13 +94,13 @@
 
         .mock-ui-card:hover {
             transform: translateY(-5px);
-            border-color: rgba(37, 99, 235, 0.2);
+            border-color: var(--secondary);
         }
 
         .mock-ui-card:hover h4,
         .mock-ui-card:hover strong,
         .mock-ui-card:hover span {
-            color: var(--primary);
+            color: var(--secondary);
             transition: color 0.3s ease;
         }
 
@@ -112,13 +112,13 @@
         }
 
         .status-processing {
-            background: rgba(59, 130, 246, 0.1);
-            color: #3b82f6;
+            background: rgba(16, 185, 129, 0.1);
+            color: var(--secondary);
         }
 
         .status-completed {
             background: rgba(16, 185, 129, 0.1);
-            color: #0fb880;
+            color: var(--secondary);
         }
 
         .status-pending {
@@ -137,7 +137,7 @@
 
         .stat-bar-fill {
             height: 100%;
-            background: var(--primary);
+            background: var(--secondary);
             border-radius: 10px;
             animation: growBar 2s ease-out forwards;
         }
@@ -182,10 +182,7 @@
         .demo-hero h1 {
             font-size: 4.2rem;
             margin-bottom: 1.5rem;
-            background: linear-gradient(135deg, var(--text-main) 0%, var(--primary) 100%);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: var(--text-main);
         }
 
         .hero-bg-accent {
@@ -195,7 +192,7 @@
             transform: translateX(-50%);
             width: 100%;
             height: 100%;
-            background: radial-gradient(circle at center, rgba(37, 99, 235, 0.05) 0%, transparent 70%);
+            background: radial-gradient(circle at center, var(--primary-soft) 0%, transparent 70%);
             pointer-events: none;
             z-index: -1;
         }
@@ -220,7 +217,7 @@
 
         .interactive-card:hover {
             transform: translateY(-10px);
-            border-color: var(--primary);
+            border-color: var(--secondary);
             box-shadow: var(--shadow-lg);
         }
 
@@ -238,7 +235,8 @@
             position: absolute;
             width: 100px;
             height: 100px;
-            border: 2px dashed rgba(59, 130, 246, 0.4);
+            border: 2px dashed var(--secondary);
+            opacity: 0.3;
             border-radius: 50%;
             animation: rotate-cw 15s linear infinite;
         }
@@ -256,7 +254,7 @@
             position: absolute;
             width: 80px;
             height: 2px;
-            background: linear-gradient(90deg, transparent, var(--primary), transparent);
+            background: linear-gradient(90deg, transparent, var(--secondary), transparent);
             top: 50%;
             left: 50%;
             margin-left: -40px;
@@ -292,7 +290,7 @@
 
         .automation-visual .gear-main {
             font-size: 3.5rem;
-            color: #8b5cf6;
+            color: var(--text-main);
             animation: rotate-cw 8s linear infinite;
         }
 
@@ -301,7 +299,7 @@
             top: 5px;
             right: 5px;
             font-size: 1.8rem;
-            color: #a78bfa;
+            color: var(--secondary);
             animation: rotate-ccw 5s linear infinite;
         }
 
@@ -331,6 +329,10 @@
         @keyframes shieldPulse {
             0% { width: 40px; height: 40px; opacity: 0.8; }
             100% { width: 100px; height: 100px; opacity: 0; }
+        }
+
+        p, .sub {
+            line-height: 1.8;
         }
 
         /* Responsive Improvements */
@@ -393,12 +395,10 @@
             <a href="index.html" class="logo"><img src="../image/logo.png" alt="OpenRise Logo" class="brand-logo"></a>
             <div class="mobile-menu-toggle"><i class="fas fa-bars"></i></div>
             <div class="nav-links">
-                <a href="index.html">Home</a>
                 <a href="features.html">Features</a>
-                <a href="../pricing.html">Pricing</a>
-                <a href="demo.html" class="active">Demo</a>
-                <a href="team.html">Team &amp; Vision</a>
-                <a href="contact.html">Contact</a>
+                <a href="blog-fachkraeftemangel.html">Blog</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="demo.html" class="btn btn-primary">Demo</a>
                 <div class="lang-switcher-nav">
                     <a href="../demo.html" class="lang-link">DE</a>
                     <a href="demo.html" class="lang-link active">EN</a>
@@ -602,20 +602,20 @@
 
                         <!-- Progress Bar -->
                         <div style="width: 100%; height: 8px; background: var(--border); border-radius: 100px; margin-bottom: 3rem; overflow: hidden;">
-                            <div style="width: 65%; height: 100%; background: linear-gradient(90deg, #3b82f6, #60a5fa); border-radius: 100px; box-shadow: 0 0 15px rgba(59, 130, 246, 0.4);">
+                            <div style="width: 65%; height: 100%; background: var(--secondary); border-radius: 100px; box-shadow: 0 0 15px rgba(16, 185, 129, 0.4);">
                             </div>
                         </div>
 
                         <div class="grid" style="display: grid; grid-template-columns: 1.5fr 1fr; gap: 2rem;">
                             <div class="timeline" style="border-left: 2px dashed var(--border); padding-left: 2rem; position: relative; margin-left: 1rem;">
                                 <div class="timeline-item" style="margin-bottom: 2rem; position: relative;">
-                                    <div style="position: absolute; left: -2.6rem; top: 0; width: 1.2rem; height: 1.2rem; background: #10b981; border-radius: 50%; border: 3px solid var(--bg-main);">
+                                    <div style="position: absolute; left: -2.6rem; top: 0; width: 1.2rem; height: 1.2rem; background: var(--secondary); border-radius: 50%; border: 3px solid var(--bg-main);">
                                     </div>
                                     <h4 style="margin-bottom: 0.25rem;">Document Submission</h4>
                                     <p class="text-muted small">Fully verified on 15.03.2026</p>
                                 </div>
                                 <div class="timeline-item" style="margin-bottom: 2rem; position: relative;">
-                                    <div style="position: absolute; left: -2.6rem; top: 0; width: 1.2rem; height: 1.2rem; background: #3b82f6; border-radius: 50%; border: 3px solid var(--bg-main); box-shadow: 0 0 10px rgba(59, 130, 246, 0.5);">
+                                    <div style="position: absolute; left: -2.6rem; top: 0; width: 1.2rem; height: 1.2rem; background: var(--secondary); border-radius: 50%; border: 3px solid var(--bg-main); box-shadow: 0 0 10px rgba(16, 185, 129, 0.5);">
                                     </div>
                                     <h4 style="margin-bottom: 0.25rem;">Authority Review</h4>
                                     <p class="text-muted small">Current status: In processing by BAMF</p>
@@ -635,7 +635,7 @@
                                 </div>
                                 <div class="mock-ui-card" style="margin-top: 1rem; padding: 1.25rem;">
                                     <p class="text-muted small mb-1">Next step</p>
-                                    <p style="font-weight: 700; font-size: 1.1rem; color: #3b82f6;">Final appointment</p>
+                                    <p style="font-weight: 700; font-size: 1.1rem; color: var(--secondary);">Final appointment</p>
                                 </div>
                             </div>
                         </div>
@@ -676,17 +676,17 @@
                         <li><a href="features.html">Features</a></li>
                         <li><a href="../pricing.html">Pricing</a></li>
                         <li><a href="demo.html">Demo</a></li>
-                        <li><a href="team.html">Team &amp; Vision</a></li>
+                        <li><a href="blog-fachkraeftemangel.html">Blog</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h4 class="footer-heading">Resources</h4>
+                    <h4 class="footer-heading">Company</h4>
                     <ul class="footer-links">
+                        <li><a href="team.html">Team & Vision</a></li>
                         <li><a href="contact.html">Contact</a></li>
-                        <li><a href="blog-fachkraeftemangel.html">Blog</a></li>
-                        <li><a href="datenschutz.html">Data Privacy</a></li>
-                        <li><a href="impressum.html">Legal Notice</a></li>
-                        <li><a href="#" class="cookie-settings-trigger">Cookie Settings</a></li>
+                        <li><a href="datenschutz.html">Privacy Policy</a></li>
+                        <li><a href="impressum.html">Imprint</a></li>
+                        <li><a href="#" class="cookie-settings-trigger">Cookies</a></li>
                     </ul>
                 </div>
                 <div class="footer-newsletter">

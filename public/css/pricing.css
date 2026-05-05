@@ -1,26 +1,26 @@
 /* Pricing Page Styles (Figma Minimalist Aesthetic) */
 body {
-    background-color: #ffffff;
-    color: #000000;
+    background-color: var(--bg);
+    color: var(--text-main);
 }
 
 .pricing-page-hero {
-    padding-top: 8rem;
-    padding-bottom: 5rem;
+    padding-top: 6rem;
+    padding-bottom: 4rem;
     text-align: center;
-    background-color: #ffffff;
+    background-color: transparent;
 }
 
 .pricing-title {
     font-size: 3rem;
     font-weight: 600;
     margin-bottom: 1rem;
-    color: #000;
+    color: var(--text-main);
     letter-spacing: -0.03em;
 }
 
 .pricing-subtitle {
-    color: #555;
+    color: var(--text-muted);
     max-width: 700px;
     margin: 0 auto 3rem;
     line-height: 1.6;
@@ -29,8 +29,8 @@ body {
 
 /* Freemium List (Top) */
 .freemium-container {
-    background: #fafafa;
-    border: 1px solid #eaeaea;
+    background: var(--card-bg);
+    border: 1px solid var(--border);
     border-radius: 12px;
     padding: 2.5rem;
     margin-bottom: 5rem;
@@ -40,7 +40,7 @@ body {
 .freemium-container h2 {
     font-size: 1.4rem;
     margin-bottom: 1.5rem;
-    color: #000;
+    color: var(--text-main);
     font-weight: 600;
 }
 
@@ -55,13 +55,13 @@ body {
     align-items: flex-start;
     gap: 0.8rem;
     font-weight: 400;
-    color: #333;
+    color: var(--text-main);
     font-size: 0.95rem;
     line-height: 1.5;
 }
 
 .freemium-item i {
-    color: #000;
+    color: var(--secondary);
     font-size: 0.9rem;
     margin-top: 0.25rem;
 }
@@ -76,11 +76,10 @@ body {
 .filter-tags {
     display: flex;
     gap: 0.2rem;
-    background: #ffffff;
+    background: var(--card-bg);
     padding: 0.25rem;
     border-radius: 50px;
-    border: 2px solid #34d399;
-    /* Bright mint green border */
+    border: 2px solid var(--secondary);
 }
 
 .filter-tag {
@@ -92,13 +91,12 @@ body {
     transition: all 0.2s ease;
     font-size: 1rem;
     font-weight: 500;
-    color: #000;
+    color: var(--text-main);
 }
 
 .filter-tag.active {
-    background: #171717;
-    /* Solid black/dark grey */
-    color: #ffffff;
+    background: var(--text-main);
+    color: var(--bg);
     box-shadow: none;
 }
 
@@ -106,8 +104,8 @@ body {
 .pricing-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    border-top: 1px solid #eaeaea;
-    border-bottom: 1px solid #eaeaea;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
     text-align: left;
 }
 
@@ -118,7 +116,7 @@ body {
     }
 
     .pricing-card {
-        border: 1px solid #eaeaea;
+        border: 1px solid var(--border);
         margin-bottom: 1rem;
         border-radius: 12px;
     }
@@ -132,9 +130,10 @@ body {
 
 .pricing-card {
     padding: 2.5rem 2rem;
-    border-right: 1px solid #eaeaea;
+    border-right: 1px solid var(--border);
     display: flex;
     flex-direction: column;
+    background: var(--bg);
 }
 
 .pricing-card:last-child {
@@ -142,13 +141,13 @@ body {
 }
 
 .pricing-card.grey-bg {
-    background-color: #fafafa;
+    background-color: var(--card-bg);
 }
 
 .pricing-title-sm {
     font-weight: 500;
     font-size: 2rem;
-    color: #000;
+    color: var(--text-main);
     margin-bottom: 1.5rem;
     letter-spacing: -0.02em;
 }
@@ -157,13 +156,12 @@ body {
 .pricing-price-container {
     margin-bottom: 2rem;
     min-height: 80px;
-    /* stabilize height */
 }
 
 .pricing-price {
     font-size: 2rem;
     font-weight: 600;
-    color: #000;
+    color: var(--text-main);
     display: flex;
     align-items: baseline;
     gap: 0.2rem;
@@ -175,13 +173,13 @@ body {
 
 .pricing-price span.suffix {
     font-size: 1rem;
-    color: #666;
+    color: var(--text-muted);
     font-weight: 400;
 }
 
 .billed-yearly-hint {
     font-size: 0.75rem;
-    color: #666;
+    color: var(--text-muted);
     margin-top: 0.5rem;
 }
 
@@ -194,28 +192,29 @@ body {
     font-size: 1rem;
     text-align: center;
     cursor: pointer;
-    transition: background 0.2s;
+    transition: all 0.2s;
     margin-bottom: 2rem;
+    border: 1px solid transparent;
 }
 
 .btn-pricing.black {
-    background: #000;
-    color: #fff;
-    border: 1px solid #000;
+    background: var(--text-main);
+    color: var(--bg);
+    border: 1px solid var(--text-main);
 }
 
 .btn-pricing.black:hover {
-    background: #333;
+    opacity: 0.9;
 }
 
 .btn-pricing.white {
-    background: #fff;
-    color: #000;
-    border: 1px solid #ccc;
+    background: transparent;
+    color: var(--text-main);
+    border: 1px solid var(--border);
 }
 
 .btn-pricing.white:hover {
-    border-color: #000;
+    border-color: var(--text-main);
 }
 
 /* Descriptions */
@@ -225,14 +224,14 @@ body {
 
 .desc-label {
     font-size: 0.85rem;
-    color: #000;
+    color: var(--text-main);
     font-weight: 600;
     margin-bottom: 0.8rem;
 }
 
 .desc-text {
     font-size: 0.85rem;
-    color: #333;
+    color: var(--text-muted);
     line-height: 1.6;
 }
 
@@ -245,7 +244,7 @@ body {
 /* Features */
 .features-label {
     font-size: 0.85rem;
-    color: #000;
+    color: var(--text-main);
     font-weight: 600;
     margin-bottom: 1rem;
 }
@@ -261,19 +260,19 @@ body {
     align-items: flex-start;
     gap: 0.8rem;
     font-size: 0.85rem;
-    color: #333;
+    color: var(--text-main);
     line-height: 1.5;
     margin-bottom: 1rem;
 }
 
 .pricing-features li i.green {
-    color: #10b981;
+    color: var(--secondary);
     font-size: 1rem;
     margin-top: 0.15rem;
 }
 
 .pricing-features li i.grey {
-    color: #888;
+    color: var(--text-muted);
     font-size: 0.9rem;
     margin-top: 0.2rem;
 }
@@ -284,7 +283,7 @@ body {
 
 .discount-badge {
     font-size: 0.75rem;
-    background: #10b981;
+    background: var(--secondary);
     color: white;
     padding: 0.2rem 0.5rem;
     border-radius: 4px;

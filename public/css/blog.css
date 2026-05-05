@@ -1,0 +1,146 @@
+/* Blog Minimalist Styles (Matching Pricing Page) */
+.blog-header {
+    padding: 8rem 0 4rem;
+    background: transparent;
+    text-align: center;
+    border-bottom: 1px solid var(--border);
+}
+
+.blog-meta {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.blog-meta span {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.blog-content {
+    max-width: 800px;
+    margin: 4rem auto;
+    padding: 0 1.5rem;
+    line-height: 1.8;
+    font-size: 1.1rem;
+    color: var(--text-main);
+}
+
+.blog-content h2 {
+    margin: 3.5rem 0 1.5rem;
+    font-size: 2rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    color: var(--text-main);
+}
+
+.blog-content h3 {
+    margin: 2.5rem 0 1rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-main);
+}
+
+.blog-content p {
+    margin-bottom: 1.5rem;
+}
+
+.highlight-box {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 2.5rem;
+    margin: 3rem 0;
+}
+
+.highlight-box h4 {
+    margin-bottom: 1rem;
+    color: var(--text-main);
+    font-weight: 600;
+}
+
+.stat-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin: 3rem 0;
+}
+
+.stat-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    padding: 2rem;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.stat-number {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--secondary); /* Mint Green */
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.blog-cards-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin: 4rem auto;
+    max-width: 1000px;
+}
+
+@media (max-width: 768px) {
+    .blog-cards-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+.blog-card {
+    background: var(--card-bg);
+    border: 2px solid var(--border);
+    padding: 3rem;
+    border-radius: 16px;
+    transition: all 0.3s ease;
+}
+
+.blog-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--secondary);
+}
+
+.blog-card h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: var(--text-main);
+}
+
+.btn-read-more {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--secondary);
+    font-weight: 600;
+    text-decoration: none;
+    margin-top: 1rem;
+}
+
+.btn-read-more:hover {
+    text-decoration: underline;
+}
+
+.back-link {
+    display: inline-block;
+    margin-bottom: 2rem;
+}

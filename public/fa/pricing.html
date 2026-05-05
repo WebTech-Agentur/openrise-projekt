@@ -1,0 +1,292 @@
+<!DOCTYPE html><html lang="fa" dir="rtl"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>قیمت‌گذاری | OpenRise</title>
+    <link rel="icon" type="image/png" href="../image/favicon.png?v=4">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/pricing.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100;400;700&amp;display=swap" rel="stylesheet">
+    <style>
+        [dir="rtl"] .freemium-container {
+            text-align: right;
+        }
+        [dir="rtl"] .pricing-grid {
+            text-align: right;
+        }
+        [dir="rtl"] .pricing-card {
+            border-right: none;
+            border-left: 1px solid #eaeaea;
+        }
+        [dir="rtl"] .pricing-card:last-child {
+            border-left: none;
+        }
+        @media (max-width: 1024px) {
+            [dir="rtl"] .pricing-card {
+                border-left: 1px solid #eaeaea;
+            }
+        }
+        .pricing-price {
+            flex-direction: row-reverse;
+            justify-content: flex-end;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="container nav-container">
+            <a href="index.html" class="logo"><img src="../image/logo.png" alt="لوگوی OpenRise" class="brand-logo"></a>
+            <div class="mobile-menu-toggle"><i class="fas fa-bars"></i></div>
+            <div class="nav-links">
+                <a href="features.html">ویژگی‌ها</a>
+                <a href="blog-fachkraeftemangel.html">وبلاگ</a>
+                <a href="pricing.html">قیمت‌گذاری</a>
+                <a href="demo.html" class="btn btn-primary">دمو</a>
+                <div class="lang-switcher-nav">
+                    <a href="../pricing.html" class="lang-link">DE</a>
+                    <a href="../en/pricing.html" class="lang-link">EN</a>
+                    <a href="pricing.html" class="lang-link active">FA</a>
+                </div>
+                <div class="theme-switch-wrapper">
+                    <label class="theme-switch" for="checkbox">
+                        <input type="checkbox" id="checkbox">
+                        <div class="slider round">
+                            <i class="fas fa-sun sun-icon"></i>
+                            <i class="fas fa-moon moon-icon"></i>
+                        </div>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="pricing-page-hero">
+            <div class="container" style="max-width: 1200px;">
+                <h1 class="pricing-title">قیمت‌گذاری ساده و شفاف</h1>
+                <p class="pricing-subtitle">طرحی را انتخاب کنید که با نیازهای استخدامی شما مطابقت دارد. با رشد خود، مقیاس را افزایش دهید.</p>
+                
+                <div class="pricing-filters-container">
+                    <div class="filter-tags">
+                        <button class="filter-tag" data-period="monthly">ماهانه</button>
+                        <button class="filter-tag" data-period="quarterly">فصلی (۴۵٪ صرفه‌جویی)*</button>
+                        <button class="filter-tag active" data-period="yearly">سالانه (۵۰٪ صرفه‌جویی)*</button>
+                    </div>
+                </div>
+
+                <div class="pricing-grid">
+                    <!-- Card 1: Freemium -->
+                    <div class="pricing-card grey-bg">
+                        <h3 class="pricing-title-sm">رایگان</h3>
+                        
+                        <div class="pricing-price-container">
+                            <div class="pricing-price" data-price-monthly="رایگان" data-price-quarterly="رایگان" data-price-yearly="رایگان">
+                                <span class="amount" style="font-size: 1.5rem;">رایگان</span>
+                            </div>
+                        </div>
+
+                        <button class="btn-pricing white">انتخاب طرح</button>
+
+                        <div class="pricing-desc-box">
+                            <p class="desc-label">طرح رایگان را انتخاب کنید اگر:</p>
+                            <p class="desc-text">نقطه شروع ایده‌آل برای آشنایی با پلتفرم و اولین مشاهده پروفایل‌های کاندیداهای مناسب.</p>
+                        </div>
+
+                        <div class="pricing-features-box">
+                            <p class="features-label">شامل:</p>
+                            <ul class="pricing-features">
+                                <li><i class="fas fa-check grey"></i> <span class="feature-text">ایجاد حساب کاربری</span></li>
+                                <li><i class="fas fa-check grey"></i> <span class="feature-text">ارسال نامحدود آگهی شغلی</span></li>
+                                <li><i class="fas fa-check grey"></i> <span class="feature-text">مشاهده رزومه‌های تایید شده</span></li>
+                                <li><i class="fas fa-lock grey" style="color:#aaa;"></i> <span class="feature-text text-danger">تماس و مصاحبه: نیاز به ارتقا</span></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Card 2: Starter -->
+                    <div class="pricing-card">
+                        <h3 class="pricing-title-sm">استارتر</h3>
+                        
+                        <div class="pricing-price-container">
+                            <div class="pricing-price" data-price-monthly="۱۳۹۹.۹۹ €" data-price-quarterly="۷۶۷ €" data-price-yearly="۶۹۹.۹۹ €">
+                                <span class="amount">۶۹۹.۹۹ €</span> <span class="suffix">/ماهانه</span>
+                            </div>
+                            <div class="billed-yearly-hint" data-note-monthly="" data-note-quarterly="به صورت ۲۳۰۰ یورو هر ۳ ماه صورت‌حساب می‌شود" data-note-yearly="به صورت ۸۳۹۹.۸۸ یورو سالانه صورت‌حساب می‌شود">
+                                به صورت ۸۳۹۹.۸۸ یورو سالانه صورت‌حساب می‌شود
+                            </div>
+                        </div>
+
+                        <button class="btn-pricing black">انتخاب طرح</button>
+
+                        <div class="pricing-desc-box">
+                            <p class="desc-label">طرح استارتر را انتخاب کنید اگر:</p>
+                            <p class="desc-text">برای اولین استخدامی‌های بین‌المللی با محدودیت‌های مشخص و دسترسی کامل به پروفایل کاندیداها.</p>
+                        </div>
+
+                        <div class="pricing-features-box">
+                            <p class="features-label">ویژگی‌های اصلی:</p>
+                            <ul class="pricing-features">
+                                <li><i class="fas fa-check-circle green"></i> <span class="feature-text">دسترسی نامحدود به رزومه‌ها</span></li>
+                                <li><i class="fas fa-check-circle green"></i> <span class="feature-text">استخدام تا ۲ متخصص در ماه</span></li>
+                                <li><i class="fas fa-check-circle green"></i> <span class="feature-text">تا ۳ مصاحبه برای هر کاندیدا</span></li>
+                                <li><i class="fas fa-check-circle green"></i> <span class="feature-text">تطبیق پروفایل‌ها با آگهی‌های شما</span></li>
+                                <li><i class="fas fa-check-circle green"></i> <span class="feature-text">دانلود رزومه‌ها به صورت PDF</span></li>
+                                <li><i class="fas fa-check-circle green"></i> <span class="feature-text">تطبیق پایه</span></li>
+                                <li><i class="fas fa-check-circle green"></i> <span class="feature-text">داشبورد شفاف</span></li>
+                                <li><i class="fas fa-check-circle green"></i> <span class="feature-text">امکان لغو منعطف پس از دوره</span></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Card 3: Basic -->
+                    <div class="pricing-card">
+                        <h3 class="pricing-title-sm">پایه</h3>
+                        
+                        <div class="pricing-price-container">
+                            <div class="pricing-price" data-price-monthly="۱۹۹۹.۹۹ €" data-price-quarterly="۱۱۰۰ €" data-price-yearly="۹۹۹.۹۹ €">
+                                <span class="amount">۹۹۹.۹۹ €</span> <span class="suffix">/ماهانه</span>
+                            </div>
+                            <div class="billed-yearly-hint" data-note-monthly="" data-note-quarterly="به صورت ۳۳۰۰ یورو هر ۳ ماه صورت‌حساب می‌شود" data-note-yearly="به صورت ۱۱۹۹۹.۸۸ یورو سالانه صورت‌حساب می‌شود">
+                                به صورت ۱۱۹۹۹.۸۸ یورو سالانه صورت‌حساب می‌شود
+                            </div>
+                        </div>
+
+                        <button class="btn-pricing black">انتخاب طرح</button>
+
+                        <div class="pricing-desc-box">
+                            <p class="desc-label">طرح پایه را انتخاب کنید اگر:</p>
+                            <p class="desc-text">پکیج پیشنهادی برای تیم‌هایی که چندین استخدام را به طور همزمان هماهنگ می‌کنند.</p>
+                        </div>
+
+                        <div class="pricing-features-box">
+                            <p class="features-label">ویژگی‌های اصلی:</p>
+                            <ul class="pricing-features">
+                                <li><i class="fas fa-check-circle green"></i> <span class="feature-text">دسترسی نامحدود به رزومه‌ها</span></li>
+                                <li><i class="fas fa-check-circle green"></i> <span class="feature-text">استخدام تا ۴ متخصص در ماه</span></li>
+                                <li><i class="fas fa-check-circle green"></i> <span class="feature-text">تا ۳ مصاحبه برای هر کاندیدا</span></li>
+                                <li><i class="fas fa-check-circle green"></i> <span class="feature-text">تطبیق پروفایل‌ها با آگهی‌های شما</span></li>
+                                <li><i class="fas fa-check-circle green"></i> <span class="feature-text">تمامی ویژگی‌های استارتر</span></li>
+                                <li><i class="fas fa-check-circle green"></i> <span class="feature-text">اطلاع‌رسانی پروفایل‌های جدید</span></li>
+                                <li><i class="fas fa-check-circle green"></i> <span class="feature-text">برنامه‌ریزی (Google/Outlook)</span></li>
+                                <li><i class="fas fa-check-circle green"></i> <span class="feature-text">دسترسی تیمی (تا ۲ کاربر)</span></li>
+                                <li><i class="fas fa-check-circle green"></i> <span class="feature-text">امکان لغو منعطف پس از دوره</span></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Card 4: Pro -->
+                    <div class="pricing-card">
+                        <h3 class="pricing-title-sm">حرفه‌ای</h3>
+                        
+                        <div class="pricing-price-container">
+                            <div class="pricing-price" data-price-monthly="۲۵۹۹.۹۹ €" data-price-quarterly="۱۴۳۳ €" data-price-yearly="۱۲۹۹.۹۹ €">
+                                <span class="amount">۱۲۹۹.۹۹ €</span> <span class="suffix">/ماهانه</span>
+                            </div>
+                            <div class="billed-yearly-hint" data-note-monthly="" data-note-quarterly="به صورت ۴۲۹۹ یورو هر ۳ ماه صورت‌حساب می‌شود" data-note-yearly="به صورت ۱۵۵۹۹.۸۸ یورو سالانه صورت‌حساب می‌شود">
+                                به صورت ۱۵۵۹۹.۸۸ یورو سالانه صورت‌حساب می‌شود
+                            </div>
+                        </div>
+
+                        <button class="btn-pricing black">تماس با واحد فروش</button>
+
+                        <div class="pricing-desc-box">
+                            <p class="desc-label">طرح حرفه‌ای را انتخاب کنید اگر:</p>
+                            <p class="desc-text">برای تیم‌های استخدامی بزرگتر با ظرفیت بیشتر، تطبیق قوی‌تر و اتصال سیستم API.</p>
+                        </div>
+
+                        <div class="pricing-features-box">
+                            <p class="features-label">ویژگی‌های اصلی:</p>
+                            <ul class="pricing-features">
+                                <li><i class="fas fa-check-circle green"></i> <span class="feature-text">دسترسی نامحدود به رزومه‌ها</span></li>
+                                <li><i class="fas fa-check-circle green"></i> <span class="feature-text">استخدام تا ۸ متخصص در ماه</span></li>
+                                <li><i class="fas fa-check-circle green"></i> <span class="feature-text">تا ۳ مصاحبه برای هر کاندیدا</span></li>
+                                <li><i class="fas fa-check-circle green"></i> <span class="feature-text">تطبیق پروفایل‌ها با آگهی‌های شما</span></li>
+                                <li><i class="fas fa-check-circle green"></i> <span class="feature-text">تمامی ویژگی‌های پایه</span></li>
+                                <li><i class="fas fa-check-circle green"></i> <span class="feature-text">تطبیق و رتبه‌بندی با هوش مصنوعی</span></li>
+                                <li><i class="fas fa-check-circle green"></i> <span class="feature-text">زمان‌های مصاحبه ترجیحی</span></li>
+                                <li><i class="fas fa-check-circle green"></i> <span class="feature-text">اتصال اختیاری HR API</span></li>
+                                <li><i class="fas fa-check-circle green"></i> <span class="feature-text">امکان لغو منعطف پس از دوره</span></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo"><img src="../image/logo.png" alt="OpenRise Logo" class="brand-logo"></a>
+                    <p>پل شما به استعدادهای جهانی. ما دنیای پیچیده استخدام بین‌المللی را با هوش مصنوعی پیشرفته ساده می‌کنیم.</p>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-heading">پلتفرم</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">خانه</a></li>
+                        <li><a href="features.html">ویژگی‌ها</a></li>
+                        <li><a href="pricing.html">قیمت‌گذاری</a></li>
+                        <li><a href="demo.html">دمو</a></li>
+                        <li><a href="blog-fachkraeftemangel.html">وبلاگ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-heading">شرکت</h4>
+                    <ul class="footer-links">
+                        <li><a href="team.html">تیم و چشم‌انداز</a></li>
+                        <li><a href="contact.html">تماس</a></li>
+                        <li><a href="datenschutz.html">حریم خصوصی</a></li>
+                        <li><a href="impressum.html">اطلاعات حقوقی</a></li>
+                        <li><a href="#" class="cookie-settings-trigger">تنظیمات کوکی</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© ۲۰۲۶ OpenRise. تمامی حقوق محفوظ است.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/background.js"></script>
+    <script src="../js/interactive.js"></script>
+    <script src="../js/script.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const tabs = document.querySelectorAll(".filter-tag[data-period]");
+            const prices = document.querySelectorAll(".pricing-price");
+            const hints = document.querySelectorAll(".billed-yearly-hint");
+
+            tabs.forEach(tab => {
+                tab.addEventListener("click", function () {
+                    tabs.forEach(t => t.classList.remove("active"));
+                    this.classList.add("active");
+
+                    const period = this.getAttribute("data-period");
+
+                    prices.forEach(priceEl => {
+                        const newAmount = priceEl.getAttribute("data-price-" + period);
+                        if (newAmount) {
+                            const amountSpan = priceEl.querySelector(".amount");
+                            if (amountSpan) amountSpan.textContent = newAmount;
+                        }
+                    });
+
+                    hints.forEach(hintEl => {
+                        const newNote = hintEl.getAttribute("data-note-" + period);
+                        if (newNote !== null) {
+                            hintEl.textContent = newNote;
+                            hintEl.style.opacity = "0";
+                            setTimeout(() => {
+                                hintEl.style.display = newNote === "" ? "none" : "block";
+                                hintEl.style.opacity = "1";
+                            }, 50);
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body></html>
