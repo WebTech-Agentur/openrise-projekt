@@ -2544,7 +2544,7 @@ input:not(:checked)+.slider .sun-icon {
     width: 100%;
     padding: 2rem 1.5rem;
     background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, transparent 100%);
-    color: var(--bg);
+    color: #ffffff;
 }
 
 .reel-overlay .badge {
@@ -2561,7 +2561,7 @@ input:not(:checked)+.slider .sun-icon {
 .reel-overlay h3 {
     margin: 0 0 0.25rem 0;
     font-size: 1.5rem;
-    color: var(--bg);
+    color: #ffffff;
 }
 
 .reel-overlay p {
@@ -2581,7 +2581,7 @@ input:not(:checked)+.slider .sun-icon {
     width: 36px;
     height: 36px;
     border-radius: 50%;
-    color: var(--bg);
+    color: #ffffff;
     cursor: pointer;
     backdrop-filter: blur(5px);
     transition: all 0.2s;
