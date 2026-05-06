@@ -1869,9 +1869,8 @@ input:not(:checked)+.slider .sun-icon {
 }
 
 .member-image:hover {
-    transform: translateY(-15px) rotate(3deg) scale(1.05);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-    border-color: var(--border);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    border-color: var(--secondary);
 }
 
 .member-image::after {
@@ -3262,6 +3261,42 @@ input:not(:checked)+.slider .sun-icon {
 
     [dir='rtl'] .member-info {
         text-align: center !important;
+    }
+}
+
+/* RTL Vision List & Section Fixes */
+[dir='rtl'] .vision-list {
+    padding-right: 0;
+    list-style: none;
+}
+
+[dir='rtl'] .vision-list li {
+    padding-left: 0;
+    padding-right: 2rem;
+    position: relative;
+    text-align: right;
+}
+
+[dir='rtl'] .vision-list li::before {
+    left: auto !important;
+    right: 0 !important;
+}
+
+@media (max-width: 992px) {
+    [dir='rtl'] #team-vision .content {
+        align-items: flex-start !important;
+        text-align: right !important;
+    }
+
+    [dir='rtl'] #team-vision .content h2,
+    [dir='rtl'] #team-vision .content p {
+        text-align: right !important;
+    }
+
+    [dir='rtl'] ul.vision-list {
+        text-align: right !important;
+        padding-left: 0 !important;
+        padding-right: 2.5rem !important;
     }
 }
 
