@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head>
+﻿<!DOCTYPE html><html lang="en"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Interactive Demo | OpenRise</title>
@@ -112,12 +112,12 @@
         }
 
         .status-processing {
-            background: rgba(16, 185, 129, 0.1);
+            background: rgba(var(--secondary-rgb), 0.1);
             color: var(--secondary);
         }
 
         .status-completed {
-            background: rgba(16, 185, 129, 0.1);
+            background: rgba(var(--secondary-rgb), 0.1);
             color: var(--secondary);
         }
 
@@ -312,15 +312,15 @@
 
         .compliance-visual .shield-icon {
             font-size: 3.5rem;
-            color: #10b981;
-            filter: drop-shadow(0 0 10px rgba(16, 185, 129, 0.2));
+            color: var(--secondary);
+            filter: drop-shadow(0 0 10px rgba(var(--secondary-rgb), 0.2));
         }
 
         .compliance-visual .scan-wave {
             position: absolute;
             width: 40px;
             height: 40px;
-            border: 2px solid #10b981;
+            border: 2px solid var(--secondary);
             border-radius: 50%;
             opacity: 0;
             animation: shieldPulse 2s ease-out infinite;
@@ -385,7 +385,7 @@
     </style>
 </head>
 
-<body>
+<body class="accent-purple">
     <div class="scroll-progress-container">
         <div class="scroll-progress-bar" id="scroll-progress"></div>
     </div>
@@ -462,7 +462,7 @@
                         </div>
                     </div>
                     <h3>Legal Security</h3>
-                    <p>No more worries about visa issues – we simulate the compliance check live.</p>
+                    <p>No more worries about visa issues â€“ we simulate the compliance check live.</p>
                 </div>
             </div>
         </section>
@@ -524,7 +524,7 @@
                                 <p style="font-size: 2.2rem; font-weight: 700; color: var(--text-main); margin: 0.5rem 0;">
                                     148</p>
                                 <div class="stat-bar-container">
-                                    <div class="stat-bar-fill" style="--fill-width: 85%; background: #10b981;"></div>
+                                    <div class="stat-bar-fill" style="--fill-width: 85%; background: var(--secondary);"></div>
                                 </div>
                                 <p class="text-muted small mt-2">+15 new applications</p>
                             </div>
@@ -538,7 +538,7 @@
                                 <span>New candidate matched for <strong>Software Engineer</strong>.</span>
                             </div>
                             <div class="activity-item" style="animation-delay: 0.2s;">
-                                <div style="width: 8px; height: 8px; background: #10b981; border-radius: 50%;"></div>
+                                <div style="width: 8px; height: 8px; background: var(--secondary); border-radius: 50%;"></div>
                                 <span class="text-muted small">15 min ago</span>
                                 <span>Visa application for <strong>Alex J.</strong> approved.</span>
                             </div>
@@ -602,7 +602,7 @@
 
                         <!-- Progress Bar -->
                         <div style="width: 100%; height: 8px; background: var(--border); border-radius: 100px; margin-bottom: 3rem; overflow: hidden;">
-                            <div style="width: 65%; height: 100%; background: var(--secondary); border-radius: 100px; box-shadow: 0 0 15px rgba(16, 185, 129, 0.4);">
+                            <div style="width: 65%; height: 100%; background: var(--secondary); border-radius: 100px; box-shadow: 0 0 15px rgba(var(--secondary-rgb), 0.4);">
                             </div>
                         </div>
 
@@ -615,7 +615,7 @@
                                     <p class="text-muted small">Fully verified on 15.03.2026</p>
                                 </div>
                                 <div class="timeline-item" style="margin-bottom: 2rem; position: relative;">
-                                    <div style="position: absolute; left: -2.6rem; top: 0; width: 1.2rem; height: 1.2rem; background: var(--secondary); border-radius: 50%; border: 3px solid var(--bg-main); box-shadow: 0 0 10px rgba(16, 185, 129, 0.5);">
+                                    <div style="position: absolute; left: -2.6rem; top: 0; width: 1.2rem; height: 1.2rem; background: var(--secondary); border-radius: 50%; border: 3px solid var(--bg-main); box-shadow: 0 0 10px rgba(var(--secondary-rgb), 0.5);">
                                     </div>
                                     <h4 style="margin-bottom: 0.25rem;">Authority Review</h4>
                                     <p class="text-muted small">Current status: In processing by BAMF</p>
@@ -704,7 +704,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>© 2026 OpenRise. All rights reserved.</p>
+                <p>Â© 2026 OpenRise. All rights reserved.</p>
                 <div class="social-links">
                     <a href="#"><i class="fab fa-linkedin-in"></i></a>
                     <a href="#"><i class="fab fa-twitter"></i></a>
@@ -741,3 +741,4 @@
     </script>
 
 </body></html>
+

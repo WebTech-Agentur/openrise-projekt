@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="de"><head>
+﻿<!DOCTYPE html><html lang="de"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Interaktive Demo | OpenRise</title>
@@ -112,12 +112,12 @@
         }
 
         .status-processing {
-            background: rgba(16, 185, 129, 0.1);
+            background: rgba(var(--secondary-rgb), 0.1);
             color: var(--secondary);
         }
 
         .status-completed {
-            background: rgba(16, 185, 129, 0.1);
+            background: rgba(var(--secondary-rgb), 0.1);
             color: var(--secondary);
         }
 
@@ -312,15 +312,15 @@
 
         .compliance-visual .shield-icon {
             font-size: 3.5rem;
-            color: #10b981;
-            filter: drop-shadow(0 0 10px rgba(16, 185, 129, 0.2));
+            color: var(--secondary);
+            filter: drop-shadow(0 0 10px rgba(var(--secondary-rgb), 0.2));
         }
 
         .compliance-visual .scan-wave {
             position: absolute;
             width: 40px;
             height: 40px;
-            border: 2px solid #10b981;
+            border: 2px solid var(--secondary);
             border-radius: 50%;
             opacity: 0;
             animation: shieldPulse 2s ease-out infinite;
@@ -385,7 +385,7 @@
     </style>
 </head>
 
-<body>
+<body class="accent-purple">
     <div class="scroll-progress-container">
         <div class="scroll-progress-bar" id="scroll-progress"></div>
     </div>
@@ -464,7 +464,7 @@
                         </div>
                     </div>
                     <h3>Rechtssicherheit</h3>
-                    <p>Keine Sorgen mehr um Visa-Fragen – wir simulieren den Compliance-Check live.</p>
+                    <p>Keine Sorgen mehr um Visa-Fragen â€“ wir simulieren den Compliance-Check live.</p>
                 </div>
             </div>
         </section>
@@ -473,7 +473,7 @@
         <section id="simulator" class="container reveal" style="padding-top: 6rem; padding-bottom: 3rem;">
             <div class="section-title text-center">
                 <h2 style="margin-bottom: 2rem;">Interaktiver Simulator</h2>
-                <p>Klicken Sie auf die Menüpunkte links, um verschiedene Funktionen der Plattform zu testen.</p>
+                <p>Klicken Sie auf die MenÃ¼punkte links, um verschiedene Funktionen der Plattform zu testen.</p>
             </div>
 
             <div class="demo-simulator">
@@ -500,7 +500,7 @@
                     <!-- Dashboard Screen -->
                     <div id="screen-dashboard" class="demo-screen active">
                         <div class="d-flex justify-content-between align-items-center mb-4">
-                            <h2 style="margin-bottom: 0;">Dashboard Übersicht</h2>
+                            <h2 style="margin-bottom: 0;">Dashboard Ãœbersicht</h2>
                             <span class="status-badge status-completed"><i class="fas fa-sync fa-spin" style="margin-right: 0.5rem;"></i> Live Update</span>
                         </div>
                         <img src="image/demo_dashboard.png" alt="Dashboard Mockup" style="width: 60%; margin: 0 auto 3rem; display: block; border-radius: var(--radius); box-shadow: var(--shadow-lg);">
@@ -526,28 +526,28 @@
                                 <p style="font-size: 2.2rem; font-weight: 700; color: var(--text-main); margin: 0.5rem 0;">
                                     148</p>
                                 <div class="stat-bar-container">
-                                    <div class="stat-bar-fill" style="--fill-width: 85%; background: #10b981;"></div>
+                                    <div class="stat-bar-fill" style="--fill-width: 85%; background: var(--secondary);"></div>
                                 </div>
                                 <p class="text-muted small mt-2">+15 neue Bewerbungen</p>
                             </div>
                         </div>
 
                         <div class="recent-activity">
-                            <h4 style="margin-bottom: 1.5rem;">Kürzliche Aktivitäten</h4>
+                            <h4 style="margin-bottom: 1.5rem;">KÃ¼rzliche AktivitÃ¤ten</h4>
                             <div class="activity-item" style="animation-delay: 0.1s;">
                                 <div style="width: 8px; height: 8px; background: #3b82f6; border-radius: 50%;"></div>
                                 <span class="text-muted small">Vor 2 Min.</span>
-                                <span>Neuer Kandidat für <strong>Software Engineer</strong> gematcht.</span>
+                                <span>Neuer Kandidat fÃ¼r <strong>Software Engineer</strong> gematcht.</span>
                             </div>
                             <div class="activity-item" style="animation-delay: 0.2s;">
-                                <div style="width: 8px; height: 8px; background: #10b981; border-radius: 50%;"></div>
+                                <div style="width: 8px; height: 8px; background: var(--secondary); border-radius: 50%;"></div>
                                 <span class="text-muted small">Vor 15 Min.</span>
                                 <span>Visumantrag von <strong>Alex J.</strong> genehmigt.</span>
                             </div>
                             <div class="activity-item" style="animation-delay: 0.3s; border-bottom: none;">
                                 <div style="width: 8px; height: 8px; background: #f59e0b; border-radius: 50%;"></div>
                                 <span class="text-muted small">Vor 1 Std.</span>
-                                <span>Dokumentenprüfung für <strong>Elena R.</strong> gestartet.</span>
+                                <span>DokumentenprÃ¼fung fÃ¼r <strong>Elena R.</strong> gestartet.</span>
                             </div>
                         </div>
                     </div>
@@ -590,7 +590,7 @@
                         <div class="mock-ui-card">
                             <div class="d-flex justify-content-between">
                                 <span>Qualifikationsnachweis.zip</span>
-                                <span class="status-badge status-processing">Prüfung läuft</span>
+                                <span class="status-badge status-processing">PrÃ¼fung lÃ¤uft</span>
                             </div>
                         </div>
                     </div>
@@ -607,7 +607,7 @@
 
                         <!-- Progress Bar -->
                         <div style="width: 100%; height: 8px; background: var(--border); border-radius: 100px; margin-bottom: 3rem; overflow: hidden;">
-                            <div style="width: 65%; height: 100%; background: var(--secondary); border-radius: 100px; box-shadow: 0 0 15px rgba(16, 185, 129, 0.4);">
+                            <div style="width: 65%; height: 100%; background: var(--secondary); border-radius: 100px; box-shadow: 0 0 15px rgba(var(--secondary-rgb), 0.4);">
                             </div>
                         </div>
 
@@ -617,12 +617,12 @@
                                     <div style="position: absolute; left: -2.6rem; top: 0; width: 1.2rem; height: 1.2rem; background: var(--secondary); border-radius: 50%; border: 3px solid var(--bg-main);">
                                     </div>
                                     <h4 style="margin-bottom: 0.25rem;">Dokumenteneinreichung</h4>
-                                    <p class="text-muted small">Vollständig geprüft am 15.03.2026</p>
+                                    <p class="text-muted small">VollstÃ¤ndig geprÃ¼ft am 15.03.2026</p>
                                 </div>
                                 <div class="timeline-item" style="margin-bottom: 2rem; position: relative;">
-                                    <div style="position: absolute; left: -2.6rem; top: 0; width: 1.2rem; height: 1.2rem; background: var(--secondary); border-radius: 50%; border: 3px solid var(--bg-main); box-shadow: 0 0 10px rgba(16, 185, 129, 0.5);">
+                                    <div style="position: absolute; left: -2.6rem; top: 0; width: 1.2rem; height: 1.2rem; background: var(--secondary); border-radius: 50%; border: 3px solid var(--bg-main); box-shadow: 0 0 10px rgba(var(--secondary-rgb), 0.5);">
                                     </div>
-                                    <h4 style="margin-bottom: 0.25rem;">Behördliche Prüfung</h4>
+                                    <h4 style="margin-bottom: 0.25rem;">BehÃ¶rdliche PrÃ¼fung</h4>
                                     <p class="text-muted small">Aktueller Status: In Bearbeitung durch BAMF</p>
                                 </div>
                                 <div class="timeline-item" style="position: relative;">
@@ -639,7 +639,7 @@
                                     <p style="font-weight: 700; font-size: 1.1rem;">~ 14 Tage</p>
                                 </div>
                                 <div class="mock-ui-card" style="margin-top: 1rem; padding: 1.25rem;">
-                                    <p class="text-muted small mb-1">Nächster Schritt</p>
+                                    <p class="text-muted small mb-1">NÃ¤chster Schritt</p>
                                     <p style="font-weight: 700; font-size: 1.1rem; color: #3b82f6;">Finaler Termin</p>
                                 </div>
                             </div>
@@ -654,7 +654,7 @@
             <div class="container">
                 <div class="final-cta">
                     <h2>Interesse geweckt?</h2>
-                    <p>Lassen Sie uns persönlich über Ihre Anforderungen sprechen.</p>
+                    <p>Lassen Sie uns persÃ¶nlich Ã¼ber Ihre Anforderungen sprechen.</p>
                     <a href="contact.html" class="btn-cta">Beratung vereinbaren</a>
                 </div>
             </div>
@@ -666,7 +666,7 @@
             <div class="footer-grid">
                 <div class="footer-brand">
                     <a href="index.html" class="logo"><img src="image/logo.png" alt="OpenRise Logo" class="brand-logo"></a>
-                    <p>Ihre Brücke zu globalen Talenten. Wir vereinfachen die komplexe Welt der internationalen
+                    <p>Ihre BrÃ¼cke zu globalen Talenten. Wir vereinfachen die komplexe Welt der internationalen
                         Personalbeschaffung mit modernster KI.</p>
                     <div class="footer-status">
                         <div class="status-indicator">
@@ -710,7 +710,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>© 2026 OpenRise. Alle Rechte vorbehalten.</p>
+                <p>Â© 2026 OpenRise. Alle Rechte vorbehalten.</p>
                 <div class="social-links">
                     <a href="#"><i class="fab fa-linkedin-in"></i></a>
                     <a href="#"><i class="fab fa-twitter"></i></a>
@@ -748,3 +748,4 @@
 
 
 </body></html>
+
