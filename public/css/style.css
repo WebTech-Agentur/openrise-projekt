@@ -2,8 +2,8 @@
     /* High-Contrast Minimalist Aesthetic (Pricing Page Style) */
     --primary: #171717; /* Solid black/dark grey */
     --primary-soft: #fafafa; /* Very light grey */
-    --secondary: #10b981; /* Mint green */
-    --accent: #34d399; /* Bright mint green border */
+    --secondary: #10b981; /* Mint green default */
+    --accent: #34d399; /* Bright mint green border default */
     --bg: #ffffff;
     --text-main: #000000;
     --text-muted: #555555;
@@ -16,11 +16,16 @@
     --radius: 8px;
     --bg-main: #ffffff;
     
-    
     /* Form Styles */
     --input-bg: #ffffff;
     --input-border: #eaeaea;
-    --input-focus: #10b981;
+    --input-focus: var(--secondary);
+}
+
+/* Purple Accent Theme for Home and Features */
+.accent-purple {
+    --secondary: #7c3aed; /* Elegant Violet */
+    --accent: #a78bfa; /* Soft Lavender */
 }
 
 [data-theme="dark"] {
@@ -36,7 +41,12 @@
     --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.5);
     --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.7);
     --bg-main: #0a0a0a;
-    
+}
+
+/* Dark Mode Overrides for Purple Theme */
+[data-theme="dark"] .accent-purple,
+[data-theme="dark"].accent-purple {
+    --primary-soft: rgba(124, 58, 237, 0.15);
 }
 
 * {
@@ -473,7 +483,7 @@ nav {
 
 .doc-stamp {
     margin-top: auto;
-    color: #10b981;
+    color: var(--secondary);
     font-size: 0.75rem;
     font-weight: 800;
     display: flex;
@@ -849,13 +859,13 @@ nav {
 }
 
 .tracker-step.completed i {
-    background: #10b981;
-    border-color: #10b981;
+    background: var(--secondary);
+    border-color: var(--secondary);
     color: var(--bg);
 }
 
 .tracker-step.completed::after {
-    background: #10b981;
+    background: var(--secondary);
 }
 
 .tracker-step.active i {
@@ -895,11 +905,12 @@ nav {
 }
 
 .house-visual .house-base {
-    color: #10b981;
+    color: var(--secondary);
 }
 
 .bento-item:hover .house-visual .house-base {
-    color: rgba(16, 185, 129, 0.5);
+    color: var(--accent);
+    opacity: 0.8;
 }
 
 .audio-visual .globe-center {
@@ -1310,7 +1321,7 @@ footer::before {
 .status-dot {
     width: 8px;
     height: 8px;
-    background: #10b981;
+    background: var(--secondary);
     border-radius: 50%;
     position: relative;
 }
@@ -1322,7 +1333,7 @@ footer::before {
     left: -4px;
     right: -4px;
     bottom: -4px;
-    border: 1px solid #10b981;
+    border: 1px solid var(--secondary);
     border-radius: 50%;
     animation: pulse-status 2s infinite;
 }
@@ -3356,7 +3367,7 @@ input:not(:checked)+.slider .sun-icon {
 
 .cookie-icon {
     font-size: 1.5rem;
-    color: #10b981;
+    color: var(--secondary);
 }
 
 .cookie-title {
