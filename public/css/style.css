@@ -2,8 +2,8 @@
     /* High-Contrast Minimalist Aesthetic (Pricing Page Style) */
     --primary: #171717; /* Solid black/dark grey */
     --primary-soft: #fafafa; /* Very light grey */
-    --secondary: #10b981; /* Mint green default */
-    --accent: #34d399; /* Bright mint green border default */
+    --secondary: #8b5cf6; /* Elegant purple */
+    --accent: #a78bfa; /* Soft violet border */
     --bg: #ffffff;
     --text-main: #000000;
     --text-muted: #555555;
@@ -16,17 +16,11 @@
     --radius: 8px;
     --bg-main: #ffffff;
     
+    
     /* Form Styles */
     --input-bg: #ffffff;
     --input-border: #eaeaea;
-    --input-focus: var(--secondary);
-}
-
-/* Purple Accent Theme for Home and Features */
-.accent-purple {
-    --secondary: #7c3aed; /* Elegant Violet */
-    --accent: #a78bfa; /* Soft Lavender */
-    --secondary-rgb: 124, 58, 237;
+    --input-focus: #8b5cf6;
 }
 
 [data-theme="dark"] {
@@ -35,19 +29,14 @@
     --text-main: #ffffff;
     --text-muted: #a1a1aa;
     --border: #222222;
-    --primary-soft: rgba(16, 185, 129, 0.1);
+    --primary-soft: rgba(139, 92, 246, 0.1);
     --input-bg: #111111;
     --input-border: #222222;
     --nav-bg: rgba(2, 6, 23, 0.85);
     --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.5);
     --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.7);
     --bg-main: #0a0a0a;
-}
-
-/* Dark Mode Overrides for Purple Theme */
-[data-theme="dark"] .accent-purple,
-[data-theme="dark"].accent-purple {
-    --primary-soft: rgba(124, 58, 237, 0.15);
+    
 }
 
 * {
@@ -484,7 +473,7 @@ nav {
 
 .doc-stamp {
     margin-top: auto;
-    color: var(--secondary);
+    color: #8b5cf6;
     font-size: 0.75rem;
     font-weight: 800;
     display: flex;
@@ -860,13 +849,13 @@ nav {
 }
 
 .tracker-step.completed i {
-    background: var(--secondary);
-    border-color: var(--secondary);
+    background: #8b5cf6;
+    border-color: #8b5cf6;
     color: var(--bg);
 }
 
 .tracker-step.completed::after {
-    background: var(--secondary);
+    background: #8b5cf6;
 }
 
 .tracker-step.active i {
@@ -906,12 +895,11 @@ nav {
 }
 
 .house-visual .house-base {
-    color: var(--secondary);
+    color: #8b5cf6;
 }
 
 .bento-item:hover .house-visual .house-base {
-    color: var(--accent);
-    opacity: 0.8;
+    color: rgba(139, 92, 246, 0.5);
 }
 
 .audio-visual .globe-center {
@@ -1322,7 +1310,7 @@ footer::before {
 .status-dot {
     width: 8px;
     height: 8px;
-    background: var(--secondary);
+    background: #8b5cf6;
     border-radius: 50%;
     position: relative;
 }
@@ -1334,7 +1322,7 @@ footer::before {
     left: -4px;
     right: -4px;
     bottom: -4px;
-    border: 1px solid var(--secondary);
+    border: 1px solid #8b5cf6;
     border-radius: 50%;
     animation: pulse-status 2s infinite;
 }
@@ -3368,7 +3356,7 @@ input:not(:checked)+.slider .sun-icon {
 
 .cookie-icon {
     font-size: 1.5rem;
-    color: var(--secondary);
+    color: #8b5cf6;
 }
 
 .cookie-title {
