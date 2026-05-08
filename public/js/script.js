@@ -131,6 +131,40 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- Cookie Consent System ---
     initCookieConsent();
+
+    // --- Highlight Active Nav Link ---
+    function highlightActiveNav() {
+        const path = window.location.pathname;
+        const filename = path.split('/').pop() || 'index.html';
+        
+        // Target only main nav links (Features, Blog, Preise/Pricing, Demo)
+        // We use a selector that targets the top-level links in nav-links
+        const navLinks = document.querySelectorAll('.nav-links > a');
+        
+        navLinks.forEach(link => {
+            const href = link.getAttribute('href');
+            
+            // Remove active class first to be sure
+            link.classList.remove('active');
+
+            // 1. Exact match for current filename
+            if (href === filename) {
+                link.classList.add('active');
+            }
+            
+            // 2. Special case for Home (index.html)
+            if ((filename === 'index.html' || filename === '') && (href === 'index.html' || href === './')) {
+                // Usually we don't highlight the logo, and "Home" is often only in footer.
+                // But if there's a Home link in header, this would catch it.
+            }
+
+            // 3. Special case for Blog (all blog-*.html pages should highlight the Blog link)
+            if (filename.includes('blog') && href.includes('blog')) {
+                link.classList.add('active');
+            }
+        });
+    }
+    highlightActiveNav();
 });
 
 function initCookieConsent() {
